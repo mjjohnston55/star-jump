@@ -19,7 +19,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/contacts', require('./routes/contacts'));
 
 // If there is an environment variable for hosted port, use it, otherwise use 5000 (development)
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 // Start server with PORT
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
