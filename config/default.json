@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://thnlsn:JoeKerr@contact-manager-8zcpu.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://thnlsn:JoeKerr@project-3-qlbwi.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "secret"
 }
