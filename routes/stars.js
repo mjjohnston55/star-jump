@@ -1,34 +1,47 @@
-// CRUD for each specific users contacts
-
 const express = require('express');
 const router = express.Router();
+/* const bcrypt = require('bcryptjs'); */
+/* const jwt = require('jsonwebtoken'); */
+/* const config = require('config'); */
+const auth = require('../middleware/auth');
+const { check, validationResult } = require('express-validator/check');
 
-// @route       GET api/contacts
-// @desc        Get all users contacts (NOT ALL CONTACTS ON THE DATABASE)
-// @access      Private
-router.get('/', (req, res) => {
-  res.send('Get all users stars');
-});
+const User = require('../models/User');
 
-// @route       POST api/contacts
-// @desc        Add new contacts
+// @route       PUT api/stars/:id
+// @desc        Update contact
 // @access      Private
-router.post('/', (req, res) => {
-  res.send('Add star');
-});
+router.put('/:id', auth, async (req, res) => {
+  const { stars } = req.body;
+  const loggedInUser = req.user.id;
 
-// @route       GET api/contacts/:id
-// @desc        Get all users contacts
-// @access      Private
-router.put('/:id', (req, res) => {
-  res.send('Update stars');
-});
+  // build toUpdate object (these are the fields we would be editing)
+  const toUpdate = {};
+  console.log(stars);
+  if (stars) toUpdate.stars = stars; // if stars exists in req.body, add it to toUpdate
 
-// @route       DELETE api/contacts
-// @desc        Delete contact
-// @access      Private
-router.delete('/:id', (req, res) => {
-  res.send('Delete stars');
+  try {
+    let user = await User.findById(req.params.id); // create contact based on the id in the endpoint
+
+    if (!user) return res.status(404).json({ msg: 'User not found' }); // if their search doesn't exist
+
+    // make sure the users stars being update is by the person logged in (so someone can't just change them with Postman etc.)
+    // this is done by taking the user in the token and comparing it to the user whos stars is being updated
+    if (req.params.id !== loggedInUser) {
+      return res.status(401).json({ msg: 'Not authorized' });
+    }
+
+    user = await User.findByIdAndUpdate(
+      req.params.id, // this is the id we find by (_id)
+      { $set: toUpdate }, // setting the fields of the contact to the updated fields
+      { returnOriginal: false }
+    );
+
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
 });
 
 module.exports = router;

@@ -16,7 +16,7 @@ app.get('/', (req, res) => res.json('Welcome to the ContactManager API'));
 ////// Define routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/contacts', require('./routes/contacts'));
+app.use('/api/stars', require('./routes/stars'));
 
 // If there is an environment variable for hosted port, use it, otherwise use 5000 (development)
 const PORT = process.env.PORT || 8000;
