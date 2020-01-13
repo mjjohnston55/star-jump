@@ -18,3 +18,10 @@ nav {
   align-items: center;
   list-style: none;
 }
+
+.back-arrow {
+  background-image: url('https://vectorified.com/images/back-button-icon-15.png');
+  height:150px;
+  width:150px;
+  background-size: contain;
+}
