@@ -24,4 +24,31 @@ nav {
   height:150px;
   width:150px;
   background-size: contain;
+  margin-left:30px;
 }
+
+.shape {
+  height: 150px;
+  margin: 1rem;
+  position: relative;
+}
+
+.shape-title {
+  text-align:center;
+  background:white;
+  color:black;
+  border:2px solid black;
+}
+
+.audio-btn1 {
+  background:none;
+  border:none;
+}
+
+
+.audio-btn2 {
+  width:50px;
+  height:50px;
+}
+
+
