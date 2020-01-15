@@ -19,7 +19,9 @@ import ShapeApp from "./Components/GameModules/ShapeApp";
 
 function App() {
   return (
+    
     <Router>
+      <div><Preload/></div>
       <div className="App">
         <Nav />
         <Switch>
@@ -54,5 +56,19 @@ const Home = () => (
     
   </div>
 );
+
+const Preload = () => (
+  <section class="wrapper">
+        <div class="spinner">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      </section>
+)
 
 export default App;

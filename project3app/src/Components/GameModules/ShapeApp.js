@@ -2,43 +2,50 @@ import React from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import cards from "./cards.json";
+import swal from "sweetalert";
+// import swal from '@sweetalert/with-react'
+
 
 
 let randId;
 let randShape;
 let randAudio;
 let i = 0;
-const correct = new Audio('https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3');
-const incorrect = new Audio('https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3');
+const correct = new Audio(
+  "https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3"
+);
+const incorrect = new Audio(
+  "https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3"
+);
 
-function pickRandom(){
+function pickRandom() {
   // randId = cards[ Math.floor(Math.random() * cards.length) ]['id'];
-  
+
   randId = cards[i].id;
-  randShape = cards[randId-1].name;
-  randAudio = cards[randId-1].audio;
+  randShape = cards[randId - 1].name;
+  randAudio = cards[randId - 1].audio;
   // console.log(randId);
   // console.log(randShape);
   // console.log(randAudio);
 
   // setTimeout(playAudio(), 6000);
-  setTimeout(function(){ playAudio(); }, 1500);
-
+  setTimeout(function() {
+    playAudio();
+  }, 1500);
 
   if (i > 0 && i < 8) {
     document.getElementById("name").innerHTML = randShape;
   }
-  
-
-  
 }
 
 function resetGame() {
   i = 0;
+  // randId = cards[0].id;
+  // randShape=cards[0].name;
+  // randAudio = cards[0].audio;
 }
 
-
-function playAudio(){
+function playAudio() {
   let audio = new Audio(randAudio);
 
   audio.setAttribute("autoplay", "true");
@@ -46,59 +53,59 @@ function playAudio(){
 
   audio.load();
   audio.play();
-
 }
-
 
 function shapeClick(e) {
   let clickedShapeId = e.target.id;
-  let clickedShapeName = e.target.alt;
-  console.log("------------------------")
-  console.log("Clicked Shape Id: " + clickedShapeId);
-  console.log("Clicked Shape Name: " + clickedShapeName)
-  console.log("\nRandom Id: " + randId)
-  console.log("Random Shape: " + randShape)
-  console.log("------------------------")
+  // let clickedShapeName = e.target.alt;
+  // console.log("------------------------")
+  // console.log("Clicked Shape Id: " + clickedShapeId);
+  // console.log("Clicked Shape Name: " + clickedShapeName)
+  // console.log("\nRandom Id: " + randId)
+  // console.log("Random Shape: " + randShape)
+  // console.log("------------------------")
   // eslint-disable-next-line
-   if(clickedShapeId == randId) {
-     console.log("correct")
-     console.log("------------------------")
+  if (clickedShapeId == randId) {
+    console.log("correct");
+    console.log("------------------------");
 
-       
-      correct.play();
-      if(i < 7) {
-        i++;
-        pickRandom();
-      }
-      else {
-        alert("You Win!")
-        i=0;
-        return;
-      }
+    correct.play();
+    if (i < 7) {
+      i++;
+      pickRandom();
+    } else {
+      swal("You got them all Correct!", "You Win!", "success");
+      i = 0;
       
-      
-     
-   }
-   else {
+    }
+  } 
+ 
+  else {
     incorrect.play();
-    setTimeout(function(){ playAudio(); }, 1500);
-     console.log("incorrect")
-   }
+    setTimeout(function() {
+      playAudio();
+    }, 1500);
+    console.log("incorrect");
+  }
 }
 
 function ShapeApp() {
   return (
     <div>
-
       <div className="shape-title">
-  <h1 onLoad={pickRandom()} id="name">{randShape}</h1>
+        <h1 onLoad={pickRandom()} id="name">
+          {randShape}
+        </h1>
       </div>
-      
 
-      <button onClick={playAudio}
-      className="audio-btn1"> <img src="https://www.searchpng.com/wp-content/uploads/2019/02/Audio-Button-PNG-715x735.png" alt="play audio" className="audio-btn2"/> </button>
-      
-
+      <button onClick={playAudio} className="audio-btn1">
+        {" "}
+        <img
+          src="https://www.searchpng.com/wp-content/uploads/2019/02/Audio-Button-PNG-715x735.png"
+          alt="play audio"
+          className="audio-btn2"
+        />{" "}
+      </button>
 
       <div className="row">
         <Link to="/mainapp">
@@ -110,7 +117,13 @@ function ShapeApp() {
         <div className="row">
           {cards.map(card => (
             <div className="col-md-3">
-              <img className="shape" src={card.image} alt={card.name} id={card.id} onClick={shapeClick}/>
+              <img
+                className="shape"
+                src={card.image}
+                alt={card.name}
+                id={card.id}
+                onClick={shapeClick}
+              />
             </div>
           ))}
         </div>
