@@ -1,83 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import cards from "./cards.json";
 import swal from "sweetalert";
-// import swal from '@sweetalert/with-react'
 
-
-
-let randId;
-let randShape;
-let randAudio;
-let i = 0;
 const correct = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3"
 );
 const incorrect = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3"
 );
+function ShapeApp() {
+  const [item, setItem] = useState(0);
+  const [randShape, setRandShape] = useState();
+  const [randId, setRandId] = useState();
+  const [randAudio, setRandAudio] = useState();
 
-function pickRandom() {
-  // randId = cards[ Math.floor(Math.random() * cards.length) ]['id'];
-
-  randId = cards[i].id;
-  randShape = cards[randId - 1].name;
-  randAudio = cards[randId - 1].audio;
-  // console.log(randId);
-  // console.log(randShape);
-  // console.log(randAudio);
-
-  // setTimeout(playAudio(), 6000);
-  setTimeout(function() {
-    playAudio();
-  }, 1500);
-
-  if (i > 0 && i < 8) {
-    document.getElementById("name").innerHTML = randShape;
+  function playAudio(audioNum = item) {
+    console.log(randAudio);
+    console.log("PLAYING AUDIO");
+    let audio = new Audio(cards[audioNum].audio);
+  
+    audio.setAttribute("autoplay", "true");
+    audio.setAttribute("muted", "muted");
+  
+    audio.load();
+    audio.play();
   }
-}
 
-function resetGame() {
-  i = 0;
-  // randId = cards[0].id;
-  // randShape=cards[0].name;
-  // randAudio = cards[0].audio;
-}
+  useEffect(() => {
+    setRandId(cards[item].id);
+    setRandShape(cards[item].name);
+    setRandAudio(cards[item].audio);
 
-function playAudio() {
-  let audio = new Audio(randAudio);
+    if (item === 0) {
+      playAudio(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item]);
 
-  audio.setAttribute("autoplay", "true");
-  audio.setAttribute("muted", "muted");
-
-  audio.load();
-  audio.play();
-}
-
-function shapeClick(e) {
+  function shapeClick(e) {
   let clickedShapeId = e.target.id;
-  // let clickedShapeName = e.target.alt;
-  // console.log("------------------------")
-  // console.log("Clicked Shape Id: " + clickedShapeId);
-  // console.log("Clicked Shape Name: " + clickedShapeName)
-  // console.log("\nRandom Id: " + randId)
-  // console.log("Random Shape: " + randShape)
-  // console.log("------------------------")
+
   // eslint-disable-next-line
   if (clickedShapeId == randId) {
-    console.log("correct");
-    console.log("------------------------");
-
     correct.play();
-    if (i < 7) {
-      i++;
-      pickRandom();
-    } else {
+
+    let newItem = (item < 7) ? item + 1 : 0;
+    
+    if (item === 7) {
       swal("You got them all Correct!", "You Win!", "success");
-      i = 0;
-      
     }
+
+    setItem(newItem);
+    setTimeout(function() {
+      playAudio(newItem);
+    }, 1500);
   } 
  
   else {
@@ -85,20 +63,19 @@ function shapeClick(e) {
     setTimeout(function() {
       playAudio();
     }, 1500);
-    console.log("incorrect");
   }
 }
+  
 
-function ShapeApp() {
   return (
     <div>
       <div className="shape-title">
-        <h1 onLoad={pickRandom()} id="name">
+        <h1>
           {randShape}
         </h1>
       </div>
 
-      <button onClick={playAudio} className="audio-btn1">
+      <button onClick={() => playAudio()} className="audio-btn1">
         {" "}
         <img
           src="https://www.searchpng.com/wp-content/uploads/2019/02/Audio-Button-PNG-715x735.png"
@@ -109,14 +86,14 @@ function ShapeApp() {
 
       <div className="row">
         <Link to="/mainapp">
-          <div className="back-arrow" onClick={resetGame}></div>
+          <div className="back-arrow" onClick={() => setItem(0)}></div>
         </Link>
       </div>
 
       <div className="container">
         <div className="row">
           {cards.map(card => (
-            <div className="col-md-3">
+            <div className="col-md-3" key={card.id}>
               <img
                 className="shape"
                 src={card.image}

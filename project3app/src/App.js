@@ -58,8 +58,8 @@ const Home = () => (
 );
 
 const Preload = () => (
-  <section class="wrapper">
-        <div class="spinner">
+  <section className="wrapper">
+        <div className="spinner">
           <i></i>
           <i></i>
           <i></i>
