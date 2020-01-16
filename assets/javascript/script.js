@@ -1,4 +1,4 @@
-const clock = document.querySelector(`.timer`);
+let countingScore = document.querySelector(`.timer`);
 const easy = document.querySelector(`.box1`);
 const medium = document.querySelector(`.box2`);
 const hard = document.querySelector(`.box3`);
@@ -9,27 +9,7 @@ let operator = document.querySelector(`.operator`)
 let allAnswers = document.querySelectorAll(`.answer`)
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-let counter = 20;
 let score = 0;
-
-function retrieveProblem(){
-    let a = numbers[Math.floor(Math.random() * numbers.length)];
-    let b =  numbers[Math.floor(Math.random() * (numbers.length - a + 1))];
-    console.log(a, b);
-    let result = add(a, b);
-    return console.log(result)
-};
-
-// const timer = setInterval(function(){
-//     if (counter <= 0){
-//         clearInterval(timer);
-//         alert(`loser`)
-//     } else {
-//         counter--;
-//         console.log(counter)
-//     }
-// }, 1000)
-
 
 function displayAnswer(result){
     console.log(result)
@@ -46,7 +26,10 @@ function displayAnswer(result){
         secondAnswer.textContent = result + 1;
         thirdAnswer.textContent = result - 1;
     }
-    allAnswers.forEach( button => button.addEventListener(`click`, handleAnswer));
+    if (operator.textContent == "-"){
+        allAnswers.forEach( button => button.addEventListener(`click`, handleAnswerHard, {once: true}));
+    }
+    allAnswers.forEach( button => button.addEventListener(`click`, handleAnswer, {once: true}));
 }
 
 
@@ -60,9 +43,12 @@ function handleAnswer(event){
         event.toElement.classList.add(`correct`);
         hard.textContent = a + b
         score++;
+        countingScore.textContent = `Score: ${score}`;
         console.log(score);
         if (score == 5){
-            resetGame()
+            event.toElement.classList.remove(`correct`);
+            allAnswers.forEach(button => button.classList.remove(`strike`))
+            resetGameEasy()
         } else {
             setTimeout(function(){
                 event.toElement.classList.remove(`correct`);
@@ -77,11 +63,72 @@ function handleAnswer(event){
     }
 }
 
-function resetGame() {
-    
+function handleAnswerHard(event){
+    console.log(event)
+    let a = parseInt(easy.textContent);
+    let b = parseInt(medium.textContent);
+    console.log(parseInt(event.target.innerText))
+    if (operator.textContent == "+"){
+        if(parseInt(event.target.innerText) == (a + b)) {
+            console.log(`yes`)
+            event.toElement.classList.add(`correct`);
+            hard.textContent = a + b
+            score++;
+            countingScore.textContent = `Score: ${score}`;
+            console.log(score);
+            if (score == 5){
+                resetGame()
+            } else {
+                setTimeout(function(){
+                    event.toElement.classList.remove(`correct`);
+                    allAnswers.forEach(button => button.classList.remove(`strike`))
+                    hard.textContent = "";
+                    startHard();
+                }, 1000)
+            }
+        } else {
+            console.log(`no`)
+            event.toElement.classList.add(`strike`);
+        }
+    } else if (operator.textContent == "-"){
+            if(parseInt(event.target.innerText) == (a - b)) {
+                console.log(`yes`)
+                event.toElement.classList.add(`correct`);
+                hard.textContent = a - b
+                score++;
+                countingScore.textContent = `Score: ${score}`;
+                console.log(score);
+                if (score == 5){
+                    resetGame()
+                } else {
+                    setTimeout(function(){
+                        event.toElement.classList.remove(`correct`);
+                        allAnswers.forEach(button => button.classList.remove(`strike`))
+                        hard.textContent = "";
+                        startHard();
+                    }, 1000)
+                }
+            } else {
+                console.log(`no`)
+                event.toElement.classList.add(`strike`);
+            }
+        }
+}
+
+function resetGameEasy() {
+    swal({
+        title: "Good job!",
+        text: "You got all the questions Correct! For completing the EASY difficulty you earned 1 STAR!",
+        icon: "success",
+      });
+    //POST TO ADD STAR
+    demit();
+    init();
+
 };
 
 function startEasy(){
+    operator.textContent = "+"
     let a = numbers[Math.floor(Math.random() * numbers.length)];
     let b =  numbers[Math.floor(Math.random() * numbers.length)];
     let result;
@@ -102,6 +149,7 @@ function startHard(){
     let b =  numbers[Math.floor(Math.random() * numbers.length)];
     let middle;
     let result;
+    hard.textContent = ""
     if (Math.random() < 0.5){
         operator.textContent = `+`
         middle = "+"
@@ -112,24 +160,38 @@ function startHard(){
     easy.textContent = a;
     medium.textContent = b;
     if (middle == "-"){
-        result = a - b
+        result = a - b;
+        operator.textContent = "-";
     }
     if (middle == "+"){
         result = a + b
+        operator.textContent = "+";
     };
     console.log(result);
-    displayAnswerHard(result)
+    displayAnswer(result)
 }
 
 
-easy.addEventListener(`click`, startEasy);
+function init(){
+    easy.addEventListener(`click`, startEasy);
 medium.addEventListener(`click`, startMedium);
 hard.addEventListener(`click`, startHard);
-
-
-function resetGame(){
+score = 0;
+countingScore.textContent = `Score: ${score}`
+}
+function demit(){
+    easy.removeEventListener(`click`, startEasy);
+    medium.removeEventListener(`click`, startMedium);
+    hard.removeEventListener(`click`, startHard);
+    easy.textContent = "Easy"
+    medium.textContent = "Medium"
+    hard.textContent = "Hard"
+    operator.textContent = "+"
+    allAnswers.forEach(div => div.textContent = "");
 
 }
+
+init();
 
 
 
