@@ -9,27 +9,34 @@ let operator = document.querySelector(`.operator`)
 let allAnswers = document.querySelectorAll(`.answer`)
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const biggerNumber = [...numbers, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 let score = 0;
 
 function displayAnswer(result){
     console.log(result)
-    if (Math.floor(Math.random() * 3) == 0){
+    let compare = Math.floor(Math.random() * 3)
+    if (compare == 0){
         firstAnswer.textContent = result - 1;
     secondAnswer.textContent = result + 1;
     thirdAnswer.textContent = result;
-    } else if (Math.floor(Math.random() * 3) == 1){
+    } else if (compare) == 1){
         firstAnswer.textContent = result - 1;
     secondAnswer.textContent = result
     thirdAnswer.textContent = result + 1;
-    } else if (Math.floor(Math.random() * 3) == 2){
+    } else if (compare == 2){
+        firstAnswer.textContent = result;
+        secondAnswer.textContent = result + 1;
+        thirdAnswer.textContent = result - 1;
+    } else {
         firstAnswer.textContent = result;
         secondAnswer.textContent = result + 1;
         thirdAnswer.textContent = result - 1;
     }
     if (operator.textContent == "-"){
         allAnswers.forEach( button => button.addEventListener(`click`, handleAnswerHard, {once: true}));
-    }
+    } else {
     allAnswers.forEach( button => button.addEventListener(`click`, handleAnswer, {once: true}));
+    }
 }
 
 
@@ -45,7 +52,15 @@ function handleAnswer(event){
         score++;
         countingScore.textContent = `Score: ${score}`;
         console.log(score);
-        if (score == 5){
+        if (score == 5 && mediumDifficulty == true){
+            event.toElement.classList.remove(`correct`);
+            allAnswers.forEach(button => button.classList.remove(`strike`))
+            resetGameMedium()
+        }  else if (score < 5 && mediumDifficulty == true){
+            event.toElement.classList.remove(`correct`);
+            allAnswers.forEach(button => button.classList.remove(`strike`))
+            startMedium()
+        } else if (score == 5){
             event.toElement.classList.remove(`correct`);
             allAnswers.forEach(button => button.classList.remove(`strike`))
             resetGameEasy()
@@ -77,7 +92,7 @@ function handleAnswerHard(event){
             countingScore.textContent = `Score: ${score}`;
             console.log(score);
             if (score == 5){
-                resetGame()
+                resetGameHard()
             } else {
                 setTimeout(function(){
                     event.toElement.classList.remove(`correct`);
@@ -99,7 +114,7 @@ function handleAnswerHard(event){
                 countingScore.textContent = `Score: ${score}`;
                 console.log(score);
                 if (score == 5){
-                    resetGame()
+                    resetGameHard()
                 } else {
                     setTimeout(function(){
                         event.toElement.classList.remove(`correct`);
@@ -127,6 +142,30 @@ function resetGameEasy() {
 
 };
 
+function resetGameMedium() {
+    swal({
+        title: "Good job!",
+        text: "You got all the questions Correct! For completing the MEDIUM difficulty you earned 2 STARS!",
+        icon: "success",
+      });
+    //POST TO ADD STAR
+    demit();
+    init();
+
+};
+
+function resetGameHard() {
+    swal({
+        title: "Good job!",
+        text: "You got all the questions Correct! For completing the HARD difficulty you earned 3 STARS!",
+        icon: "success",
+      });
+    //POST TO ADD STAR
+    demit();
+    init();
+
+};
+
 function startEasy(){
     operator.textContent = "+"
     let a = numbers[Math.floor(Math.random() * numbers.length)];
@@ -141,7 +180,17 @@ function startEasy(){
 }
 
 function startMedium(){
-    console.log(`dick`)
+    mediumDifficulty = true;
+    operator.textContent = "+"
+    let a = biggerNumber[Math.floor(Math.random() * biggerNumber.length)];
+    let b =  biggerNumber[Math.floor(Math.random() * biggerNumber.length)];
+    let result;
+    easy.textContent = a;
+    medium.textContent = b;
+    hard.textContent = "";
+    result = a + b;
+    console.log(result);
+    displayAnswer(result) 
 }
 
 function startHard(){
@@ -179,6 +228,7 @@ hard.addEventListener(`click`, startHard);
 score = 0;
 countingScore.textContent = `Score: ${score}`
 }
+
 function demit(){
     easy.removeEventListener(`click`, startEasy);
     medium.removeEventListener(`click`, startMedium);

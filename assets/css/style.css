@@ -22,6 +22,10 @@ body {
     border-radius: 5%;
 }
 
+.swal-text {
+    text-align: center !important;
+}
+
 .strike {
     color: red;
     text-decoration: line-through;
