@@ -19,7 +19,7 @@ function displayAnswer(result){
         firstAnswer.textContent = result - 1;
     secondAnswer.textContent = result + 1;
     thirdAnswer.textContent = result;
-    } else if (compare) == 1){
+    } else if (compare == 1){
         firstAnswer.textContent = result - 1;
     secondAnswer.textContent = result
     thirdAnswer.textContent = result + 1;
@@ -240,6 +240,9 @@ function demit(){
     allAnswers.forEach(div => div.textContent = "");
 
 }
+
+let suite = new Benchmark.suite;
+consoel.log(suite)
 
 init();
 
