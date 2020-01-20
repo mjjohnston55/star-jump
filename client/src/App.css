@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+nav {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: darkblue;
+  color: white;
+}
+
+.nav-links {
+  width:50%;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.back-arrow {
+  background-image: url('https://vectorified.com/images/back-button-icon-15.png');
+  height:150px;
+  width:150px;
+  background-size: contain;
+}

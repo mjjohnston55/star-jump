@@ -1,31 +1,34 @@
 {
-  "name": "contact-manager",
-  "version": "1.0.0",
-  "description": "Contact managing application",
-  "main": "server.js",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "config": "^3.2.4",
-    "concurrently": "^5.0.2",
-    "express": "^4.17.1",
-    "express-validator": "^6.3.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.4"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thnlsn/contact-manager.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thnlsn/contact-manager/issues"
-  },
-  "homepage": "https://github.com/thnlsn/contact-manager#readme"
+    "name": "project-3",
+    "version": "1.0.0",
+    "description": "Contact managing application",
+    "main": "server.js",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "config": "^3.2.4",
+        "concurrently": "^5.0.2",
+        "express": "^4.17.1",
+        "express-validator": "^6.3.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.8.4"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "client": "npm start --prefix client",
+        "clientInstall": "npm install --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thnlsn/contact-manager.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/thnlsn/contact-manager/issues"
+    },
+    "homepage": "https://github.com/thnlsn/contact-manager#readme"
 }
