@@ -7,6 +7,9 @@ let secondAnswer = document.querySelector(`.second`);
 let thirdAnswer = document.querySelector(`.third`);
 let operator = document.querySelector(`.operator`)
 let allAnswers = document.querySelectorAll(`.answer`)
+let mediumDifficulty = false;
+let hardDifficulty = false;
+
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const biggerNumber = [...numbers, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -32,7 +35,7 @@ function displayAnswer(result){
         secondAnswer.textContent = result + 1;
         thirdAnswer.textContent = result - 1;
     }
-    if (operator.textContent == "-"){
+    if (operator.textContent == "-" || hardDifficulty == true){
         allAnswers.forEach( button => button.addEventListener(`click`, handleAnswerHard, {once: true}));
     } else {
     allAnswers.forEach( button => button.addEventListener(`click`, handleAnswer, {once: true}));
@@ -57,9 +60,12 @@ function handleAnswer(event){
             allAnswers.forEach(button => button.classList.remove(`strike`))
             resetGameMedium()
         }  else if (score < 5 && mediumDifficulty == true){
-            event.toElement.classList.remove(`correct`);
-            allAnswers.forEach(button => button.classList.remove(`strike`))
-            startMedium()
+            setTimeout(function(){
+                event.toElement.classList.remove(`correct`);
+                allAnswers.forEach(button => button.classList.remove(`strike`))
+                hard.textContent = "";
+                startEasy();
+            }, 1000)
         } else if (score == 5){
             event.toElement.classList.remove(`correct`);
             allAnswers.forEach(button => button.classList.remove(`strike`))
@@ -143,6 +149,7 @@ function resetGameEasy() {
 };
 
 function resetGameMedium() {
+    mediumDifficulty = false;
     swal({
         title: "Good job!",
         text: "You got all the questions Correct! For completing the MEDIUM difficulty you earned 2 STARS!",
@@ -155,6 +162,7 @@ function resetGameMedium() {
 };
 
 function resetGameHard() {
+    hardDifficulty = false;
     swal({
         title: "Good job!",
         text: "You got all the questions Correct! For completing the HARD difficulty you earned 3 STARS!",
@@ -194,6 +202,7 @@ function startMedium(){
 }
 
 function startHard(){
+    hardDifficulty = true;
     let a = numbers[Math.floor(Math.random() * numbers.length)];
     let b =  numbers[Math.floor(Math.random() * numbers.length)];
     let middle;
@@ -241,8 +250,6 @@ function demit(){
 
 }
 
-let suite = new Benchmark.suite;
-consoel.log(suite)
 
 init();
 
