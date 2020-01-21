@@ -40,6 +40,7 @@ function App() {
                         <Nav />
                         <div className='container'>
                             <Alerts />
+                            <Preload/>
                             <Switch>
                                 <Route path='/' exact component={Home} />
                                 <Route path='/register' component={Register} />
@@ -73,6 +74,21 @@ const Home = () => (
             <h3>Login</h3>
         </Link>
     </div>
+);
+
+const Preload = () => (
+    <section class="wrapper">
+  <div class="spinner">
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+  </div>
+</section>
+
 );
 
 export default App;
