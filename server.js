@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json({ extended: false }));
 
 // GET home route
-app.get('/', (req, res) => res.json('Welcome to the ContactManager API'));
+app.get('/', (req, res) => res.json('Welcome to the Kids-Learning-App API'));
 
 ////// Define routes
 app.use('/api/users', require('./routes/users'));
