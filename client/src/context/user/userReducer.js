@@ -3,6 +3,8 @@
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL,
     GET_USER,
     SET_LOADING,
     USER_LOADED,
@@ -10,7 +12,7 @@ import {
     CLEAR_ERRORS
 } from '../types';
 
-// GithubState dispaches actions here, ad depending on the TYPE it does something, maybe with a payload...
+// UserState dispaches actions here, ad depending on the TYPE it does something, maybe with a payload...
 export default (state, action) => {
     switch (action.type) {
         case USER_LOADED:
@@ -21,6 +23,7 @@ export default (state, action) => {
                 user: action.payload
             };
         case REGISTER_SUCCESS:
+        case LOGIN_SUCCESS:
             localStorage.setItem('token', action.payload.token); // saving the token to headings
             return {
                 ...state,
@@ -30,6 +33,7 @@ export default (state, action) => {
             };
         case REGISTER_FAIL: // both these cases do the same thing
         case AUTH_ERROR: // both these cases do the same thing
+        case LOGIN_FAIL:
             localStorage.removeItem('token'); // removing any tokens from storage
             return {
                 ...state,

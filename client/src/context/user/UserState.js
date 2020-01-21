@@ -9,6 +9,8 @@ import setAuthToken from '../../utils/setAuthToken'; // needed to set the token 
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL,
     SET_LOADING,
     USER_LOADED,
     AUTH_ERROR,
@@ -35,7 +37,7 @@ const UserState = props => {
         try {
             const res = await axios.get('/api/auth');
 
-            dispatch({ type: USER_LOADED, payload: res.data });
+            dispatch({ type: USER_LOADED, payload: res.data }); // pulls the data from the database and adds it to the payload
         } catch (err) {
             dispatch({ type: AUTH_ERROR });
         }
@@ -68,7 +70,28 @@ const UserState = props => {
 
     //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     // LOGIN_USER:
-    const login = () => console.log('login');
+    const login = async formData => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+        try {
+            const res = await axios.post('/api/auth', formData, config);
+
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: res.data // token signed in users.js
+            });
+
+            loadUser(); // load user when they login
+        } catch (err) {
+            dispatch({
+                type: LOGIN_FAIL,
+                payload: err.response.data.msg // this is from users.js error
+            });
+        }
+    };
 
     //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     // LOGOUT_USER:

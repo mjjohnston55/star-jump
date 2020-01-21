@@ -1,6 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import UserContext from '../../context/user/userContext';
+import AlertContext from '../../context/alert/alertContext';
 
-const Login = () => {
+const Login = props => {
+    const userContext = useContext(UserContext);
+    const { login, error, clearErrors, isAuthenticated } = userContext;
+
+    const alertContext = useContext(AlertContext);
+    const { setAlert /* removeAlert */ } = alertContext;
+
+    useEffect(() => {
+        if (isAuthenticated) {
+            props.history.push('/mainapp');
+        }
+
+        if (error === 'Invalid Credentials') {
+            // setting the error value in state
+            setAlert(error, 'danger'); // calling set alert with the previously set error value
+            clearErrors(); // setting error value back to null
+        }
+        // eslint-disable-next-line
+    }, [error, isAuthenticated, props.history]);
+
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -12,7 +33,14 @@ const Login = () => {
 
     const onSubmit = e => {
         e.preventDefault();
-        console.log('Login Submit');
+        if (email === '' || password === '') {
+            setAlert('Please fill in all fields', 'danger');
+        } else {
+            login({
+                email,
+                password
+            });
+        }
     };
 
     return (
@@ -29,6 +57,7 @@ const Login = () => {
                         name='email'
                         value={email}
                         onChange={onChange}
+                        required
                     />
                 </div>
                 <div className='form-group  text-left'>
@@ -39,6 +68,7 @@ const Login = () => {
                         name='password'
                         value={password}
                         onChange={onChange}
+                        required
                     />
                 </div>
                 <input
