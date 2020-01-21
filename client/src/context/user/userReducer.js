@@ -10,7 +10,7 @@ import {
     CLEAR_ERRORS
 } from '../types';
 
-// GithubState dispaches actions here, ad depending on the TYPE it does something, maybe with a payload...
+// UserState dispaches actions here, ad depending on the TYPE it does something, maybe with a payload...
 export default (state, action) => {
     switch (action.type) {
         case USER_LOADED:

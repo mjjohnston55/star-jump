@@ -5,57 +5,62 @@ import { Link } from 'react-router-dom';
 import UserContext from '../context/user/userContext';
 
 function MainApp() {
-    const userContext = useContext(UserContext);
+    const userContext = useContext(UserContext); // init context
+
+    useEffect(() => {
+        userContext.loadUser();
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <div>
             <h1>MainApp Page</h1>
 
-            <div class='container'>
-                <div class='row'>
-                    <div class='col-md-3'>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-md-3'>
                         <Link to='/math'>
-                            <div class='iconMath hvr-pulse'></div>
+                            <div className='iconMath hvr-pulse'></div>
                         </Link>
                     </div>
-                    <div class='col-md-3'>
+                    <div className='col-md-3'>
                         <Link to='/abc'>
-                            <div class='iconABC hvr-pulse'></div>
+                            <div className='iconABC hvr-pulse'></div>
                         </Link>
                     </div>
-                    <div class='col-md-3'>
+                    <div className='col-md-3'>
                         <Link to='/shapes'>
-                            <div class='iconShapes hvr-pulse'></div>
+                            <div className='iconShapes hvr-pulse'></div>
                         </Link>
                     </div>
-                    <div class='col-md-3'>
+                    <div className='col-md-3'>
                         <Link to='/numbers'>
-                            <div class='iconNumbers hvr-pulse'></div>
+                            <div className='iconNumbers hvr-pulse'></div>
                         </Link>
                     </div>
                 </div>
                 <br />
                 <br />
 
-                <div class='row'>
-                    <div class='col-md-3'>
+                <div className='row'>
+                    <div className='col-md-3'>
                         <Link to='/colors'>
-                            <div class='iconColors hvr-pulse'></div>
+                            <div className='iconColors hvr-pulse'></div>
                         </Link>
                     </div>
-                    <div class='col-md-3'>
+                    <div className='col-md-3'>
                         <Link to='/animals'>
-                            <div class='iconAnimals hvr-pulse'></div>
+                            <div className='iconAnimals hvr-pulse'></div>
                         </Link>
                     </div>
-                    <div class='col-md-3'>
+                    <div className='col-md-3'>
                         <Link to='/planets'>
-                            <div class='iconPlanets hvr-pulse'></div>
+                            <div className='iconPlanets hvr-pulse'></div>
                         </Link>
                     </div>
-                    <div class='col-md-3'>
+                    <div className='col-md-3'>
                         <Link to='/clock'>
-                            <div class='iconTime hvr-pulse'></div>
+                            <div className='iconTime hvr-pulse'></div>
                         </Link>
                     </div>
                 </div>
