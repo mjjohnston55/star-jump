@@ -11,10 +11,13 @@ import {
     REGISTER_FAIL,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
+    LOGOUT,
     SET_LOADING,
     USER_LOADED,
     AUTH_ERROR,
-    CLEAR_ERRORS
+    CLEAR_ERRORS,
+    UPDATE_STARS,
+    STARS_ERROR
 } from '../types';
 
 const UserState = props => {
@@ -95,15 +98,36 @@ const UserState = props => {
 
     //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     // LOGOUT_USER:
-    const logout = () => console.log('logout');
+    const logout = () => dispatch({ type: LOGOUT });
 
     //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     // CLEAR_ERRORS:
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
     //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-    // Set Loading
+    // SET_LOADING:
     const setLoading = () => dispatch({ type: SET_LOADING });
+
+    //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+    // UPDATE_STARS:
+    const updateStars = async (user, count) => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        user.stars = user.stars + count;
+        console.log(user);
+
+        try {
+            const res = await axios.put(`/api/stars/${user._id}`, user, config);
+
+            dispatch({ type: UPDATE_STARS, payload: res.data });
+        } catch (err) {
+            dispatch({ type: STARS_ERROR, payload: err.response.msg });
+        }
+    };
 
     return (
         <UserContext.Provider
@@ -118,7 +142,8 @@ const UserState = props => {
                 loadUser,
                 login,
                 logout,
-                clearErrors
+                clearErrors,
+                updateStars
             }}
         >
             {props.children}

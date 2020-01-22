@@ -5,11 +5,14 @@ import {
     REGISTER_FAIL,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
+    LOGOUT,
     GET_USER,
     SET_LOADING,
     USER_LOADED,
     AUTH_ERROR,
-    CLEAR_ERRORS
+    CLEAR_ERRORS,
+    UPDATE_STARS,
+    STARS_ERROR
 } from '../types';
 
 // UserState dispaches actions here, ad depending on the TYPE it does something, maybe with a payload...
@@ -34,6 +37,7 @@ export default (state, action) => {
         case REGISTER_FAIL: // both these cases do the same thing
         case AUTH_ERROR: // both these cases do the same thing
         case LOGIN_FAIL:
+        case LOGOUT:
             localStorage.removeItem('token'); // removing any tokens from storage
             return {
                 ...state,
@@ -59,7 +63,12 @@ export default (state, action) => {
                 ...state,
                 loading: true
             };
-
+        case UPDATE_STARS:
+            return {
+                ...state,
+                loading: false
+            };
+        case STARS_ERROR:
         default:
             return state;
     }

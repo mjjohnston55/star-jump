@@ -6,14 +6,29 @@ import UserContext from '../../context/user/userContext';
 function Nav() {
     const userContext = useContext(UserContext);
 
-    const { isAuthenticated, logout, user } = userContext;
+    const { isAuthenticated, logout, updateStars, user } = userContext;
+
+    const onLogout = () => {
+        logout();
+    };
+
+    const put = () => {
+        /* THIS IS FOR TESTING UPDATE STARS */
+        updateStars(user, 3);
+    };
 
     const authLinks = (
         <Fragment>
+            <button onClick={put}></button>{' '}
+            {/* THIS IS FOR TESTING UPDATE STARS */}
             <li>Hello {user && user.name}</li>
             <li>
-                <a href='#!'>
-                    <i className='fas fa-sign-out-alt'></i>{' '}
+                <i className='fas fa-star'></i>
+                {user && user.stars}
+            </li>
+            <li>
+                <a onClick={onLogout} href='#!'>
+                    <i className='fas fa-sign-out-alt'></i>
                     <span className='hide-sm'>Logout</span>
                 </a>
             </li>
@@ -29,14 +44,14 @@ function Nav() {
                 <Link to='/login'>Login</Link>
             </li>
         </Fragment>
-    ); // if there is a user, display the users name
+    ); // if there is a user, display the users star count
 
     const navStyle = {
         color: 'white'
     };
 
     return (
-        <nav className='navbar bg-primary'>
+        <nav className='navbar'>
             <Link to='/'>
                 <h1 style={navStyle}>
                     <i className='fas fa-graduation-cap'></i> Home
