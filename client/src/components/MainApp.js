@@ -5,13 +5,19 @@ import { Link } from 'react-router-dom';
 import UserContext from '../context/user/userContext';
 
 function MainApp() {
-    const userContext = useContext(UserContext);
+    const userContext = useContext(UserContext); // init context
+
+    useEffect(() => {
+        userContext.loadUser();
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <div>
-            
-            <br/>
-            <br/>
+
+            <h1>MainApp Page</h1>
+
+
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-3'>
@@ -55,7 +61,10 @@ function MainApp() {
                         </Link>
                     </div>
                     <div className='col-md-3'>
-                        <Link to='/sightwords'>
+
+                        <Link to='/clock'>
+                         <Link to='/sightwords'>
+
                             <div className='iconTime hvr-pulse'></div>
                         </Link>
                     </div>

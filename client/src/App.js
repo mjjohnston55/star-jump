@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import setAuthToken from './utils/setAuthToken';
 
 // layout
-import Nav from './components/Nav';
+import Nav from './components/layout/Nav';
 import Alerts from './components/layout/Alerts';
 
 // pages
