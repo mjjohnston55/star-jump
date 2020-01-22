@@ -8,8 +8,12 @@ body {
   /* background-position: 50% 30%; */
   background-color: #509264;
   font-family: 'Pangolin', cursive;
+  
  
 } 
+.container {
+  max-width: inherit;
+}
 
 
 
@@ -21,6 +25,8 @@ body {
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    border:1vh solid #026db0;
+    border-radius:20%;
 }
 
 .iconABC {
@@ -29,6 +35,8 @@ body {
   height: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
 }
 
 .iconShapes {
@@ -37,6 +45,8 @@ body {
   height: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
 }
 
 .iconNumbers {
@@ -45,16 +55,20 @@ body {
   height: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
 }
 
 
 
 .iconColors {
-  background-image: url('https://cdn3.iconfinder.com/data/icons/toy-set-flat-colorful-long-shadow/614/2004_-_Paint_Colors-512.png');
+  background-image: url('https://s3images.coroflot.com/user_files/individual_files/118060_aho5nzgjsmdhaoj2ffzhqiqja.gif');
   width:15vh;
   height: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
+  border-radius:20%;
+  border:1vh solid #026db0;
 }
 
 .iconAnimals {
@@ -63,6 +77,8 @@ body {
   height: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
 }
 
 .iconPlanets {
@@ -72,6 +88,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   border-radius:20%;
+  border:1vh solid #026db0;
 }
 
 .iconTime {
@@ -81,6 +98,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 border-radius:20%;
+border:1vh solid #026db0;
 }
 
 /* Pulse */

@@ -1,12 +1,11 @@
 // import React, { useState, useEffect } from "react";
 import React from "react";
 import "../../App.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
 var wordBank = [
   "all",
-  "am",
   "at",
   "ate",
   "be",
@@ -20,7 +19,6 @@ var wordBank = [
   "good",
   "he",
   "like",
-  "must",
   "new",
   "no",
   "now",
@@ -76,7 +74,7 @@ function chooseRandomWords() {
       // console.log("no duplicates");
       chosenWordArr.push(rand);
     }
-    if (chosenWordArr.length === 30) {
+    if (chosenWordArr.length === 20) {
       console.log(chosenWordArr);
       pickedWord =
         chosenWordArr[Math.floor(Math.random() * chosenWordArr.length)];
@@ -101,7 +99,7 @@ function cycle() {
     "--_us_1.mp3";
   if (score === 10) {
     swal("You got 10 Correct!", "You Win!", "success");
-    <Redirect to="/mainapp" />;
+
     return;
   }
 }
@@ -138,6 +136,7 @@ function wordClick(e) {
 function SightWordApp() {
   return (
     <div>
+      <br />
       <div className="container">
         <div className="row">
           <div className="col-md-2">
@@ -162,7 +161,7 @@ function SightWordApp() {
       <div className="container" onLoad={playAudio(currentAudioURL)}>
         <div className="row">
           {chosenWordArr.map(word => (
-            <div className="col-md-2 word-bg">
+            <div className="col-md-3 word-bg">
               <p className="word-inside" key={word} onClick={wordClick}>
                 {word}
               </p>

@@ -49,7 +49,7 @@ function App() {
 
                                 <Route path='/abc' component={ABCApp} />
                                 <Route path='/animals' component={AnimalApp} />
-                                <Route path='/clock' component={ClockApp} />
+                                <Route path='/sightwords' component={ClockApp} />
                                 <Route path='/colors' component={ColorApp} />
                                 <Route path='/math' component={MathApp} />
                                 <Route path='/numbers' component={NumApp} />
@@ -77,8 +77,8 @@ const Home = () => (
 );
 
 const Preload = () => (
-    <section class="wrapper">
-  <div class="spinner">
+    <section className="wrapper">
+  <div className="spinner">
     <i></i>
     <i></i>
     <i></i>

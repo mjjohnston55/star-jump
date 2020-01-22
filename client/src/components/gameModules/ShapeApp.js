@@ -20,10 +20,10 @@ function ShapeApp() {
     console.log(randAudio);
     console.log("PLAYING AUDIO");
     let audio = new Audio(cards[audioNum].audio);
-  
+
     audio.setAttribute("autoplay", "true");
     audio.setAttribute("muted", "muted");
-  
+
     audio.load();
     audio.play();
   }
@@ -40,39 +40,47 @@ function ShapeApp() {
   }, [item]);
 
   function shapeClick(e) {
-  let clickedShapeId = e.target.id;
+    let clickedShapeId = e.target.id;
 
-  // eslint-disable-next-line
-  if (clickedShapeId == randId) {
-    correct.play();
+    // eslint-disable-next-line
+    if (clickedShapeId == randId) {
+      correct.play();
 
-    let newItem = (item < 7) ? item + 1 : 0;
-    
-    if (item === 7) {
-      swal("You got them all Correct!", "You Win!", "success");
+      let newItem = item < 7 ? item + 1 : 0;
+
+      if (item === 7) {
+        swal("You got them all Correct!", "You Win!", "success");
+      }
+
+      setItem(newItem);
+      setTimeout(function() {
+        playAudio(newItem);
+      }, 1500);
+    } else {
+      incorrect.play();
+      setTimeout(function() {
+        playAudio();
+      }, 1500);
     }
-
-    setItem(newItem);
-    setTimeout(function() {
-      playAudio(newItem);
-    }, 1500);
-  } 
- 
-  else {
-    incorrect.play();
-    setTimeout(function() {
-      playAudio();
-    }, 1500);
   }
-}
-  
 
   return (
     <div>
-      <div className="shape-title">
-        <h1>
-          {randShape}
-        </h1>
+      <br />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-2">
+            <Link to="/mainapp">
+              <div className="back-arrow" onClick={() => setItem(0)}></div>
+            </Link>
+          </div>
+          <div className="col-md-8">
+            <div className="shape-title">
+              <h1>{randShape}</h1>
+            </div>
+          </div>
+          <div className="col-md-2"></div>
+        </div>
       </div>
 
       <button onClick={() => playAudio()} className="audio-btn1">
@@ -84,23 +92,19 @@ function ShapeApp() {
         />{" "}
       </button>
 
-      <div className="row">
-        <Link to="/mainapp">
-          <div className="back-arrow" onClick={() => setItem(0)}></div>
-        </Link>
-      </div>
-
       <div className="container">
         <div className="row">
           {cards.map(card => (
-            <div className="col-md-3" key={card.id}>
-              <img
-                className="shape"
-                src={card.image}
-                alt={card.name}
-                id={card.id}
-                onClick={shapeClick}
-              />
+            <div className="box">
+              <div className="col-md-3" key={card.id}>
+                <img
+                  className="shape"
+                  src={card.image}
+                  alt={card.name}
+                  id={card.id}
+                  onClick={shapeClick}
+                />
+              </div>
             </div>
           ))}
         </div>
