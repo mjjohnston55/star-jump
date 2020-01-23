@@ -16,7 +16,7 @@ function ABCApp() {
     return (
         <div>
             <h1>ABC App</h1>
-            <Link to='/mainapp'>
+            <Link to='/'>
                 <div className='back-arrow'></div>
             </Link>
             <button onClick={put}></button>

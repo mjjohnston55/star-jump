@@ -1,0 +1,142 @@
+body {
+  height: 100%;
+  margin:0;
+  padding:0;
+  /* background-repeat: no-repeat;
+  background-image: url("http://clipart-library.com/images_k/school-clipart-transparent-background/school-clipart-transparent-background-17.png");
+  /* background-size: cover; */
+  /* background-position: 50% 30%; */
+  background-color: #509264;
+  font-family: 'Pangolin', cursive;
+  
+ 
+} 
+.container {
+  max-width: inherit;
+}
+
+
+
+.iconMath {
+    background-image: url('https://library.kissclipart.com/20181112/aqe/kissclipart--16451bfd5bc98fb9.png');
+    width:15vh;
+    height: 15vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border:1vh solid #026db0;
+    border-radius:20%;
+}
+
+.iconABC {
+  background-image: url('https://lh3.googleusercontent.com/3cy6mzshMLdv1b_BCgz97-zXcn_zPbzb6mBPgtpeB7TL-lQOUjpdyLmywKPsmJ13ULA=w300');
+  width:15vh;
+  height: 15vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
+}
+
+.iconShapes {
+  background-image: url('data:image/png;base64,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');
+  width:15vh;
+  height: 15vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
+}
+
+.iconNumbers {
+  background-image: url('https://lh3.ggpht.com/EdP0v7sa3ak97WSbDvNOV1PJbCWLQmLJ6GTCWYwqbRutZzpFsESBeG5dJY8MgYX1v60');
+  width:15vh;
+  height: 15vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
+}
+
+
+
+.iconColors {
+  background-image: url('https://s3images.coroflot.com/user_files/individual_files/118060_aho5nzgjsmdhaoj2ffzhqiqja.gif');
+  width:15vh;
+  height: 15vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius:20%;
+  border:1vh solid #026db0;
+}
+
+.iconAnimals {
+  background-image: url('https://apprecs.org/gp/images/app-icons/300/0c/com.fanaticsol.kids.animals.memory.game.jpg');
+  width:15vh;
+  height: 15vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border:1vh solid #026db0;
+  border-radius:20%;
+}
+
+.iconPlanets {
+  background-image: url('https://image.winudf.com/v2/image1/Y29tLmhhcHB5YXJ0ZWR1Y2F0aW9uLm1hZ2ljcGxhbmV0c19pY29uXzE1NDMzMjkwNjJfMDAw/icon.png?w=170&fakeurl=1');
+  width:15vh;
+  height: 15vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius:20%;
+  border:1vh solid #026db0;
+}
+
+.iconTime {
+  background-image: url('http://clipart-library.com/img/1293509.jpg');
+  width:15vh;
+  height: 15vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+border-radius:20%;
+border:1vh solid #026db0;
+}
+
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
