@@ -42,10 +42,10 @@ function App() {
                             <Alerts />
                             <Preload/>
                             <Switch>
-                                <Route path='/' exact component={Home} />
+                                <Route path='/' exact component={MainApp} />
                                 <Route path='/register' component={Register} />
                                 <Route path='/login' component={Login} />
-                                <Route path='/mainapp' component={MainApp} />
+                                {/* <Route path='/mainapp' component={MainApp} /> */}
 
                                 <Route path='/abc' component={ABCApp} />
                                 <Route path='/animals' component={AnimalApp} />
@@ -64,17 +64,29 @@ function App() {
     );
 }
 
-const Home = () => (
-    <div>
-        <h1>Home Page!</h1>
-        <Link to='/register'>
-            <h3>Register</h3>
-        </Link>
-        <Link to='/login'>
-            <h3>Login</h3>
-        </Link>
-    </div>
-);
+// const Home = () => (
+//     <div>
+//         <h1>Home Page!</h1>
+
+//         <div className="container">
+//             <div className="row">
+//                 <div className="col-md-1"></div>
+//                 <div className="col-md-4 register-login"><Link to='/register'>
+//             <h3 className="white">Register</h3>
+//         </Link></div>
+//         <div className="col-md-2"></div>
+//                 <div className="col-md-4 register-login"><Link to='/login'>
+//             <h3 className="white">Login</h3>
+//         </Link></div>
+//                 <div className="col-md-1"></div>
+//             </div>
+//         </div>
+        
+
+        
+        
+//     </div>
+// );
 
 const Preload = () => (
     <section className="wrapper">
