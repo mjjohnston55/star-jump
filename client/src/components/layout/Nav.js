@@ -12,14 +12,14 @@ function Nav() {
         logout();
     };
 
-    const put = () => {
-        /* THIS IS FOR TESTING UPDATE STARS */
-        updateStars(user, 3);
-    };
+    // const put = () => {
+    //     /* THIS IS FOR TESTING UPDATE STARS */
+    //     updateStars(user, 3);
+    // };
 
     const authLinks = (
         <Fragment>
-            <button onClick={put}></button>{' '}
+            {/* <button onClick={put}></button>{' '} */}
             {/* THIS IS FOR TESTING UPDATE STARS */}
             <li>Hello {user && user.name}</li>
             <li>
@@ -28,8 +28,8 @@ function Nav() {
             </li>
             <li>
                 <a onClick={onLogout} href='#!'>
-                    <i className='fas fa-sign-out-alt'></i>
-                    <span className='hide-sm'>Logout</span>
+                    <i className='fas fa-sign-out-alt white'></i>
+                    <span className='hide-sm white'>Logout</span>
                 </a>
             </li>
         </Fragment>
@@ -37,12 +37,13 @@ function Nav() {
 
     const guestLinks = (
         <Fragment>
-            <li>
-                <Link to='/register'>Register</Link>
+            <ul className="nav-links"><li>
+                <Link to='/register' className="white">Register</Link>
             </li>
             <li>
-                <Link to='/login'>Login</Link>
-            </li>
+                <Link to='/login' className="white">Login</Link>
+            </li></ul>
+            
         </Fragment>
     ); // if there is a user, display the users star count
 
@@ -52,9 +53,9 @@ function Nav() {
 
     return (
         <nav className='navbar'>
-            <Link to='/'>
-                <h1 style={navStyle}>
-                    <i className='fas fa-graduation-cap'></i> Home
+            <Link to='/' className="title-link">
+                <h1 style={navStyle} className="title">
+                    <i className='far fa-star'></i> Star Jump
                 </h1>
             </Link>
             <ul className='nav-links'>

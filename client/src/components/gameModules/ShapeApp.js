@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import cards from "./cards.json";
 import swal from "sweetalert";
+import UserContext from '../../context/user/userContext';
 
 const correct = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3"
@@ -10,11 +11,23 @@ const correct = new Audio(
 const incorrect = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3"
 );
-function ShapeApp() {
+
+function randomizeOrder() {
+
+
+  cards.sort(() => Math.random() - 0.5);
+
+}
+function ShapeApp(props) {
   const [item, setItem] = useState(0);
   const [randShape, setRandShape] = useState();
   const [randId, setRandId] = useState();
   const [randAudio, setRandAudio] = useState();
+
+
+  const userContext = useContext(UserContext);
+
+    const { isAuthenticated, logout, updateStars, user } = userContext;
 
   function playAudio(audioNum = item) {
     console.log(randAudio);
@@ -29,6 +42,7 @@ function ShapeApp() {
   }
 
   useEffect(() => {
+    randomizeOrder();
     setRandId(cards[item].id);
     setRandShape(cards[item].name);
     setRandAudio(cards[item].audio);
@@ -50,6 +64,11 @@ function ShapeApp() {
 
       if (item === 7) {
         swal("You got them all Correct!", "You Win!", "success");
+        updateStars(user, 3)
+        // props.history.push("/");
+        setTimeout(function() {
+          props.history.push("/");
+        }, 1500);
       }
 
       setItem(newItem);
@@ -95,7 +114,7 @@ function ShapeApp() {
       <div className="container shape-row">
         <div className="row">
           {cards.map(card => (
-            <div className="box">
+            <div className="box" key={card.id}>
               <div className="col-md-3" key={card.id}>
                 <img
                   className="shape"

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import cards from "./colors.json";
 import swal from "sweetalert";
+import UserContext from '../../context/user/userContext';
 
 const correct = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3"
@@ -11,11 +12,22 @@ const incorrect = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3"
 );
 
-function ColorApp() {
+function randomizeOrder() {
+
+
+    cards.sort(() => Math.random() - 0.5);
+  
+  }
+
+function ColorApp(props) {
   const [item, setItem] = useState(0);
   const [randColor, setRandColor] = useState();
   const [randId, setRandId] = useState();
   const [randAudio, setRandAudio] = useState();
+
+  const userContext = useContext(UserContext);
+
+  const { isAuthenticated, logout, updateStars, user } = userContext;
 
   function playAudio(audioNum = item) {
     console.log(randAudio);
@@ -30,6 +42,7 @@ function ColorApp() {
   }
 
   useEffect(() => {
+    randomizeOrder();
     setRandId(cards[item].id);
     setRandColor(cards[item].name);
     setRandAudio(cards[item].audio);
@@ -51,6 +64,11 @@ function ColorApp() {
 
       if (item === 8) {
         swal("You got them all Correct!", "You Win!", "success");
+        updateStars(user, 3)
+        // props.history.push("/");
+        setTimeout(function() {
+          props.history.push("/");
+        }, 1500);
       }
 
       setItem(newItem);
@@ -96,7 +114,7 @@ function ColorApp() {
       <div className="container color-row">
         <div className="row">
           {cards.map(card => (
-            <div className="box">
+            <div className="box" key={card.id}>
               <div className="col-md-2" key={card.id}>
                 <img
                   className="color"

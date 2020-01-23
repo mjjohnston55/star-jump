@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -32,6 +32,7 @@ if (localStorage.token) {
 } // saving the users token to local storage
 
 function App() {
+    
     return (
         <UserState>
             <AlertState>
@@ -55,6 +56,7 @@ function App() {
                                 <Route path='/numbers' component={NumApp} />
                                 <Route path='/planets' component={PlanetApp} />
                                 <Route path='/shapes' component={ShapeApp} />
+                               
                             </Switch>
                         </div>
                     </div>

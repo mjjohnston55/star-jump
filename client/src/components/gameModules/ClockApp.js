@@ -1,8 +1,10 @@
-// import React, { useState, useEffect } from "react";
-import React, { useEffect} from "react";
+import React, { useContext} from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+
+import UserContext from '../../context/user/userContext';
+
 
 var wordBank = [
   "all",
@@ -60,81 +62,94 @@ const incorrect = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3"
 );
 
-function chooseRandomWords() {
-  score = 0;
-  chosenWordArr = [];
-  for (var i = 0; i < 200; i++) {
-    var rand = wordBank[Math.floor(Math.random() * wordBank.length)];
-    var n = chosenWordArr.includes(rand);
-    if (n === true) {
-      console.log("contains duplicates");
-    }
-    //only push value to new array if not a duplicate
-    else {
-      // console.log("no duplicates");
-      chosenWordArr.push(rand);
-    }
-    if (chosenWordArr.length === 20) {
-      console.log(chosenWordArr);
-      pickedWord =
-        chosenWordArr[Math.floor(Math.random() * chosenWordArr.length)];
-      console.log(pickedWord);
-      currentAudioURL =
-        "https://ssl.gstatic.com/dictionary/static/sounds/oxford/" +
-        pickedWord +
-        "--_us_1.mp3";
-      console.log(currentAudioURL);
 
-      return;
-    }
-  }
-}
+function SightWordApp(props) {
+    const userContext = useContext(UserContext);
+
+    const { isAuthenticated, logout, updateStars, user } = userContext;
 
 
-
-function cycle() {
-  pickedWord = chosenWordArr[Math.floor(Math.random() * chosenWordArr.length)];
-  console.log("Newly Picked Word: " + pickedWord);
-  currentAudioURL =
-    "https://ssl.gstatic.com/dictionary/static/sounds/oxford/" +
-    pickedWord +
-    "--_us_1.mp3";
-  if (score === 10) {
-    swal("You got 10 Correct!", "You Win!", "success");
-    return;
-  }
-}
-
-function playAudio() {
-  let audio = new Audio(currentAudioURL);
-  audio.setAttribute("autoplay", "true");
-  audio.setAttribute("muted", "muted");
-  audio.load();
-  audio.play();
-
-  if (score === 10) {
-    audio.pause();
-  }
-}
-function wordClick(e) {
-  let clickedWord = e.target.innerText;
-  console.log(clickedWord);
-  if (clickedWord === pickedWord) {
-    correct.play();
-    setTimeout(function() {
-      playAudio();
-    }, 1500);
-    score++;
-    console.log("Score: " + score);
-    cycle();
-  } else {
-    incorrect.play();
-    setTimeout(function() {
-      playAudio();
-    }, 1500);
-  }
-}
-function SightWordApp() {
+    function chooseRandomWords() {
+        score = 0;
+        chosenWordArr = [];
+        for (var i = 0; i < 200; i++) {
+          var rand = wordBank[Math.floor(Math.random() * wordBank.length)];
+          var n = chosenWordArr.includes(rand);
+          if (n === true) {
+            console.log("contains duplicates");
+          }
+          //only push value to new array if not a duplicate
+          else {
+            // console.log("no duplicates");
+            chosenWordArr.push(rand);
+          }
+          if (chosenWordArr.length === 20) {
+            console.log(chosenWordArr);
+            pickedWord =
+              chosenWordArr[Math.floor(Math.random() * chosenWordArr.length)];
+            console.log(pickedWord);
+            currentAudioURL =
+              "https://ssl.gstatic.com/dictionary/static/sounds/oxford/" +
+              pickedWord +
+              "--_us_1.mp3";
+            console.log(currentAudioURL);
+      
+            return;
+          }
+        }
+      }
+      
+      
+      
+      function cycle() {
+        pickedWord = chosenWordArr[Math.floor(Math.random() * chosenWordArr.length)];
+        console.log("Newly Picked Word: " + pickedWord);
+        currentAudioURL =
+          "https://ssl.gstatic.com/dictionary/static/sounds/oxford/" +
+          pickedWord +
+          "--_us_1.mp3";
+        if (score === 10) {
+          swal("You got 10 Correct!", "You Win!", "success");
+          updateStars(user, 3)
+        // props.history.push("/");
+        setTimeout(function() {
+          props.history.push("/");
+        }, 1500);
+          
+          return;
+        }
+      }
+      
+      function playAudio() {
+        let audio = new Audio(currentAudioURL);
+        audio.setAttribute("autoplay", "true");
+        audio.setAttribute("muted", "muted");
+        audio.load();
+        audio.play();
+      
+        if (score === 10) {
+          audio.pause();
+        }
+      }
+      function wordClick(e) {
+        let clickedWord = e.target.innerText;
+        console.log(clickedWord);
+        if (clickedWord === pickedWord) {
+          correct.play();
+          setTimeout(function() {
+            playAudio();
+          }, 1500);
+          score++;
+          console.log("Score: " + score);
+          cycle();
+        } else {
+          incorrect.play();
+          setTimeout(function() {
+            playAudio();
+          }, 1500);
+        }
+      }
+    
   return (
     <div>
       <br />

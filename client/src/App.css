@@ -21,13 +21,25 @@ nav {
   border-bottom:2px solid white;
 }
 
+.title {
+  font-family: 'Amatic SC', cursive;
+  font-size:400%;
+}
+
+.title-link:hover {
+  color:white;
+}
+
 .nav-links {
   width:50%;
   display:flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  font-size: 150%;
+    margin-top: auto;
 }
+
 
 .back-arrow {
   background-image: url('https://pngimage.net/wp-content/uploads/2018/06/go-back-button-png.png');
@@ -61,6 +73,10 @@ nav {
 }
 
 .white {
+  color:white;
+}
+
+.white:hover {
   color:white;
 }
 
