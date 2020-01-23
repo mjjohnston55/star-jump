@@ -14,9 +14,7 @@ function MainApp() {
 
     return (
         <div>
-
             <h1>MainApp Page</h1>
-
 
             <div className='container'>
                 <div className='row'>
@@ -61,10 +59,7 @@ function MainApp() {
                         </Link>
                     </div>
                     <div className='col-md-3'>
-
-                        <Link to='/clock'>
-                         <Link to='/sightwords'>
-
+                        <Link to='/sightwords'>
                             <div className='iconTime hvr-pulse'></div>
                         </Link>
                     </div>
