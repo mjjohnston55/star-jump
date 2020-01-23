@@ -6,15 +6,13 @@ import swal from "sweetalert";
 import UserContext from '../../context/user/userContext';
 
 const correct = new Audio(
-  "https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3"
+    'https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3'
 );
 const incorrect = new Audio(
-  "https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3"
+    'https://ssl.gstatic.com/dictionary/static/sounds/oxford/incorrect--_us_1.mp3'
 );
 
 function randomizeOrder() {
-
-
   cards.sort(() => Math.random() - 0.5);
 
 }
@@ -117,19 +115,31 @@ function ShapeApp(props) {
             <div className="box" key={card.id}>
               <div className="col-md-3" key={card.id}>
                 <img
-                  className="shape"
-                  src={card.image}
-                  alt={card.name}
-                  id={card.id}
-                  onClick={shapeClick}
-                />
-              </div>
+                    src='https://www.searchpng.com/wp-content/uploads/2019/02/Audio-Button-PNG-715x735.png'
+                    alt='play audio'
+                    className='audio-btn2'
+                />{' '}
+            </button>
+
+            <div className='container'>
+                <div className='row'>
+                    {cards.map(card => (
+                        <div className='box'>
+                            <div className='col-md-3' key={card.id}>
+                                <img
+                                    className='shape'
+                                    src={card.image}
+                                    alt={card.name}
+                                    id={card.id}
+                                    onClick={shapeClick}
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default ShapeApp;
