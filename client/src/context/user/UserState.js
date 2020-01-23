@@ -12,7 +12,6 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
-    SET_LOADING,
     USER_LOADED,
     AUTH_ERROR,
     CLEAR_ERRORS,
@@ -103,10 +102,6 @@ const UserState = props => {
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
     //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-    // SET_LOADING:
-    const setLoading = () => dispatch({ type: SET_LOADING });
-
-    //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
     // UPDATE_STARS:
     const updateStars = async (user, count) => {
         const config = {
@@ -116,7 +111,6 @@ const UserState = props => {
         };
 
         user.stars = user.stars + count;
-        console.log(user);
 
         try {
             const res = await axios.put(`/api/stars/${user._id}`, user, config);

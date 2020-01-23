@@ -7,7 +7,6 @@ import {
     LOGIN_FAIL,
     LOGOUT,
     GET_USER,
-    SET_LOADING,
     USER_LOADED,
     AUTH_ERROR,
     CLEAR_ERRORS,
@@ -36,6 +35,15 @@ export default (state, action) => {
             };
         case REGISTER_FAIL: // both these cases do the same thing
         case AUTH_ERROR: // both these cases do the same thing
+            localStorage.removeItem('token'); // removing any tokens from storage
+            return {
+                ...state,
+                token: null,
+                isAuthenticated: false,
+                loading: false,
+                user: null,
+                error: action.payload // setting error in the payload to the one in msg in users.js
+            };
         case LOGIN_FAIL:
         case LOGOUT:
             localStorage.removeItem('token'); // removing any tokens from storage
@@ -57,11 +65,6 @@ export default (state, action) => {
                 ...state,
                 user: action.payload,
                 loading: false
-            };
-        case SET_LOADING:
-            return {
-                ...state,
-                loading: true
             };
         case UPDATE_STARS:
             return {

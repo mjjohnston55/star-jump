@@ -1,281 +1,275 @@
 .App {
-  text-align: center;
-  min-height: 100vh;
-  border-style: solid;
-border-width: 5vh;
-/* border-top-color: red;
+    text-align: center;
+    min-height: 100vh;
+    border-style: solid;
+    border-width: 5vh;
+    /* border-top-color: red;
 border-right-color: green;
 border-bottom-color: blue;
 border-left-color: yellow; */
-border-image: url('https://thumbs.dreamstime.com/b/illustrated-texture-wood-grain-clean-vector-49427773.jpg') 50 stretch;
-/* border-image-repeat: repeat; */
+    border-image: url('https://thumbs.dreamstime.com/b/illustrated-texture-wood-grain-clean-vector-49427773.jpg')
+        50 stretch;
+    /* border-image-repeat: repeat; */
 }
 
 nav {
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: #026db0;
-  color: white;
-  border-bottom:2px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: #026db0;
+    color: white;
+    border-bottom: 2px solid white;
 }
 
 .nav-links {
-  width:50%;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
 }
 
 .back-arrow {
-  background-image: url('https://pngimage.net/wp-content/uploads/2018/06/go-back-button-png.png');
-  height:10vh;
-  width:10vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  float:left;
-  left:-10%;
+    background-image: url('https://pngimage.net/wp-content/uploads/2018/06/go-back-button-png.png');
+    height: 10vh;
+    width: 10vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    left: -10%;
 }
 
 .shape {
-  height: 15vh;
-  margin: 1rem;
-  position: relative;
+    height: 15vh;
+    margin: 1rem;
+    position: relative;
 }
 
 .shape-title {
-  text-align:center;
-  background:white;
-  color:black;
-  border:2px solid black;
+    text-align: center;
+    background: white;
+    color: black;
+    border: 2px solid black;
 }
 
 .color {
-  height: 14vh;
-  width:14vh;
-  margin: 1rem;
-  position: relative;
+    height: 14vh;
+    width: 14vh;
+    margin: 1rem;
+    position: relative;
 }
 
 .color-title {
-  text-align:center;
-  background:white;
-  color:black;
-  border:2px solid black;
+    text-align: center;
+    background: white;
+    color: black;
+    border: 2px solid black;
 }
 
 .audio-btn1 {
-  background:none;
-  border:none;
+    background: none;
+    border: none;
 }
 
-
 .audio-btn2 {
-  width:50px;
-  height:50px;
+    width: 50px;
+    height: 50px;
 }
 
 .word-bg {
     background: #026db0;
-    border:8px solid #509264;
-    
-    
+    border: 8px solid #509264;
 }
 
-.word-bg > .word-inside{
-font-size: 200%;
-padding-top:5%;
-color:white;
+.word-bg > .word-inside {
+    font-size: 200%;
+    padding-top: 5%;
+    color: white;
 }
 
 .box > .color {
-  text-align: center;
+    text-align: center;
 }
 
 .box > .shape {
-  text-align:center;
+    text-align: center;
 }
 
 /* PRELOAD SECTION */
 /*Preload*/
 
+.contain {
+    background-color: (255, 255, 255, 0.034);
+}
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-
 
 section.wrapper {
-  
-  position:absolute;
-  animation: FadeAnimation 2s ease-in .2s forwards;
-  background:white;
-  z-index:10;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  
-  
+    position: absolute;
+    animation: FadeAnimation 2s ease-in 0.2s forwards;
+    background: white;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
-
 
 div.spinner {
-  -moz-animation: rotate 10s infinite linear;
-  -webkit-animation: rotate 10s infinite linear;
-  animation: rotate 10s infinite linear;
-  position: relative;
-  display: block;
-  margin: auto;
-  width: 142px;
-  height: 142px;
-  top:35%;
+    -moz-animation: rotate 10s infinite linear;
+    -webkit-animation: rotate 10s infinite linear;
+    animation: rotate 10s infinite linear;
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 142px;
+    height: 142px;
+    top: 35%;
 }
 div.spinner i {
-  -moz-animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
-  -webkit-animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
-  animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
-  -moz-transform-origin: 50% 100% 0;
-  -webkit-transform-origin: 50% 100% 0;
-  transform-origin: 50% 100% 0;
-  position: absolute;
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-  border: solid 6px transparent;
-  border-bottom: none;
+    -moz-animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
+    -webkit-animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
+    animation: rotate 3s infinite cubic-bezier(0.09, 0.6, 0.8, 0.03);
+    -moz-transform-origin: 50% 100% 0;
+    -webkit-transform-origin: 50% 100% 0;
+    transform-origin: 50% 100% 0;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    border: solid 6px transparent;
+    border-bottom: none;
 }
 div.spinner i:nth-child(1) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
-  width: 44px;
-  height: 22px;
-  margin-top: -22px;
-  margin-left: -22px;
-  border-color: #2172b8;
-  border-top-left-radius: 36px;
-  border-top-right-radius: 36px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 0.3, 0.12, 0.03);
+    width: 44px;
+    height: 22px;
+    margin-top: -22px;
+    margin-left: -22px;
+    border-color: #2172b8;
+    border-top-left-radius: 36px;
+    border-top-right-radius: 36px;
 }
 div.spinner i:nth-child(2) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
-  width: 58px;
-  height: 29px;
-  margin-top: -29px;
-  margin-left: -29px;
-  border-color: #18a39b;
-  border-top-left-radius: 42px;
-  border-top-right-radius: 42px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 0.6, 0.24, 0.03);
+    width: 58px;
+    height: 29px;
+    margin-top: -29px;
+    margin-left: -29px;
+    border-color: #18a39b;
+    border-top-left-radius: 42px;
+    border-top-right-radius: 42px;
 }
 div.spinner i:nth-child(3) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
-  width: 72px;
-  height: 36px;
-  margin-top: -36px;
-  margin-left: -36px;
-  border-color: #82c545;
-  border-top-left-radius: 48px;
-  border-top-right-radius: 48px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 0.9, 0.36, 0.03);
+    width: 72px;
+    height: 36px;
+    margin-top: -36px;
+    margin-left: -36px;
+    border-color: #82c545;
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
 }
 div.spinner i:nth-child(4) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
-  width: 86px;
-  height: 43px;
-  margin-top: -43px;
-  margin-left: -43px;
-  border-color: #f8b739;
-  border-top-left-radius: 54px;
-  border-top-right-radius: 54px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 1.2, 0.48, 0.03);
+    width: 86px;
+    height: 43px;
+    margin-top: -43px;
+    margin-left: -43px;
+    border-color: #f8b739;
+    border-top-left-radius: 54px;
+    border-top-right-radius: 54px;
 }
 div.spinner i:nth-child(5) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
-  width: 100px;
-  height: 50px;
-  margin-top: -50px;
-  margin-left: -50px;
-  border-color: #f06045;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 1.5, 0.6, 0.03);
+    width: 100px;
+    height: 50px;
+    margin-top: -50px;
+    margin-left: -50px;
+    border-color: #f06045;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
 }
 div.spinner i:nth-child(6) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
-  width: 114px;
-  height: 57px;
-  margin-top: -57px;
-  margin-left: -57px;
-  border-color: #ed2861;
-  border-top-left-radius: 66px;
-  border-top-right-radius: 66px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 1.8, 0.72, 0.03);
+    width: 114px;
+    height: 57px;
+    margin-top: -57px;
+    margin-left: -57px;
+    border-color: #ed2861;
+    border-top-left-radius: 66px;
+    border-top-right-radius: 66px;
 }
 div.spinner i:nth-child(7) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
-  width: 128px;
-  height: 64px;
-  margin-top: -64px;
-  margin-left: -64px;
-  border-color: #c12680;
-  border-top-left-radius: 72px;
-  border-top-right-radius: 72px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 2.1, 0.84, 0.03);
+    width: 128px;
+    height: 64px;
+    margin-top: -64px;
+    margin-left: -64px;
+    border-color: #c12680;
+    border-top-left-radius: 72px;
+    border-top-right-radius: 72px;
 }
 div.spinner i:nth-child(8) {
-  -moz-animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
-  -webkit-animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
-  animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
-  width: 142px;
-  height: 71px;
-  margin-top: -71px;
-  margin-left: -71px;
-  border-color: #5d3191;
-  border-top-left-radius: 78px;
-  border-top-right-radius: 78px;
+    -moz-animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
+    -webkit-animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
+    animation-timing-function: cubic-bezier(0.09, 2.4, 0.96, 0.03);
+    width: 142px;
+    height: 71px;
+    margin-top: -71px;
+    margin-left: -71px;
+    border-color: #5d3191;
+    border-top-left-radius: 78px;
+    border-top-right-radius: 78px;
 }
-
 
 @-moz-keyframes rotate {
-  to {
-    -moz-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    to {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 @-webkit-keyframes rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 @keyframes rotate {
-  to {
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    to {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 @keyframes FadeAnimation {
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
 
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
