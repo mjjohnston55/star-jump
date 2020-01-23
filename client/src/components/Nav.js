@@ -11,15 +11,10 @@ function Nav() {
         <nav>
             <Link to='/'>
                 <h1 style={navStyle}>Home</h1>
-                <img src="http://www.lexmantra.net/images/home.png" alt="home icon"></img>
             </Link>
             <ul className='nav-links'>
-                
-                <Link style={navStyle} to='/register'>
-                    <li>Register</li>
-                </Link>
-                <Link style={navStyle} to='/login'>
-                    <li>Login</li>
+                <Link style={navStyle} to='/mainapp'>
+                    <li>Main App</li>
                 </Link>
             </ul>
         </nav>
