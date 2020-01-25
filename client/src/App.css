@@ -125,6 +125,71 @@ nav {
     color: white;
 }
 
+.banner {
+    text-align: center;
+    font-size: 60px;
+    color: #f3f3f3;
+  }
+  
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;;
+  }
+  
+  .grid-container > div {
+    margin-top: 30px;
+    text-align: center;
+  
+  
+  }
+  
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: block;
+    margin: auto;
+    width : 800px;
+    height : 500px;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1rem;
+    border-radius: 2rem;
+    border-color: #acb9c0;
+  }
+  
+  .item2 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: block;
+    margin: auto;
+    letter-spacing: 25px;
+    font-size: 64px;
+  }
+  
+  .planet-picture {
+    object-fit: fill;
+    margin: auto;
+  }
+  
+  .choice-button {
+    background-color: #acb9c0;
+    color: black;
+    font-size: 20px;
+    padding: 15px 32px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
 .box > .color {
     text-align: center;
 }

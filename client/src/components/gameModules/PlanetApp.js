@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import '../../App.css';
 import { Link } from 'react-router-dom';
 import Picture from '../planetComponents/Picture'
 import PlanetBank from '../planetComponents/PlanetBank'
 import PlanetButton from '../planetComponents/PlanetButton'
 import swal from 'sweetalert';
+import UserContext from '../../context/user/userContext';
 
 const PlanetApp = props => {
 
     const [score, setScore] = useState(0)
     const [planet, setPlanet] = useState(PlanetBank.first())
     const [correctButtonIndex, setCorrectButtonIndex] = useState(Math.floor(Math.random() * 2))
-  
+    const userContext = useContext(UserContext);
+
+    const { updateStars, user } = userContext;
+
     useEffect(() => {
       setScore(score)
       setPlanet(planet)
