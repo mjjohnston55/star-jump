@@ -69,6 +69,7 @@ function ColorApp(props) {
         setTimeout(function() {
           props.history.push("/");
         }, 1500);
+        return;
       }
 
       setItem(newItem);
@@ -114,7 +115,7 @@ function ColorApp(props) {
       <div className="container color-row">
         <div className="row">
           {cards.map(card => (
-            <div className="box" key={card.id}>
+            <div className="box9" key={card.id}>
               <div className="col-md-2" key={card.id}>
                 <img
                   className="color"

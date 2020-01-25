@@ -101,6 +101,7 @@ const Preload = () => (
     <i></i>
     <i></i>
   </div>
+  <h1 className="spin-title">Welcome to Star Jump!</h1>
 </section>
 
 );
