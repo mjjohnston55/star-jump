@@ -52,6 +52,7 @@ function ShapeApp(props) {
                 setTimeout(function() {
                     props.history.push('/');
                 }, 1500);
+                return;
             }
             setItem(newItem);
             setTimeout(function() {
@@ -96,7 +97,7 @@ function ShapeApp(props) {
             <div className='container shape-row'>
                 <div className='row'>
                     {cards.map(card => (
-                        <div className='box' key={card.id}>
+                        <div className='box9' key={card.id}>
                             <div className='col-md-3' key={card.id}>
                                 <img
                                     className='shape'

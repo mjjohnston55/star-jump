@@ -170,6 +170,12 @@ nav {
     letter-spacing: 25px;
     font-size: 64px;
   }
+
+  .spin-title {
+    font-size:600%;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bolder;
+  }
   
   .planet-picture {
     object-fit: fill;
@@ -190,11 +196,11 @@ nav {
     margin-right: 70px;
   }
 
-.box > .color {
+.box9 > .color {
     text-align: center;
 }
 
-.box > .shape {
+.box9 > .shape {
     text-align: center;
 }
 
