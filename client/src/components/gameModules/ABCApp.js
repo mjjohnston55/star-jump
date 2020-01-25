@@ -1,17 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import '../../App.css';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/user/userContext'; //////
 import Word from '../spellingComponents/Word'
+import WordBank from '../spellingComponents/WordBank'
 import Picture from '../spellingComponents/Picture'
 import LetterButton from '../spellingComponents/LetterButtons'
 import swal from 'sweetalert'
+import '../spellingComponents/spellingApp.css'
 
 const ABCApp = props => {
     const [score, setScore] = useState(0)
     const [word, setWord] = useState(WordBank.first())
     const [hiddenLetterIndex, setHiddenLetterIndex] = useState(Math.floor(Math.random() * (WordBank.first()).length))
     const [correctButtonIndex, setCorrectButtonIndex] = useState(Math.floor(Math.random() * 3))
+    const userContext = useContext(UserContext);
+    const { updateStars, user } = userContext;
   
     useEffect(() => {
       setScore(score)
