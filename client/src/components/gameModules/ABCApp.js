@@ -26,6 +26,11 @@ const ABCApp = props => {
       setScore(score + 1)
       if (score > 10) {
         swal("You won! You've earned the star for this game!")
+        updateStars(user, 3)
+        // props.history.push("/");
+        setTimeout(function() {
+          props.history.push("/");
+        }, 1500);
       }
       console.log(score)
       setWord(WordBank.next(word))

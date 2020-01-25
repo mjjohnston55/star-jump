@@ -21,8 +21,13 @@ const PlanetApp = props => {
     const correctGuess = () => {
       setScore(score + 1);
       if (score >= 7) {
+        updateStars(user, 3)
+        // props.history.push("/");
+        setTimeout(function() {
+          props.history.push("/");
+        }, 1500);
         swal("You won! You've earned the star for this game!")
-      }
+        }
       
       console.log(score)
       // const planet = PlanetBank.next()
