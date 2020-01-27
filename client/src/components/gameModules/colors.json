@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Red",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-red-2-2-300x278.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/red--_us_1.mp3"
+  },
+  {
+    "id": 2,
+    "name": "Orange",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/07/orange-watercolor-brush-stroke-15.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/orange--_us_1.mp3"
+    
+  },
+  {
+    "id": 3,
+    "name": "Yellow",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-yellow-2-10-300x254.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/yellow--_us_1.mp3"
+  },
+  {
+    "id": 4,
+    "name": "Green",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-green-2-6-300x224.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/green--_us_1.mp3"
+  },
+  {
+    "id": 5,
+    "name": "Blue",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-blue-2-4-300x260.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/blue--_us_1.mp3"
+  },
+  {
+    "id": 6,
+    "name": "Purple",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-purple-2-9-300x256.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/purple--_us_1.mp3"
+  },
+  {
+    "id": 7,
+    "name": "Pink",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/07/pink-watercolor-brush-stroke-2-10.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/pink--_us_1.mp3"
+  },
+  {
+    "id": 8,
+    "name": "Brown",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-brown-2-8-298x300.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/brown--_us_1.mp3"
+  },
+  {
+    "id": 9,
+    "name": "Black",
+    "image": "https://www.onlygfx.com/wp-content/uploads/2017/04/watercolor-square-black-2-11-300x230.png",
+    "audio": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/black--_us_1.mp3"
+  }
+
+]
