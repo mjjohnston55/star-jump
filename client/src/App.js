@@ -12,6 +12,7 @@ import Alerts from './components/layout/Alerts';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import MainApp from './components/MainApp';
+import About from './components/About';
 
 // game modules
 import ABCApp from './components/gameModules/ABCApp';
@@ -46,6 +47,7 @@ function App() {
                                 <Route path='/' exact component={MainApp} />
                                 <Route path='/register' component={Register} />
                                 <Route path='/login' component={Login} />
+                                <Route path='/about' component={About} />
                                 {/* <Route path='/mainapp' component={MainApp} /> */}
 
                                 <Route path='/abc' component={ABCApp} />

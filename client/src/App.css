@@ -190,6 +190,14 @@ nav {
     color: white;
 }
 
+.about {
+    background:#026db0;
+    color:white;
+    border:5px solid black;
+    font-size:150%;
+    padding:5px;
+}
+
 .nav-links {
     width: 50%;
     display: flex;
@@ -199,6 +207,7 @@ nav {
     font-size: 150%;
     margin-top: auto;
 }
+
 
 .back-arrow {
     background-image: url('https://pngimage.net/wp-content/uploads/2018/06/go-back-button-png.png');
@@ -331,7 +340,7 @@ nav {
 }
 
 .planet-picture {
-    object-fit: fill;
+    object-fit: cover;
     margin: auto;
 }
 
