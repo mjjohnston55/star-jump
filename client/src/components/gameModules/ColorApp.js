@@ -63,7 +63,7 @@ function ColorApp(props) {
       let newItem = item < 8 ? item + 1 : 0;
 
       if (item === 8) {
-        swal("You got them all Correct!", "You Win!", "success");
+        swal("You earned 3 stars!", "Great Job!", "success");
         updateStars(user, 3)
         // props.history.push("/");
         setTimeout(function() {
@@ -89,17 +89,17 @@ function ColorApp(props) {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <Link to="/">
               <div className="back-arrow" onClick={() => setItem(0)}></div>
             </Link>
           </div>
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <div className="color-title">
               <h1>{randColor}</h1>
             </div>
           </div>
-          <div className="col-md-4"></div>
+          <div className="col-lg-4"></div>
         </div>
       </div>
 
@@ -113,10 +113,10 @@ function ColorApp(props) {
       </button>
 
       <div className="container color-row">
-        <div className="row">
+        <div className="row justify-content-center">
           {cards.map(card => (
             <div className="box9" key={card.id}>
-              <div className="col-md-2" key={card.id}>
+              <div className="col-lg-2" key={card.id}>
                 <img
                   className="color"
                   src={card.image}
