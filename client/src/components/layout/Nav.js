@@ -21,6 +21,11 @@ function Nav() {
     <Fragment>
       {/* <button onClick={put}></button>{' '} */}
       {/* THIS IS FOR TESTING UPDATE STARS */}
+      <li className="hvr-underline-from-right hvr-rotate">
+          <Link to="/about" className="white">
+            About
+          </Link>
+        </li>
       <li>Welcome {user && user.name}</li>
       <li>
         <i className="far fa-star stars"></i>
@@ -37,12 +42,18 @@ function Nav() {
           </Link>
         </a>
       </li>
+      
     </Fragment>
   ); // if there is a user, display the users name
 
   const guestLinks = (
     <Fragment>
-      <ul className="nav-links">
+      {/* <ul className="guest-links"> */}
+      <li className="hvr-underline-from-right hvr-rotate">
+          <Link to="/about" className="white">
+            About
+          </Link>
+        </li>
         <li className="hvr-underline-from-right hvr-rotate">
           <Link to="/register" className="white">
             Register
@@ -53,7 +64,8 @@ function Nav() {
             Login
           </Link>
         </li>
-      </ul>
+        
+      {/* </ul> */}
     </Fragment>
   ); // if there is a user, display the users star count
 

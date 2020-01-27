@@ -56,7 +56,7 @@ html {
   }
   
   .word-picture {
-    object-fit: fill;
+    object-fit: cover;
     margin: auto;
   }
   
