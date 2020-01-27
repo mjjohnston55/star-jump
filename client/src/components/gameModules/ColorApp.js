@@ -63,13 +63,20 @@ function ColorApp(props) {
       let newItem = item < 8 ? item + 1 : 0;
 
       if (item === 8) {
-        swal("You earned 3 stars!", "Great Job!", "success");
-        updateStars(user, 3)
-        // props.history.push("/");
-        setTimeout(function() {
-          props.history.push("/");
-        }, 1500);
-        return;
+        if (isAuthenticated) {
+          swal('You earned 3 stars!', 'Great Job!', 'success');
+          updateStars(user, 3);
+      } else {
+          swal(
+              'You won! Make sure to login if you want to earn stars!',
+              'Great Job!',
+              'success'
+          );
+      }
+      setTimeout(function() {
+          props.history.push('/');
+      }, 1500);
+      return;
       }
 
       setItem(newItem);
