@@ -109,7 +109,7 @@ function SightWordApp(props) {
           pickedWord +
           "--_us_1.mp3";
         if (score === 10) {
-          swal("You got 10 Correct!", "You Win!", "success");
+          swal("You earned 3 stars!", "Great Job!", "success");
           updateStars(user, 3)
         // props.history.push("/");
         setTimeout(function() {

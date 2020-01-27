@@ -16,7 +16,7 @@ function MainApp() {
         <div>
             <div className='container mainspace'>
                 <div className='row justify-content-center'>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/math'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconMath'></div>
@@ -24,7 +24,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/abc'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconABC'></div>
@@ -32,7 +32,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/shapes'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconShapes'></div>
@@ -40,7 +40,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/numbers'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconNumbers'></div>
@@ -48,7 +48,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/colors'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconColors'></div>
@@ -56,7 +56,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/animals'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconAnimals'></div>
@@ -64,7 +64,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/planets'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconPlanets'></div>
@@ -72,7 +72,7 @@ function MainApp() {
                             </div>
                         </Link>
                     </div>
-                    <div className='buffer col-md-3 col-sm-6'>
+                    <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/sightwords'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconTime'></div>

@@ -11,7 +11,7 @@ const Register = props => {
 
     useEffect(() => {
         if (isAuthenticated) {
-            props.history.push('/mainapp');
+            props.history.push('/');
         }
 
         if (error === 'User already exists') {
@@ -51,6 +51,7 @@ const Register = props => {
                 password,
                 password2
             });
+            props.history.push("/");
         }
     };
 
@@ -100,11 +101,14 @@ const Register = props => {
                         onChange={onChange}
                     />
                 </div>
-                <input
+                
+              <input
                     type='submit'
                     value='Register'
                     className='btn btn-primary btn-block font-weight-bold'
                 />
+          
+                
             </form>
         </div>
     );

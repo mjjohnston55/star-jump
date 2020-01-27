@@ -46,7 +46,7 @@ function ShapeApp(props) {
             correct.play();
             let newItem = item < 7 ? item + 1 : 0;
             if (item === 7) {
-                swal('You got them all Correct!', 'You Win!', 'success');
+                swal("You earned 3 stars!", "Great Job!", "success");
                 updateStars(user, 3);
                 // props.history.push("/");
                 setTimeout(function() {
@@ -70,7 +70,7 @@ function ShapeApp(props) {
             <br />
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-4'>
+                    <div className='col-lg-4'>
                         <Link to='/'>
                             <div
                                 className='back-arrow'
@@ -78,12 +78,12 @@ function ShapeApp(props) {
                             ></div>
                         </Link>
                     </div>
-                    <div className='col-md-4'>
+                    <div className='col-lg-4'>
                         <div className='shape-title'>
                             <h1>{randShape}</h1>
                         </div>
                     </div>
-                    <div className='col-md-4'></div>
+                    <div className='col-lg-4'></div>
                 </div>
             </div>
             <button onClick={() => playAudio()} className='audio-btn1'>
@@ -98,7 +98,7 @@ function ShapeApp(props) {
                 <div className='row'>
                     {cards.map(card => (
                         <div className='box9' key={card.id}>
-                            <div className='col-md-3' key={card.id}>
+                            <div className='col-lg-3' key={card.id}>
                                 <img
                                     className='shape'
                                     src={card.image}
