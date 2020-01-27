@@ -109,14 +109,20 @@ function SightWordApp(props) {
           pickedWord +
           "--_us_1.mp3";
         if (score === 10) {
-          swal("You earned 3 stars!", "Great Job!", "success");
-          updateStars(user, 3)
-        // props.history.push("/");
+          if (isAuthenticated) {
+            swal('You earned 3 stars!', 'Great Job!', 'success');
+            updateStars(user, 3);
+        } else {
+            swal(
+                'You won! Make sure to login if you want to earn stars!',
+                'Great Job!',
+                'success'
+            );
+        }
         setTimeout(function() {
-          props.history.push("/");
+            props.history.push('/');
         }, 1500);
-          
-          return;
+        return;
         }
       }
       
