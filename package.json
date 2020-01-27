@@ -15,22 +15,22 @@
     },
     "devDependencies": {},
     "scripts": {
-        "start": "NODE_ENV=production node server.js",
+        "start": "node server.js",
         "server": "nodemon server.js",
         "client": "npm start --prefix client",
         "clientInstall": "npm install --prefix client",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run build --prefix client"
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mjjohnston55/project3.git"
+        "url": "git+https://github.com/thnlsn/star-jump.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/thnlsn/mjjohnston55/project3.git"
+        "url": "https://github.com/thnlsn/star-jump/issues"
     },
-    "homepage": "https://github.com/mjjohnston55/project3.git"
+    "homepage": "https://github.com/thnlsn/star-jump#readme"
 }

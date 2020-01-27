@@ -21,15 +21,18 @@ function Nav() {
         <Fragment>
             {/* <button onClick={put}></button>{' '} */}
             {/* THIS IS FOR TESTING UPDATE STARS */}
-            <li>Hello {user && user.name}</li>
+            <li>Welcome {user && user.name}</li>
             <li>
-                <i className='fas fa-star'></i>
+                <i className='far fa-star stars'></i>
+                <span className='small'>x </span>
                 {user && user.stars}
             </li>
             <li>
-                <a onClick={onLogout} href='#!'>
-                    <i className='fas fa-sign-out-alt white'></i>
-                    <span className='hide-sm white'>Logout</span>
+                <a className='hvr-icon-forward' onClick={onLogout} href='#!'>
+                    <i className='fas fa-sign-out-alt hvr-icon white'></i>
+                    <span className='hide-sm white hvr-underline-from-left ml-1'>
+                        Logout
+                    </span>
                 </a>
             </li>
         </Fragment>
@@ -37,13 +40,18 @@ function Nav() {
 
     const guestLinks = (
         <Fragment>
-            <ul className="nav-links"><li>
-                <Link to='/register' className="white">Register</Link>
-            </li>
-            <li>
-                <Link to='/login' className="white">Login</Link>
-            </li></ul>
-            
+            <ul className='nav-links'>
+                <li className='hvr-underline-from-right hvr-rotate'>
+                    <Link to='/register' className='white'>
+                        Register
+                    </Link>
+                </li>
+                <li className='hvr-underline-from-right hvr-rotate'>
+                    <Link to='/login' className='white'>
+                        Login
+                    </Link>
+                </li>
+            </ul>
         </Fragment>
     ); // if there is a user, display the users star count
 
@@ -53,9 +61,10 @@ function Nav() {
 
     return (
         <nav className='navbar'>
-            <Link to='/' className="title-link">
-                <h1 style={navStyle} className="title">
-                    <i className='far fa-star'></i> Star Jump
+            <Link to='/' className='title-link'>
+                <h1 style={navStyle} className='title'>
+                    <i className='fas fa-star spin'></i>
+                    <span className='hvr-underline-from-left'>Star Jump</span>
                 </h1>
             </Link>
             <ul className='nav-links'>

@@ -14,52 +14,70 @@ function MainApp() {
 
     return (
         <div>
-            
             <div className='container mainspace'>
-                <div className='row'>
-                    <div className='col-md-3'>
+                <div className='row justify-content-center'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/math'>
-                            <div className='iconMath hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconMath'></div>
+                                <p className='hoverText hvr-fade'>Math</p>
+                            </div>
                         </Link>
                     </div>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/abc'>
-                            <div className='iconABC hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconABC'></div>
+                                <p className='hoverText hvr-fade'>Spelling</p>
+                            </div>
                         </Link>
                     </div>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/shapes'>
-                            <div className='iconShapes hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconShapes'></div>
+                                <p className='hoverText hvr-fade'>Shapes</p>
+                            </div>
                         </Link>
                     </div>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/numbers'>
-                            <div className='iconNumbers hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconNumbers'></div>
+                                <p className='hoverText hvr-fade'>Numbers</p>
+                            </div>
                         </Link>
                     </div>
-                </div>
-                <br />
-                <br />
-
-                <div className='row'>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/colors'>
-                            <div className='iconColors hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconColors'></div>
+                                <p className='hoverText hvr-fade'>Colors</p>
+                            </div>
                         </Link>
                     </div>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/animals'>
-                            <div className='iconAnimals hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconAnimals'></div>
+                                <p className='hoverText hvr-fade'>Animals</p>
+                            </div>
                         </Link>
                     </div>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/planets'>
-                            <div className='iconPlanets hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconPlanets'></div>
+                                <p className='hoverText hvr-fade'>Planets</p>
+                            </div>
                         </Link>
                     </div>
-                    <div className='col-md-3'>
+                    <div className='buffer col-md-3 col-sm-6'>
                         <Link to='/sightwords'>
-                            <div className='iconTime hvr-pulse'></div>
+                            <div className='gameWrapper hvr-pulse'>
+                                <div className='iconTime'></div>
+                                <p className='hoverText hvr-fade'>Sightwords</p>
+                            </div>
                         </Link>
                     </div>
                 </div>
