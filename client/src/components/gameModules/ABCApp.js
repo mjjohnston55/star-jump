@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import '../../App.css';
+// import '../../App.css';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/user/userContext'; //////
 import Word from '../spellingComponents/Word'
@@ -12,7 +12,7 @@ import '../spellingComponents/spellingApp.css'
 const ABCApp = props => {
     const [score, setScore] = useState(0)
     const [word, setWord] = useState(WordBank.first())
-    const [hiddenLetterIndex, setHiddenLetterIndex] = useState(Math.floor(Math.random() * (WordBank.first()).length))
+    const [hiddenLetterIndex, setHiddenLetterIndex] = useState(Math.floor(Math.random() * 3))
     const [correctButtonIndex, setCorrectButtonIndex] = useState(Math.floor(Math.random() * 3))
     const userContext = useContext(UserContext);
     const { updateStars, user } = userContext;
