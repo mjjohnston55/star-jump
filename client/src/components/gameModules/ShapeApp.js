@@ -46,7 +46,7 @@ function ShapeApp(props) {
             correct.play();
             let newItem = item < 7 ? item + 1 : 0;
             if (item === 7) {
-                swal("You earned 3 stars!", "Great Job!", "success");
+                swal('You earned 3 stars!', 'Great Job!', 'success');
                 updateStars(user, 3);
                 // props.history.push("/");
                 setTimeout(function() {
