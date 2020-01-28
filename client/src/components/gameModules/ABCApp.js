@@ -19,7 +19,7 @@ const ABCApp = props => {
     Math.floor(Math.random() * 3)
   );
   const userContext = useContext(UserContext);
-  const { updateStars, user } = userContext;
+  const { updateStars, user, isAuthenticated } = userContext;
 
   useEffect(() => {
     setScore(score);
@@ -33,12 +33,20 @@ const ABCApp = props => {
     // let { hiddenLetterIndex } = this.state
     setScore(score + 1);
     if (score > 10) {
-      swal("You won! You've earned the star for this game!");
-      updateStars(user, 3);
-      // props.history.push("/");
-      setTimeout(function() {
-        props.history.push("/");
-      }, 1500);
+      if (isAuthenticated) {
+        swal('You earned 3 stars!', 'Great Job!', 'success');
+        updateStars(user, 3);
+    } else {
+        swal(
+            'You won! Make sure to login if you want to earn stars!',
+            'Great Job!',
+            'success'
+        );
+    }
+    setTimeout(function() {
+        props.history.push('/');
+    }, 1500);
+    return;
     }
     console.log(score);
     setWord(WordBank.next(word));
@@ -56,7 +64,7 @@ const ABCApp = props => {
         <div className="col-md-4"><Link to="/">
         <div className="back-arrow"></div>
       </Link></div>
-        <div className="col-md-4"><div className="banner"><h1>Fill in the missing letters in each word!</h1></div></div>
+        <div className="col-md-4"><div className="banner"><h1 className="abc-title">Fill in the missing letters in each word!</h1></div></div>
         <div className="col-md-4"></div>
         
       </div>

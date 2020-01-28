@@ -62,9 +62,9 @@ const PlanetApp = props => {
           </Link>
         </div>
         <div className="col-md-4 ">
-          <div className="banner">
-            {" "}
-            Can you guess the planet based on the picture?
+          <div className="banner2">
+            {" "}<h1> Can you guess the planet based on the picture?</h1>
+           
           </div>
         </div>
         <div className="col-md-4 "></div>
