@@ -189,15 +189,6 @@ nav {
 .title-link:hover {
     color: white;
 }
-
-.about {
-    background:#026db0;
-    color:white;
-    border:5px solid black;
-    font-size:150%;
-    padding:5px;
-}
-
 .nav-links {
     width: 50%;
     display: flex;
