@@ -155,3 +155,30 @@ body {
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 }
+
+/*ipad PRo 12.9"*/
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .col-lg-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: fit-content;
+      }
+
+      .iconABC, .iconAnimals, .iconTime, .iconMath, .iconShapes, .iconNumbers, .iconColors, .iconPlanets{
+            width:15vh;
+            height:15vh
+      }
+
+      .mainspace {
+          margin-top: 10%;
+      }
+
+}
+

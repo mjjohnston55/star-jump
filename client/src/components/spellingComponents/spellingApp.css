@@ -36,8 +36,8 @@ html {
     border-width: 1rem;
     border-radius: 2rem;
     border-color: #363b35;
-    max-width:40vh;
-    max-height:40vh;
+    max-width:30vh;
+    max-height:30vh;
   }
   
   .item2 {
@@ -65,7 +65,7 @@ html {
   .choice-button {
     background-color: #142c34;
     color: lightgray;
-    font-size: 20px;
+    font-size: 200%;
     padding: 15px 32px;
     border-style: solid;
     border-color: black;
@@ -74,6 +74,8 @@ html {
     display: inline-block;
     margin-left: 70px;
     margin-right: 70px;
+    margin-top:3%;
+
   }
 
   .back-arrow {

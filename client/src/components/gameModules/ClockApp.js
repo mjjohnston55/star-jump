@@ -161,16 +161,17 @@ function SightWordApp(props) {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-4">
             <Link to="/">
               <div className="back-arrow"></div>
             </Link>
           </div>
-          <div className="col-md-10"></div>
+          <div className="col-md-4"> <h1 onLoad={chooseRandomWords()} className="sight-title">Listen to the Word</h1></div>
+          <div className="col-md-4"></div>
         </div>
       </div>
 
-      <h3 onLoad={chooseRandomWords()}>Listen to the Word</h3>
+     
       <button onClick={() => playAudio()} className="audio-btn1">
         {" "}
         <img

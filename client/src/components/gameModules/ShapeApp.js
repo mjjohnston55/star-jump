@@ -14,12 +14,14 @@ function randomizeOrder() {
     cards.sort(() => Math.random() - 0.5);
 }
 function ShapeApp(props) {
+    useState(randomizeOrder());
     const [item, setItem] = useState(0);
     const [randShape, setRandShape] = useState();
     const [randId, setRandId] = useState();
     const [randAudio, setRandAudio] = useState();
     const userContext = useContext(UserContext);
-    const { isAuthenticated, logout, updateStars, user } = userContext;
+    const { isAuthenticated, updateStars, user } = userContext;
+    
     function playAudio(audioNum = item) {
         console.log(randAudio);
         console.log('PLAYING AUDIO');
@@ -30,7 +32,6 @@ function ShapeApp(props) {
         audio.play();
     }
     useEffect(() => {
-        randomizeOrder();
         setRandId(cards[item].id);
         setRandShape(cards[item].name);
         setRandAudio(cards[item].audio);
@@ -86,9 +87,9 @@ function ShapeApp(props) {
                         </Link>
                     </div>
                     <div className='col-lg-4'>
-                        <div className='shape-title'>
-                            <h1>{randShape}</h1>
-                        </div>
+                        
+                            <h1 className="shape-title">{randShape}</h1>
+                        
                     </div>
                     <div className='col-lg-4'></div>
                 </div>
