@@ -43,7 +43,7 @@ const ABCApp = props => {
     console.log(score);
     setWord(WordBank.next(word));
     setCorrectButtonIndex(Math.floor(Math.random() * 3));
-    setHiddenLetterIndex(Math.floor(Math.random() * word.length));
+    setHiddenLetterIndex(Math.floor(Math.random() * 3));
 
     console.log("CORRECT GUESS");
   };
@@ -51,16 +51,51 @@ const ABCApp = props => {
   // main render fuction
   return (
     <div>
-      <Link to="/">
+      <br/>
+      <div className="row">
+        <div className="col-md-4"><Link to="/">
         <div className="back-arrow"></div>
-      </Link>
-
-      <div className="banner"> Fill in the missing letters in each word!</div>
+      </Link></div>
+        <div className="col-md-4"><div className="banner"><h1>Fill in the missing letters in each word!</h1></div></div>
+        <div className="col-md-4"></div>
+        
+      </div>
       
+     
+
+      
+
+      <div className="animal-box">
       <div className="grid-container">
         <Picture word={word} />
         <Word word={word} hiddenLetterIndex={hiddenLetterIndex} />
-        <div className="item3">
+        {/* <div className="item3">
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={0}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={1}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={2}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+        </div> */}
+      </div>
+      
+    </div>
+    <div className="item3">
           <LetterButton
             onClickEvent={correctGuess}
             buttonIndex={0}
@@ -83,8 +118,9 @@ const ABCApp = props => {
             word={word}
           />
         </div>
-      </div>
     </div>
+
+
   );
 };
 
