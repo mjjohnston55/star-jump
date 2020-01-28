@@ -66,7 +66,7 @@ const ABCApp = props => {
       
 
       <div className="animal-box">
-      <div className="grid-container">
+      <div className="grid">
         <Picture word={word} />
         <Word word={word} hiddenLetterIndex={hiddenLetterIndex} />
         {/* <div className="item3">
