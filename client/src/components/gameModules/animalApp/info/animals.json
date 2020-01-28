@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Cat",
+        "image": "info/images/cat.png",
+        "clicked": false
+    },
+    {
+        "id": 2,
+        "name": "Chicken",
+        "image": "info/images/chicken.png",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "name": "Cow",
+        "image": "info/images/cow.png",
+        "clicked": false
+    },
+    {
+        "id": 4,
+        "name": "Dog",
+        "image": "info/images/dog.png",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "name": "Elephant",
+        "image": "info/images/elephant.png",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "name": "Moneky",
+        "image": "info/images/monkey.png",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "name": "Mouse",
+        "image": "info/images/mouse.png",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "name": "Owl",
+        "image": "info/images/owl.png",
+        "clicked": false
+    },
+    {
+        "id": 9,
+        "name": "Pig",
+        "image": "info/images/pig.png",
+        "clicked": false
+    },
+    {
+        "id": 10,
+        "name": "Sheep",
+        "image": "info/images/sheep.png",
+        "clicked": false
+    }
+]
