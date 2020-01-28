@@ -28,8 +28,8 @@ html {
     grid-column-end: 4;
     display: block;
     margin: auto;
-    width : 100%;
-    height : 100%;
+    /* width : 100%;
+    height : 100%; */
     display: flex;
     justify-content: center;
     border-style: solid;
@@ -54,7 +54,7 @@ html {
     grid-row-start: 3;
     grid-column-start: 1;
     grid-column-end: 4;
-    padding-top: 30px;
+    padding-bottom:20px;
   }
   
   .word-picture {
@@ -74,7 +74,6 @@ html {
     display: inline-block;
     margin-left: 70px;
     margin-right: 70px;
-    width:10%;
   }
 
   .back-arrow {
@@ -88,8 +87,7 @@ html {
 }
 
 .animal-box {
-  width:60%;
-  height:60%;
+  
   margin-left:auto;
   margin-right:auto;
 }
