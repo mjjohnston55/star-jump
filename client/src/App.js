@@ -16,7 +16,7 @@ import About from './components/About';
 
 // game modules
 import ABCApp from './components/gameModules/ABCApp';
-import AnimalApp from './components/gameModules/AnimalApp';
+import AnimalApp from './components/gameModules/animalApp/AnimalApp.js';
 import ClockApp from './components/gameModules/ClockApp';
 import ColorApp from './components/gameModules/ColorApp';
 import MathApp from './components/gameModules/MathApp';
@@ -33,7 +33,6 @@ if (localStorage.token) {
 } // saving the users token to local storage
 
 function App() {
-    
     return (
         <UserState>
             <AlertState>
@@ -42,7 +41,7 @@ function App() {
                         <Nav />
                         <div className='container'>
                             <Alerts />
-                            <Preload/>
+                            <Preload />
                             <Switch>
                                 <Route path='/' exact component={MainApp} />
                                 <Route path='/register' component={Register} />
@@ -52,13 +51,15 @@ function App() {
 
                                 <Route path='/abc' component={ABCApp} />
                                 <Route path='/animals' component={AnimalApp} />
-                                <Route path='/sightwords' component={ClockApp} />
+                                <Route
+                                    path='/sightwords'
+                                    component={ClockApp}
+                                />
                                 <Route path='/colors' component={ColorApp} />
                                 <Route path='/math' component={MathApp} />
                                 <Route path='/numbers' component={NumApp} />
                                 <Route path='/planets' component={PlanetApp} />
                                 <Route path='/shapes' component={ShapeApp} />
-                               
                             </Switch>
                         </div>
                     </div>
@@ -85,27 +86,23 @@ function App() {
 //                 <div className="col-md-1"></div>
 //             </div>
 //         </div>
-        
 
-        
-        
 //     </div>
 // );
 
 const Preload = () => (
-    <section className="wrapper">
-  <div className="spinner">
-    <i></i>
-    <i></i>
-    <i></i>
-    <i></i>
-    <i></i>
-    <i></i>
-    <i></i>
-  </div>
-  <h1 className="spin-title">Welcome to Star Jump!</h1>
-</section>
-
+    <section className='wrapper'>
+        <div className='spinner'>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+        <h1 className='spin-title'>Welcome to Star Jump!</h1>
+    </section>
 );
 
 export default App;

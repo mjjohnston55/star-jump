@@ -7,7 +7,7 @@ const Login = props => {
     const { login, error, clearErrors, isAuthenticated } = userContext;
 
     const alertContext = useContext(AlertContext);
-    const { setAlert /* removeAlert */ } = alertContext;
+    const { setAlert } = alertContext;
 
     useEffect(() => {
         if (isAuthenticated) {

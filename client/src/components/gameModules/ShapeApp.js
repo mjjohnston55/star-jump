@@ -13,6 +13,8 @@ const incorrect = new Audio(
 function randomizeOrder() {
     cards.sort(() => Math.random() - 0.5);
 }
+
+// App
 function ShapeApp(props) {
     useState(randomizeOrder());
     const [item, setItem] = useState(0);
