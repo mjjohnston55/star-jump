@@ -5,7 +5,7 @@ const Picture = props => {
         <div className='item1'>
             <img
                 className='word-picture'
-                src={`./images/${props.word}.jpg`}
+                src={`./images/${props.word}.png`}
                 alt='current-img'
                 height='100%'
                 width='100%'

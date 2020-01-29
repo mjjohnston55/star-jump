@@ -1,21 +1,19 @@
 import Shuffle from './Shuffle'
 
 const POOL = [
-"MOUSE",
-"CHICKEN",
-"LIZARD",
-"WOLF",
-"FROG",
-"CAT",
-"DOG",
-"BEE",
-"PIG",
-"COW",
-"BAT",
-"BIRD",
-"LLAMA",
-"MONKEY",
-"FERRET"
+"BACKPACK",
+"BALL",
+"BOOK",
+"BUS",
+"CHAIR",
+"DESK",
+"HOOP",
+"PEN",
+"PENCIL",
+"PLANT",
+"SCOOTER",
+"SLIDE",
+"SWING"
 ]
 
 export default {
@@ -23,9 +21,9 @@ export default {
     words: Shuffle(POOL),
     first() {return this.words[this.index = 0]},
     next(word) {
-        let newWordIndex = Math.floor( Math.random() * 15 )
+        let newWordIndex = Math.floor( Math.random() * 13 )
         while (POOL[newWordIndex] === word) {
-            newWordIndex = Math.floor( Math.random() * 15 )
+            newWordIndex = Math.floor( Math.random() * 13 )
         }
         this.index = newWordIndex
         return POOL[newWordIndex]
