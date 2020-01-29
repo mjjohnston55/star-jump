@@ -320,6 +320,7 @@ nav {
   border-width: 1rem;
   border-radius: 2rem;
   border-color: #acb9c0;
+  
 }
 
 .item2 {
@@ -337,11 +338,14 @@ nav {
   font-size: 600%;
   font-family: "Amatic SC", cursive;
   font-weight: bolder;
+  color:black;
 }
 
 .planet-picture {
   object-fit: cover;
   margin: auto;
+  border: 10px solid white;
+    border-radius: 20%;
 }
 
 .choice-button {
@@ -599,6 +603,7 @@ div.spinner i:nth-child(8) {
   .shape-row {
     margin-left:18.8%;
   }
+  
 }
 
 

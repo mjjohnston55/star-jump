@@ -70,8 +70,13 @@ const PlanetApp = props => {
         <div className="col-md-4 "></div>
       </div>
 
-      <div className="grid-container">
-        <Picture planet={planet} />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6 planet-border"> <Picture planet={planet} /></div>
+          <div className="col-md-3"></div>
+        </div>
+       
         <div className="item2">
           <PlanetButton
             onClickEvent={correctGuess}
