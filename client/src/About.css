@@ -1,17 +1,22 @@
 
 /* ABOUT */
-body {
-    overflow: hidden;
-}
 .about {
     background:#026db0;
     color:white;
-    border:5px solid black;
+    border:2px solid black;
     font-size:150%;
     padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    border-radius: 5%;
+}
+.aboutTitle {
+  color: white;
+  font-size: 3em;
 }
   .flipper {
-    height: 50vh;
+    height: 51vh;
     margin:  4em auto;
     position: relative;
     transform-style: preserve-3d;
@@ -29,20 +34,109 @@ body {
     position: absolute;
     text-align: center;
     width: inherit;
+    border-radius: 10%;
+    border: 3px solid black;
+  }
+  .cardBack {
+    font-size: 2em;
+    padding: 3%;
+    align-self: center;
   }
   
   .front {
-    background: darkgreen;
+    background: darkcyan;
     z-index: 2;
     vertical-align: middle;
   }
 
   .topText {
-      margin-top: 40%;
+      font-size: 4.5em;
+      margin-top: 3%;
+      color: white;
   }
   
   .back {
-    background: darkblue;
+    background: #026db0;
     transform: rotateY(180deg);
+    display: flex;
   }
 
+  /* GIFS */
+  .gifStar2 {
+    background: lightcyan;
+    border-radius: 5%;
+    padding: 10px;
+    height: auto;
+  }
+  .newThings {
+    background: lightcyan;
+    border-radius: 5%;
+    padding: 10px;
+    height: auto;
+  }
+  .allGames {
+    transform: scale(1.1);
+    background: lightcyan;
+    border-radius: 5%;
+    padding: 10px;
+    height: auto;
+  }
+  .pulsate {
+    animation: pulsate 3s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+.blockStar:nth-child(1n) { 
+  animation: rotate 3s infinite forwards;
+  transition: all 0.2s;
+}
+
+@keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+
+
+
+/* MEDIA */
+  @media only screen and (min-width: 1800px) {
+    body {
+      overflow: hidden;;
+    }
+  }
+
+  /*ipad PRo 12.9"*/
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+  
+}
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen
+and (min-device-width: 1366px)
+and (max-device-width: 1366px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+}
+  
