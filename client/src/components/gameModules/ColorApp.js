@@ -117,7 +117,7 @@ function ColorApp(props) {
       <div className="container color-row">
         <div className="row justify-content-center">
           {cards.map(card => (
-            <div className="box9" key={card.id}>
+            <div className="box-color" key={card.id}>
               <div className="col-lg-2" key={card.id}>
                 <img
                   className="color"
