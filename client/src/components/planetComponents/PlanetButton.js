@@ -21,7 +21,7 @@ const generatePlanetButton = (buttonIndex, correctButtonIndex, planet, onClickEv
         console.log('wrong answer')
     }
     
-    return (<button className="choice-button" onClick={buttonClickEvent}> {buttonPlanet}</button>)
+    return (<button className="choice-button2" onClick={buttonClickEvent}> {buttonPlanet}</button>)
 }
 
 const PlanetButton = (props) => {

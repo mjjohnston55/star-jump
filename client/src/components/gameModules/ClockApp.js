@@ -109,14 +109,20 @@ function SightWordApp(props) {
           pickedWord +
           "--_us_1.mp3";
         if (score === 10) {
-          swal("You earned 3 stars!", "Great Job!", "success");
-          updateStars(user, 3)
-        // props.history.push("/");
+          if (isAuthenticated) {
+            swal('You earned 3 stars!', 'Great Job!', 'success');
+            updateStars(user, 3);
+        } else {
+            swal(
+                'You won! Make sure to login if you want to earn stars!',
+                'Great Job!',
+                'success'
+            );
+        }
         setTimeout(function() {
-          props.history.push("/");
+            props.history.push('/');
         }, 1500);
-          
-          return;
+        return;
         }
       }
       
@@ -155,16 +161,17 @@ function SightWordApp(props) {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-4">
             <Link to="/">
               <div className="back-arrow"></div>
             </Link>
           </div>
-          <div className="col-md-10"></div>
+          <div className="col-md-4"> <h1 onLoad={chooseRandomWords()} className="sight-title">Listen to the Word</h1></div>
+          <div className="col-md-4"></div>
         </div>
       </div>
 
-      <h3 onLoad={chooseRandomWords()}>Listen to the Word</h3>
+     
       <button onClick={() => playAudio()} className="audio-btn1">
         {" "}
         <img

@@ -3,7 +3,7 @@ import "../../App.css";
 import { Link } from "react-router-dom";
 import cards from "./colors.json";
 import swal from "sweetalert";
-import UserContext from '../../context/user/userContext';
+import UserContext from "../../context/user/userContext";
 
 const correct = new Audio(
   "https://ssl.gstatic.com/dictionary/static/sounds/oxford/correct--_us_1.mp3"
@@ -13,21 +13,17 @@ const incorrect = new Audio(
 );
 
 function randomizeOrder() {
-
-
-    cards.sort(() => Math.random() - 0.5);
-  
-  }
+  cards.sort(() => Math.random() - 0.5);
+}
 
 function ColorApp(props) {
+  useState(randomizeOrder());
   const [item, setItem] = useState(0);
   const [randColor, setRandColor] = useState();
   const [randId, setRandId] = useState();
   const [randAudio, setRandAudio] = useState();
-
   const userContext = useContext(UserContext);
-
-  const { isAuthenticated, logout, updateStars, user } = userContext;
+  const { isAuthenticated, updateStars, user } = userContext;
 
   function playAudio(audioNum = item) {
     console.log(randAudio);
@@ -42,7 +38,6 @@ function ColorApp(props) {
   }
 
   useEffect(() => {
-    randomizeOrder();
     setRandId(cards[item].id);
     setRandColor(cards[item].name);
     setRandAudio(cards[item].audio);
@@ -63,9 +58,16 @@ function ColorApp(props) {
       let newItem = item < 8 ? item + 1 : 0;
 
       if (item === 8) {
-        swal("You earned 3 stars!", "Great Job!", "success");
-        updateStars(user, 3)
-        // props.history.push("/");
+        if (isAuthenticated) {
+          swal("You earned 3 stars!", "Great Job!", "success");
+          updateStars(user, 3);
+        } else {
+          swal(
+            "You won! Make sure to login if you want to earn stars!",
+            "Great Job!",
+            "success"
+          );
+        }
         setTimeout(function() {
           props.history.push("/");
         }, 1500);
@@ -95,9 +97,9 @@ function ColorApp(props) {
             </Link>
           </div>
           <div className="col-lg-4">
-            <div className="color-title">
-              <h1>{randColor}</h1>
-            </div>
+            
+              <h1 className="color-title">{randColor}</h1>
+            
           </div>
           <div className="col-lg-4"></div>
         </div>
@@ -115,7 +117,7 @@ function ColorApp(props) {
       <div className="container color-row">
         <div className="row justify-content-center">
           {cards.map(card => (
-            <div className="box9" key={card.id}>
+            <div className="box-color" key={card.id}>
               <div className="col-lg-2" key={card.id}>
                 <img
                   className="color"

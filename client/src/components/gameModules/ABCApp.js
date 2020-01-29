@@ -1,71 +1,138 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from "react";
 // import '../../App.css';
-import { Link } from 'react-router-dom';
-import UserContext from '../../context/user/userContext'; //////
-import Word from '../spellingComponents/Word'
-import WordBank from '../spellingComponents/WordBank'
-import Picture from '../spellingComponents/Picture'
-import LetterButton from '../spellingComponents/LetterButtons'
-import swal from 'sweetalert'
-import '../spellingComponents/spellingApp.css'
+import { Link } from "react-router-dom";
+import UserContext from "../../context/user/userContext"; //////
+import Word from "../spellingComponents/Word";
+import WordBank from "../spellingComponents/WordBank";
+import Picture from "../spellingComponents/Picture";
+import LetterButton from "../spellingComponents/LetterButtons";
+import swal from "sweetalert";
+import "../spellingComponents/spellingApp.css";
 
 const ABCApp = props => {
-    const [score, setScore] = useState(0)
-    const [word, setWord] = useState(WordBank.first())
-    const [hiddenLetterIndex, setHiddenLetterIndex] = useState(Math.floor(Math.random() * 3))
-    const [correctButtonIndex, setCorrectButtonIndex] = useState(Math.floor(Math.random() * 3))
-    const userContext = useContext(UserContext);
-    const { updateStars, user } = userContext;
-  
-    useEffect(() => {
-      setScore(score)
-      setWord(word)
-      setHiddenLetterIndex(hiddenLetterIndex)
-      setCorrectButtonIndex(correctButtonIndex)
-    }, [score, word, hiddenLetterIndex, correctButtonIndex])
-  
-      const correctGuess = () => {
-      // let { score } = this.state
-      // let { hiddenLetterIndex } = this.state
-      setScore(score + 1)
-      if (score > 10) {
-        swal("You won! You've earned the star for this game!")
-        updateStars(user, 3)
-        // props.history.push("/");
-        setTimeout(function() {
-          props.history.push("/");
-        }, 1500);
-      }
-      console.log(score)
-      setWord(WordBank.next(word))
-      setCorrectButtonIndex(Math.floor(Math.random() * 3))
-      setHiddenLetterIndex(Math.floor(Math.random() * word.length))
-    
-      console.log("CORRECT GUESS")
+  const [score, setScore] = useState(0);
+  const [word, setWord] = useState(WordBank.first());
+  const [hiddenLetterIndex, setHiddenLetterIndex] = useState(
+    Math.floor(Math.random() * 3)
+  );
+  const [correctButtonIndex, setCorrectButtonIndex] = useState(
+    Math.floor(Math.random() * 3)
+  );
+  const userContext = useContext(UserContext);
+  const { updateStars, user, isAuthenticated } = userContext;
+
+  useEffect(() => {
+    setScore(score);
+    setWord(word);
+    setHiddenLetterIndex(hiddenLetterIndex);
+    setCorrectButtonIndex(correctButtonIndex);
+  }, [score, word, hiddenLetterIndex, correctButtonIndex]);
+
+  const correctGuess = () => {
+    // let { score } = this.state
+    // let { hiddenLetterIndex } = this.state
+    setScore(score + 1);
+    if (score > 10) {
+      if (isAuthenticated) {
+        swal('You earned 3 stars!', 'Great Job!', 'success');
+        updateStars(user, 3);
+    } else {
+        swal(
+            'You won! Make sure to login if you want to earn stars!',
+            'Great Job!',
+            'success'
+        );
     }
-  
-      // main render fuction 
-      return (
-        <div className="banner"> Fill in the missing letters in each word!
-        <div className="grid-container">
-            <Link to='/'>
-                <div className='back-arrow'></div>
-            </Link>
-          <Picture word={word}/>
-          <Word word={word} hiddenLetterIndex={hiddenLetterIndex} />
-          <div className="item3">
-          <LetterButton onClickEvent={correctGuess} buttonIndex={0} correctButtonIndex={correctButtonIndex} hiddenLetterIndex={hiddenLetterIndex} word={word}/>
-          <LetterButton onClickEvent={correctGuess} buttonIndex={1} correctButtonIndex={correctButtonIndex} hiddenLetterIndex={hiddenLetterIndex} word={word}/>
-          <LetterButton onClickEvent={correctGuess} buttonIndex={2} correctButtonIndex={correctButtonIndex} hiddenLetterIndex={hiddenLetterIndex} word={word}/> 
-          </div>
-        </div>
-        </div>
-      )
+    setTimeout(function() {
+        props.history.push('/');
+    }, 1500);
+    return;
     }
-  
-    export default ABCApp;
+    console.log(score);
+    setWord(WordBank.next(word));
+    setCorrectButtonIndex(Math.floor(Math.random() * 3));
+    setHiddenLetterIndex(Math.floor(Math.random() * 3));
+
+    console.log("CORRECT GUESS");
+  };
+
+  // main render fuction
+  return (
+    <div>
+      <br/>
+      <div className="row">
+        <div className="col-md-4"><Link to="/">
+        <div className="back-arrow"></div>
+      </Link></div>
+        <div className="col-md-4"><div className="banner"><h1 className="abc-title">Fill in the missing letters in each word!</h1></div></div>
+        <div className="col-md-4"></div>
+        
+      </div>
+      
+     
+
+      
+
+      <div className="animal-box">
+      <div className="grid">
+        <Picture word={word} />
+        <Word word={word} hiddenLetterIndex={hiddenLetterIndex} />
+        {/* <div className="item3">
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={0}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={1}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={2}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+        </div> */}
+      </div>
+      
+    </div>
+    <div className="item3">
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={0}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={1}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+          <LetterButton
+            onClickEvent={correctGuess}
+            buttonIndex={2}
+            correctButtonIndex={correctButtonIndex}
+            hiddenLetterIndex={hiddenLetterIndex}
+            word={word}
+          />
+        </div>
+    </div>
 
 
+  );
+};
+
+export default ABCApp;
 
 // function ABCApp() {
 //     const userContext = useContext(UserContext); //////
