@@ -102,11 +102,11 @@ function ShapeApp(props) {
                     className='audio-btn2'
                 />{' '}
             </button>
-            <div className='container shape-row'>
+            <div className='shape-row'>
                 <div className='row'>
                     {cards.map(card => (
-                        <div className='box9' key={card.id}>
-                            <div className='col-lg-3' key={card.id}>
+                        <div className='box-shape' key={card.id}>
+                            <div className='col-lg-3 shape-center' key={card.id}>
                                 <img
                                     className='shape'
                                     src={card.image}
