@@ -41,7 +41,7 @@ function About() {
           <div className="card-container">
           <div className="flipper">
             <div className="front">
-            <h1 className="topText pulsate">Earn Stars!</h1>
+            <h1 className="topText pulsate">Earn</h1>
             <img className="gifStar2" src="./images/aboutStarGif2.gif"></img>  
             </div>
             <div className="back">

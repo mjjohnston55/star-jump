@@ -14,6 +14,7 @@
 .aboutTitle {
   color: white;
   font-size: 3em;
+  padding-top: 5px;
 }
   .flipper {
     height: 51vh;
@@ -128,8 +129,40 @@ and (min-device-width: 1024px)
 and (max-device-width: 1024px)
 and (orientation: portrait)
 and (-webkit-min-device-pixel-ratio: 2) {
-  
+  .aboutTitle {
+    font-size: 3em;
+    padding: 20px;
+  }
+  .gifStar2 {
+    margin-left: -7px !important;
+    transform: scale(0.9);
+    padding: 3px;
+    margin-top: 40px;
+  }
+  .allGames {
+    margin-left: -7px !important;
+    transform: scale(0.9);
+    padding: 3px;
+    vertical-align: middle;
+    margin-top: 40px;
+  }
+  .newThings {
+    margin-left: -7px !important;
+    transform: scale(0.9);
+    padding: 3px;
+    vertical-align: middle;
+    margin-top: 40px;
+  }
+  .cardBack {
+    font-size: 1.8em;
+  }
+  .about {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 10px;
+  }
 }
+
 /* Landscape */
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
@@ -138,5 +171,17 @@ and (min-device-width: 1366px)
 and (max-device-width: 1366px)
 and (orientation: landscape)
 and (-webkit-min-device-pixel-ratio: 2) {
+  .aboutTitle {
+    font-size: 3em;
+    padding: 20px;
+  }
+  .cardBack {
+    font-size: 1.6em;
+  }
+  .about {
+    font-size: 1.8em;
+    line-height: 1em;
+    padding: 10px;
+  }
 }
   
