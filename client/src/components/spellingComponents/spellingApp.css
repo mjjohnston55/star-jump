@@ -37,9 +37,10 @@ html {
     border-width: 1rem;
     border-radius: 2rem;
     border-color: #363b35; */
-    max-width:30vh;
-    max-height:30vh;
+    max-width:40vh;
+  max-height:40vh;
   }
+  
   
   .item2 {
     grid-row-start: 2;
@@ -93,4 +94,15 @@ html {
   
   margin-left:auto;
   margin-right:auto;
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .item1{
+    max-width:30vh;
+    max-height:30vh;
+  }
+  
 }
