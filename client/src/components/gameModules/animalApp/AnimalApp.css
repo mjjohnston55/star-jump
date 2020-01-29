@@ -1,4 +1,17 @@
+* {
+    color: white;
+}
+
 .bounce-in-top {
     -webkit-animation: bounce-in-top 1.1s both;
     animation: bounce-in-top 1.1s both;
+}
+
+.animal-header {
+    margin-top: 2rem;
+}
+
+.animal-wrapper {
+    margin-bottom: 1rem;
+    max-width: 1230.5px;
 }

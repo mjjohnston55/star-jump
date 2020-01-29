@@ -6,12 +6,13 @@ import Tile from './AnimalTile';
 
 const Game = ({ tiles, handleClick }) => {
     return (
-        <div className='container' style={gridStyle}>
+        <div className='container animal-wrapper' style={gridStyle}>
             {tiles.map(tile => (
                 <Tile
                     key={tile.id}
                     name={tile.name}
                     image={tile.image}
+                    audio={tile.audio}
                     clicked={tile.clicked}
                     handleClick={handleClick}
                 />
@@ -26,7 +27,7 @@ Game.propTypes = {
 
 const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr)',
     gridGap: '2rem',
     justifyItems: 'center',
     padding: '2rem'

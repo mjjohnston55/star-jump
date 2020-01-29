@@ -1,25 +1,25 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ title, message, score, topScore }) => {
+const Title = ({ message, image, score }) => {
     return (
-        <Fragment>
-            <div className='title'>
-                <h1 className='title-text'>{title}</h1>
+        <div className='row animal-header'>
+            <div className='col-lg-4'>
+                <h1 className=''>{message}</h1>
             </div>
-        </Fragment>
+            <div className='col-lg-4'>
+                <div className=''>klgkjlnsgkjlns</div>
+            </div>
+            <div className='col-lg-4'>
+                <h1 className=''>{score}</h1>
+            </div>
+        </div>
     );
 };
 
-Title.defaultProps = {
-    title:
-        'Game of Thrones Memory Game' /* require('../../tiles/otherImages/title.png') */,
-    icon: 'fas fa-th'
-};
-
 Title.propTypes = {
-    title: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired
+    message: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired
 };
 
 export default Title;

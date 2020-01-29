@@ -2,61 +2,71 @@
     {
         "id": 1,
         "name": "Cat",
-        "image": "info/images/cat.png",
+        "image": "info/animals/cat.png",
+        "audio": "info/audio/cat.png",
         "clicked": false
     },
     {
         "id": 2,
         "name": "Chicken",
-        "image": "info/images/chicken.png",
+        "image": "info/animals/chicken.png",
+        "audio": "info/audio/chicken.wav",
         "clicked": false
     },
     {
         "id": 3,
         "name": "Cow",
-        "image": "info/images/cow.png",
+        "image": "info/animals/cow.png",
+        "audio": "info/audio/cow.wav",
         "clicked": false
     },
     {
         "id": 4,
         "name": "Dog",
-        "image": "info/images/dog.png",
+        "image": "info/animals/dog.png",
+        "audio": "info/audio/dog.wav",
         "clicked": false
     },
     {
         "id": 5,
         "name": "Elephant",
-        "image": "info/images/elephant.png",
+        "image": "info/animals/elephant.png",
+        "audio": "info/audio/elephant.wav",
         "clicked": false
     },
     {
         "id": 6,
-        "name": "Moneky",
-        "image": "info/images/monkey.png",
+        "name": "Monkey",
+        "image": "info/animals/monkey.png",
+        "audio": "info/audio/monkey.wav",
         "clicked": false
     },
     {
         "id": 7,
         "name": "Mouse",
-        "image": "info/images/mouse.png",
+        "image": "info/animals/mouse.png",
+        "audio": "info/audio/mouse.wav",
         "clicked": false
     },
     {
         "id": 8,
         "name": "Owl",
-        "image": "info/images/owl.png",
+        "image": "info/animals/owl.png",
+        "audio": "info/audio/owl.wav",
         "clicked": false
     },
     {
         "id": 9,
         "name": "Pig",
-        "image": "info/images/pig.png",
+        "image": "info/animals/pig.png",
+        "audio": "info/audio/pig.wav",
         "clicked": false
     },
     {
         "id": 10,
         "name": "Sheep",
-        "image": "info/images/sheep.png",
+        "image": "info/animals/sheep.png",
+        "audio": "info/audio/sheep.wav",
         "clicked": false
     }
 ]
