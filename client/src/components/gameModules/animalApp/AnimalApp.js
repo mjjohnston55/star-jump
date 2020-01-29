@@ -18,30 +18,38 @@ const AnimalApp = props => {
     const handleClick = animal => {
         let choices = tiles; // sets choices to a copy of the full object in the animals.json file
         let chosen = choices.findIndex(chosen => chosen.name === animal); // Sets chosen to the index of the animal whos name matches the one clicked
+        playAudio(choices[chosen].audio); // runs playAudio function with the path of the audio files passed in
+        // play animal sound
         if (choices[chosen].id === correctAnswer.id) {
-            handleCorrectClick(chosen);
+            handleCorrectClick(choices[chosen]); // passes in the object of the animal clicked
         } else {
-            handleIncorrectClick(animal);
+            handleIncorrectClick(choices[chosen]); // passes in the object of the animal clicked
         }
         /* console.log(this.state.tiles[chosen]); */
         /*         this.randomizeTiles(this.state.tiles);
         console.log(this.state.score); */
     };
 
-    const handleCorrectClick = (index, id) => {
+    const handleCorrectClick = animal => {
         // set clicked to true
-        console.log(`You clicked ${index}. It has the ID of ${id}. Correct!`);
+        console.log(`You clicked ${animal.name}. Correct!`);
     };
 
-    const handleIncorrectClick = index => {
-        console.log(`You clicked ${index}. Incorrect!`);
+    const handleIncorrectClick = animal => {
+        console.log(`You clicked ${animal}. Incorrect!`);
     };
 
     const playAudio = path => {
-        var a = new Audio(path);
-        a.play();
+        let audio = new Audio(require(`./${path}`));
+        audio.setAttribute('autoplay', 'true');
+        audio.setAttribute('muted', 'muted');
+        audio.load();
+        audio.play();
     };
 
+    const setNewAnswer = () => {
+        let prevAnswer = 
+    }
     // return
     return (
         <Fragment>
