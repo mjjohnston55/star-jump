@@ -2,13 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './AnimalApp.css';
 
-const Title = ({
-    message,
-    image,
-    score,
-    animalAudio,
-    playAudio /* , response */
-}) => {
+const Title = ({ message, score, animalAudio, playAudio, correct }) => {
     return (
         <div className='row animal-header'>
             <div className='col-lg-4'>
@@ -19,6 +13,7 @@ const Title = ({
             <div className='col-lg-4'>
                 <button
                     onClick={() => playAudio(animalAudio)}
+                    /*                     onEnded={() => } */
                     className='audio-btn1'
                 >
                     <img

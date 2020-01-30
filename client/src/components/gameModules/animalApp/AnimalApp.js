@@ -12,7 +12,7 @@ const AnimalApp = props => {
     const userContext = useContext(UserContext);
     const { isAuthenticated, updateStars, user } = userContext;
 
-    /*     const [response, setResponse] = useState(false); */
+    const [correct, setCorrect] = useState(false);
     const [message, setMessage] = useState('What animal made that noise?');
     const [score, setScore] = useState(0);
     const [tiles, setTiles] = useState(animals);
@@ -43,6 +43,7 @@ const AnimalApp = props => {
             let updatedTiles = tiles; // temporary copy of tiles
             updatedTiles[chosen].used = true; // set the clicked animals used key
             setTiles(updatedTiles); // set the state tiles to the updated one
+
             handleCorrectClick(choices[chosen]); // passes in the object of the animal clicked
         } else {
             handleIncorrectClick(choices[chosen]); // passes in the object of the animal clicked
@@ -73,11 +74,12 @@ const AnimalApp = props => {
             let newCorrectAnimal =
                 tiles[newAnswer(0, tiles.length - 1, usedIndexes)];
 
+            setMessage('You got it! Now what animal made this noise?');
+            setCorrect(true);
+
             setTimeout(function() {
                 let updatedScore = score + 1;
                 setScore(updatedScore);
-                setMessage('You got it! Now what animal made this noise?');
-                /*                 setResponse(false); */
 
                 playAudio(newCorrectAnimal.audio);
             }, 1500);
@@ -92,7 +94,8 @@ const AnimalApp = props => {
 
     const handleIncorrectClick = animal => {
         setMessage(`Sorry, that wasn't it! Try again!`);
-        /*         setResponse(true); */
+        setCorrect(false);
+
         console.log(`You clicked ${animal.name}. Incorrect!`);
     };
 
