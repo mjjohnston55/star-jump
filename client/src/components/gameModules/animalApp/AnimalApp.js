@@ -3,10 +3,15 @@ import Game from './AnimalGame';
 import Title from './AnimalTitle';
 import animals from './info/animals';
 import './AnimalApp.css';
+import swal from 'sweetalert';
+import UserContext from '../../../context/user/userContext';
 import { Link } from 'react-router-dom';
 
 // App
 const AnimalApp = props => {
+    const userContext = useContext(UserContext);
+    const { isAuthenticated, updateStars, user } = userContext;
+
     const [message, setMessage] = useState('What animal made that noise?');
     const [score, setScore] = useState(0);
     const [tiles, setTiles] = useState(animals);
@@ -16,8 +21,7 @@ const AnimalApp = props => {
     const newAnswer = (min, max, exclude) => {
         exclude = Array.isArray(exclude) ? exclude : [exclude];
         var num = Math.floor(Math.random() * (max - min + 1)) + min;
-        console.log(num);
-        return exclude.includes(num) ? newAnswer(min, max, exclude) : num;
+        return exclude.includes(num) ? newAnswer(min, max, exclude) : num; // if the exclude includes a number in the exclude, run the function again but excluding it, else return the number
     };
 
     useEffect(() => {
@@ -59,9 +63,28 @@ const AnimalApp = props => {
         updatedUsedIndexes.push(animal.id - 1);
         setUsedIndexes(updatedUsedIndexes);
 
-        setCorrectAnimal(tiles[newAnswer(0, tiles.length - 1, usedIndexes)]);
-        console.log(correctAnimal);
+        if (score === 9) {
+            if (isAuthenticated) {
+                swal('You earned 3 stars!', 'Great Job!', 'success');
+                updateStars(user, 3);
+            } else {
+                swal(
+                    'You won! Make sure to login if you want to earn stars!',
+                    'Great Job!',
+                    'success'
+                );
+            }
+            setTimeout(function() {
+                props.history.push('/');
+            }, 1500);
+            return;
+        } else {
+            setCorrectAnimal(
+                tiles[newAnswer(0, tiles.length - 1, usedIndexes)]
+            );
+        }
 
+        console.log(correctAnimal);
         console.log(`You clicked ${animal.name}. Correct!`);
     };
 
