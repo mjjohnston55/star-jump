@@ -70,6 +70,7 @@ React.js           |  Node.js |  MongoDB  |  JSON Web Token
 <ul style="font-size: 20px;">
   <li><a href="https://github.com/thnlsn">Github</a></li>
   <li><a href="https://www.linkedin.com/in/thnlsn/">LinkedIn</a></li>
+  <li><a href="https://www.thnlsn.me/">Portfolio</a></li>
 </ul>
 
 #### Joseph Badua
