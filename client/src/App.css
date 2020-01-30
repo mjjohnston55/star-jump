@@ -13,6 +13,12 @@
     /* border-image-repeat: repeat; */
 }
 
+.blue-auth {
+    text-shadow: 2px 2px #e9e9e9;
+    -webkit-filter: drop-shadow(3px 1px 1px #e9e9e9);
+    filter: drop-shadow(1px 1px 1px #e9e9e9);
+}
+
 .top-box {
     box-shadow: inset 0 7px 9px -40px rgba(0, 0, 0, 0.7);
 }
@@ -177,8 +183,9 @@ a:active {
 .star-jump {
     margin-left: 1rem;
     text-shadow: 2px 2px #272727;
-    -webkit-filter: drop-shadow(3px px 1px #222);
+    -webkit-filter: drop-shadow(3px 1px 1px #222);
     filter: drop-shadow(1px 1px 1px #222);
+    border-radius: 10px;
 }
 
 .star {
@@ -204,6 +211,24 @@ nav {
     box-shadow: inset 1px 19px 40px -8px rgba(0, 0, 0, 0.75);
 }
 
+.nav-buffer {
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+}
+
+.nav-link {
+    border: #ffffff50 1px dotted;
+    border-radius: 20px;
+
+    -webkit-box-shadow: inset 0px 0px 5px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0px 0px 5px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0px 0px 5px -4px rgba(0, 0, 0, 0.75);
+
+    background-image: url(../src/components/images/button.png);
+    /*     filter: brightness(99%) contrast(100%);
+    -webkit-filter: brightness(99%) contrast(100%); */
+}
+
 .title {
     font-family: 'Amatic SC', cursive;
     font-size: 400%;
@@ -220,7 +245,7 @@ nav {
     list-style: none;
     font-size: 150%;
     margin-top: auto;
-    text-shadow: 2px 2px #272727;
+    text-shadow: 1px 1px #272727;
     -webkit-filter: drop-shadow(1px 1px 1px #222);
     filter: drop-shadow(1px 1px 1px #222);
 }
@@ -430,7 +455,18 @@ nav {
 /*Preload*/
 
 .contain {
+    border: #ffffff50 1px dotted;
+    border-radius: 20px;
+
+    box-shadow: inset 1px 1px 5px rgb(0, 0, 0);
+
     background-color: (255, 255, 255, 0.034);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    background-image: url(./components/images/auth.png);
+    filter: brightness(99%) contrast(100%);
+    -webkit-filter: brightness(99%) contrast(100%);
 }
 
 * {

@@ -51,14 +51,14 @@ const Register = props => {
                 password,
                 password2
             });
-            props.history.push("/");
+            props.history.push('/');
         }
     };
 
     return (
         <div className='container w-50 p-3 contain'>
             <h1 className='text-light font-weight-bold'>
-                Account <span className='text-primary'>Register</span>
+                Account <span className='text-primary blue-auth'>Register</span>
             </h1>
             <form onSubmit={onSubmit}>
                 <div className='form-group text-left text-light font-weight-bold'>
@@ -101,14 +101,12 @@ const Register = props => {
                         onChange={onChange}
                     />
                 </div>
-                
-              <input
+
+                <input
                     type='submit'
                     value='Register'
                     className='btn btn-primary btn-block font-weight-bold'
                 />
-          
-                
             </form>
         </div>
     );
