@@ -12,14 +12,11 @@ function Nav() {
         logout();
     };
 
-    // const put = () => {
-    //     /* THIS IS FOR TESTING UPDATE STARS */
-    //     updateStars(user, 3);
-    // };
+    
 
   const authLinks = (
     <Fragment>
-      {/* <button onClick={put}></button>{' '} */}
+      
       {/* THIS IS FOR TESTING UPDATE STARS */}
       <li className="hvr-underline-from-right hvr-rotate">
           <Link to="/about" className="white">
@@ -48,7 +45,7 @@ function Nav() {
 
   const guestLinks = (
     <Fragment>
-      {/* <ul className="guest-links"> */}
+      
       <li className="hvr-underline-from-right hvr-rotate">
           <Link to="/about" className="white">
             About
@@ -65,7 +62,7 @@ function Nav() {
           </Link>
         </li>
         
-      {/* </ul> */}
+      
     </Fragment>
   ); // if there is a user, display the users star count
 
@@ -83,9 +80,7 @@ function Nav() {
             </Link>
             <ul className='nav-links'>
                 {isAuthenticated ? authLinks : guestLinks}
-                {/*                 <Link style={navStyle} to='/mainapp'>
-                    <li>Main App</li>
-                </Link> */}
+                
             </ul>
         </nav>
     );

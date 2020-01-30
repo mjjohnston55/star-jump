@@ -98,21 +98,4 @@ const PlanetApp = props => {
 
 export default PlanetApp;
 
-// function PlanetApp() {
-//     return (
-//         <div>
-//             <h1>Planet App</h1>
-//             <Link to='/'>
-//                 <div className='back-arrow'></div>
-//             </Link>
-//         </div>
-//     );
-// }
 
-// export default PlanetApp;
-
-{
-  /* <Link to='/'>
-<div className='back-arrow'></div>
-</Link> */
-}
