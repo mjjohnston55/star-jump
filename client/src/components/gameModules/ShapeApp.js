@@ -25,9 +25,12 @@ function ShapeApp(props) {
     const { isAuthenticated, updateStars, user } = userContext;
     
     function playAudio(audioNum = item) {
-        console.log(randAudio);
+
+        
+        console.log("audioNum: " + audioNum)
+        console.log("randAudio: " + randAudio);
         console.log('PLAYING AUDIO');
-        let audio = new Audio(cards[audioNum].audio);
+        let audio = new Audio(randAudio);
         audio.setAttribute('autoplay', 'true');
         audio.setAttribute('muted', 'muted');
         audio.load();
@@ -38,6 +41,7 @@ function ShapeApp(props) {
         setRandShape(cards[item].name);
         setRandAudio(cards[item].audio);
         if (item === 0) {
+            console.log("load test: " + item)
             playAudio(0);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,9 +69,10 @@ function ShapeApp(props) {
                 return;
             }
             setItem(newItem);
-            setTimeout(function() {
-                playAudio(newItem);
-            }, 1500);
+            // setTimeout(function() {
+            //     console.log("here: " + randAudio)
+            //     playAudio(randAudio);
+            // }, 1500);
         } else {
             incorrect.play();
             setTimeout(function() {

@@ -17,6 +17,7 @@ function randomizeOrder() {
 }
 
 function ColorApp(props) {
+  
   useState(randomizeOrder());
   const [item, setItem] = useState(0);
   const [randColor, setRandColor] = useState();
@@ -28,7 +29,7 @@ function ColorApp(props) {
   function playAudio(audioNum = item) {
     console.log(randAudio);
     console.log("PLAYING AUDIO");
-    let audio = new Audio(cards[audioNum].audio);
+    let audio = new Audio(randAudio);
 
     audio.setAttribute("autoplay", "true");
     audio.setAttribute("muted", "muted");
@@ -75,9 +76,9 @@ function ColorApp(props) {
       }
 
       setItem(newItem);
-      setTimeout(function() {
-        playAudio(newItem);
-      }, 1500);
+      // setTimeout(function() {
+      //   playAudio(newItem);
+      // }, 1500);
     } else {
       incorrect.play();
       setTimeout(function() {

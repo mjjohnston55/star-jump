@@ -64,7 +64,8 @@ html {
     margin: auto;
     border-radius: 20%;
     border: 10px solid white;
-    background: #026db0;
+    /* background: #026db0; */
+    background-image: url('../../components/images/navbar.png');
   }
   
   .choice-button {
@@ -109,3 +110,14 @@ html {
   }
   
 }
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .item1{
+    max-width:30vh;
+    max-height:30vh;
+  }
+  
+  }
+

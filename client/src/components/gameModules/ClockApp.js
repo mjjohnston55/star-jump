@@ -166,7 +166,7 @@ function SightWordApp(props) {
               <div className="back-arrow"></div>
             </Link>
           </div>
-          <div className="col-md-4"> <h1 onLoad={chooseRandomWords()} className="sight-title">Listen to the Word</h1></div>
+          <div className="col-md-4"> <h1 onLoad={chooseRandomWords()} className="sight-title">Can you find the word?</h1></div>
           <div className="col-md-4"></div>
         </div>
       </div>
@@ -184,7 +184,7 @@ function SightWordApp(props) {
       <div className="container" onLoad={playAudio(currentAudioURL)}>
         <div className="row">
           {chosenWordArr.map(word => (
-            <div className="col-md-3 word-bg">
+            <div className="col-md-3 word-bg" key={word}>
               <p className="word-inside" key={word} onClick={wordClick}>
                 {word}
               </p>
