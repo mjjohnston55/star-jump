@@ -12,8 +12,8 @@ const AnimalApp = props => {
     const userContext = useContext(UserContext);
     const { isAuthenticated, updateStars, user } = userContext;
 
-    /*     const [response, setResponse] = useState(false); */
-    const [message, setMessage] = useState('What animal made that noise?');
+    const [correct, setCorrect] = useState('');
+    const [message, setMessage] = useState('What made that noise?');
     const [score, setScore] = useState(0);
     const [tiles, setTiles] = useState(animals);
     const [correctAnimal, setCorrectAnimal] = useState({});
@@ -30,7 +30,7 @@ const AnimalApp = props => {
         setCorrectAnimal(newCorrectAnimal);
         setTimeout(function() {
             playAudio(newCorrectAnimal.audio);
-        }, 1500);
+        }, 500);
         // eslint-disable-next-line
     }, []);
 
@@ -43,6 +43,7 @@ const AnimalApp = props => {
             let updatedTiles = tiles; // temporary copy of tiles
             updatedTiles[chosen].used = true; // set the clicked animals used key
             setTiles(updatedTiles); // set the state tiles to the updated one
+
             handleCorrectClick(choices[chosen]); // passes in the object of the animal clicked
         } else {
             handleIncorrectClick(choices[chosen]); // passes in the object of the animal clicked
@@ -53,6 +54,12 @@ const AnimalApp = props => {
         let updatedUsedIndexes = usedIndexes;
         updatedUsedIndexes.push(animal.id - 1);
         setUsedIndexes(updatedUsedIndexes);
+
+        setMessage('You got it!');
+        setCorrect('correct');
+
+        let updatedScore = score + 1;
+        setScore(updatedScore);
 
         if (score === 9) {
             if (isAuthenticated) {
@@ -70,20 +77,18 @@ const AnimalApp = props => {
             }, 1500);
             return;
         } else {
-            let newCorrectAnimal =
-                tiles[newAnswer(0, tiles.length - 1, usedIndexes)];
+            setTimeout(function() {
+                setCorrect('');
+            }, 300);
 
             setTimeout(function() {
-                let updatedScore = score + 1;
-                setScore(updatedScore);
-                setMessage('You got it! Now what animal made this noise?');
-                /*                 setResponse(false); */
-
                 playAudio(newCorrectAnimal.audio);
+                setCorrect('shake');
             }, 1500);
 
+            let newCorrectAnimal =
+                tiles[newAnswer(0, tiles.length - 1, usedIndexes)];
             setCorrectAnimal(newCorrectAnimal);
-            console.log(correctAnimal);
         }
 
         console.log(correctAnimal);
@@ -91,8 +96,13 @@ const AnimalApp = props => {
     };
 
     const handleIncorrectClick = animal => {
-        setMessage(`Sorry, that wasn't it! Try again!`);
-        /*         setResponse(true); */
+        setMessage(`Sorry, that wasn't it!`);
+        setCorrect('incorrect');
+
+        setTimeout(function() {
+            setCorrect('');
+        }, 300);
+
         console.log(`You clicked ${animal.name}. Incorrect!`);
     };
 
@@ -112,7 +122,7 @@ const AnimalApp = props => {
                 score={score}
                 animalAudio={correctAnimal.audio}
                 playAudio={playAudio}
-                /*                 response={response} */
+                correct={correct}
             ></Title>
             <Game tiles={tiles} handleClick={handleClick}></Game>
         </Fragment>
@@ -120,10 +130,3 @@ const AnimalApp = props => {
 };
 
 export default AnimalApp;
-
-/* 
-Enter Page - DISPAY ALL ANIMALS AND EMPTY QUESTION MARK BOX ABOVE WITH MESSAGE: 'WHAT ANIMAL MADE THAT NOISE?'
-Click Animal - MAKE CLICKED ANIMAL NOISE
-    If correct - DISPLAY CORRECT ANIMAL
-
-*/

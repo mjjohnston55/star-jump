@@ -19,7 +19,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/math'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconMath'></div>
+                                <div className='icon-style iconMath'></div>
                                 <p className='hoverText hvr-fade'>Math</p>
                             </div>
                         </Link>
@@ -27,7 +27,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/abc'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconABC'></div>
+                                <div className='icon-style iconABC'></div>
                                 <p className='hoverText hvr-fade'>Spelling</p>
                             </div>
                         </Link>
@@ -35,7 +35,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/shapes'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconShapes'></div>
+                                <div className='icon-style iconShapes'></div>
                                 <p className='hoverText hvr-fade'>Shapes</p>
                             </div>
                         </Link>
@@ -43,7 +43,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/numbers'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconNumbers'></div>
+                                <div className='icon-style iconNumbers'></div>
                                 <p className='hoverText hvr-fade'>Counting</p>
                             </div>
                         </Link>
@@ -51,7 +51,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/colors'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconColors'></div>
+                                <div className='icon-style iconColors'></div>
                                 <p className='hoverText hvr-fade'>Colors</p>
                             </div>
                         </Link>
@@ -59,7 +59,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/animals'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconAnimals'></div>
+                                <div className='icon-style iconAnimals'></div>
                                 <p className='hoverText hvr-fade'>Animals</p>
                             </div>
                         </Link>
@@ -67,7 +67,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/planets'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconPlanets'></div>
+                                <div className='icon-style iconPlanets'></div>
                                 <p className='hoverText hvr-fade'>Planets</p>
                             </div>
                         </Link>
@@ -75,7 +75,7 @@ function MainApp() {
                     <div className='buffer col-lg-3 col-sm-6'>
                         <Link to='/sightwords'>
                             <div className='gameWrapper hvr-pulse'>
-                                <div className='iconTime'></div>
+                                <div className='icon-style iconTime'></div>
                                 <p className='hoverText hvr-fade'>Sightwords</p>
                             </div>
                         </Link>
