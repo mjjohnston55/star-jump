@@ -44,7 +44,7 @@ function MainApp() {
                         <Link to='/numbers'>
                             <div className='gameWrapper hvr-pulse'>
                                 <div className='iconNumbers'></div>
-                                <p className='hoverText hvr-fade'>Numbers</p>
+                                <p className='hoverText hvr-fade'>Counting</p>
                             </div>
                         </Link>
                     </div>

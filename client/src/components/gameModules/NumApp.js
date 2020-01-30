@@ -68,8 +68,13 @@ const NumApp = props => {
         <div className="col-md-4 "></div>
       </div>
 
-      <div className="grid-container">
-        <Picture domino={domino} />
+       <div className="container">
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6"> <Picture domino={domino} /></div>
+          <div className="col-md-3"></div>
+        </div>
+       
         <div className="item2">
           <DominoButton
             onClickEvent={correctGuess}
@@ -83,7 +88,7 @@ const NumApp = props => {
             correctButtonIndex={correctButtonIndex}
             domino={domino}
           />
-            <DominoButton
+          <DominoButton
             onClickEvent={correctGuess}
             buttonIndex={2}
             correctButtonIndex={correctButtonIndex}
@@ -91,6 +96,8 @@ const NumApp = props => {
           />
         </div>
       </div>
+
+
       </div>
     );
   };
