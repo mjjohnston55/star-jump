@@ -22,7 +22,8 @@ const Game = ({ tiles, handleClick }) => {
 };
 
 Game.propTypes = {
-    tiles: PropTypes.array.isRequired
+    tiles: PropTypes.array.isRequired,
+    handleClick: PropTypes.func.isRequired
 };
 
 const gridStyle = {
