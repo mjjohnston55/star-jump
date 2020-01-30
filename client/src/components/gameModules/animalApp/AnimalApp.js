@@ -14,15 +14,14 @@ const AnimalApp = props => {
     const [usedIndexes, setUsedIndexes] = useState([]);
 
     const newAnswer = (min, max, exclude) => {
-        failOn = Array.isArray(exclude) ? exclude : [exclude];
+        exclude = Array.isArray(exclude) ? exclude : [exclude];
         var num = Math.floor(Math.random() * (max - min + 1)) + min;
         console.log(num);
-        setCorrectAnimal(tiles[num]);
         return exclude.includes(num) ? newAnswer(min, max, exclude) : num;
     };
 
     useEffect(() => {
-        newAnswer(0, tiles.length - 1);
+        setCorrectAnimal(tiles[newAnswer(0, tiles.length - 1)]);
         /* let rand = Math.floor(Math.random() * unusedAnimals.length); // random number between 0 and 9 (full unusedAnimals index)
         console.log(rand);
         setCorrectAnimal(unusedAnimals[rand]); // set the correct animal to the animal at that index
@@ -53,13 +52,16 @@ const AnimalApp = props => {
 
     const handleCorrectClick = animal => {
         let updatedScore = score + 1;
-        newAnswer(0, tiles.length - 1);
-        console.log(correctAnimal);
         setScore(updatedScore);
         setMessage('You got it! Now what animal made this noise?');
-        updatedUsedIndexes = usedIndexes;
-        usedIndexes.push(animal.id - 1);
+
+        let updatedUsedIndexes = usedIndexes;
+        updatedUsedIndexes.push(animal.id - 1);
         setUsedIndexes(updatedUsedIndexes);
+
+        setCorrectAnimal(tiles[newAnswer(0, tiles.length - 1, usedIndexes)]);
+        console.log(correctAnimal);
+
         console.log(`You clicked ${animal.name}. Correct!`);
     };
 
