@@ -4,10 +4,13 @@
     border-style: solid;
     border-width: 5vh;
     box-shadow: inset 1px 1px 40px rgb(0, 0, 0);
-   
+    /* border-top-color: red;
+    border-right-color: green;
+    border-bottom-color: blue;
+    border-left-color: yellow; */
     border-image: url('https://thumbs.dreamstime.com/b/illustrated-texture-wood-grain-clean-vector-49427773.jpg')
         50 stretch;
-   
+    /* border-image-repeat: repeat; */
 }
 
 .top-box {
@@ -174,7 +177,7 @@ a:active {
 .star-jump {
     margin-left: 1rem;
     text-shadow: 2px 2px #272727;
-    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    -webkit-filter: drop-shadow(3px px 1px #222);
     filter: drop-shadow(1px 1px 1px #222);
 }
 
@@ -217,6 +220,9 @@ nav {
     list-style: none;
     font-size: 150%;
     margin-top: auto;
+    text-shadow: 2px 2px #272727;
+    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    filter: drop-shadow(1px 1px 1px #222);
 }
 
 .back-arrow {
@@ -288,19 +294,14 @@ nav {
     height: 50px;
 }
 
-/* .word-bg {
+.word-bg {
     background: #026db0;
-    border: 8px solid transparent;
-  border-image: url('./components/images/chalkboard.png') 8 8 8 8 repeat;
-    
-} */
+    border: 8px solid #509264;
+}
 
 .word-bg > .word-inside {
-    /* font-size: 200%;
+    font-size: 200%;
     padding-top: 5%;
-    color: white; */
-    font-size: 300%;
-    padding-top: 3%;
     color: white;
 }
 
@@ -418,12 +419,11 @@ nav {
 }
 
 .box-shape {
-    /* background-color: #026db0; */
+    background-color: #026db0;
     border: 6px solid white;
     margin: 5px;
     border-radius: 20%;
     width: 36vh;
-    background-image: url('./components/images/navbar.png');
 }
 
 /* PRELOAD SECTION */
@@ -618,8 +618,7 @@ div.spinner i:nth-child(8) {
     }
 
     .box-shape {
-        width: 48%;
-        margin:1%;
+        width: 20vh;
     }
 
     .shape {
@@ -629,8 +628,7 @@ div.spinner i:nth-child(8) {
         max-width: 100% !important;
     }
     .shape-row {
-        margin-left: 10%;
-        margin-right:10%;
+        margin-left: 18.8%;
     }
 }
 
