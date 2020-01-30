@@ -14,14 +14,11 @@ const AnimalApp = props => {
     const [unusedAnimals, setUnusedAnimals] = useState([]);
 
     useEffect(() => {
-        let rand = Math.floor(Math.random() * tiles.length);
+        let rand = Math.floor(Math.random() * unusedAnimals.length); // random number between 0 and 9 (full unusedAnimals index)
         console.log(rand);
-        setCorrectAnimal(tiles[rand]);
-
+        setCorrectAnimal(unusedAnimals[rand]); // set the correct animal to the animal at that index
         var updatedUnusedAnimals = unusedAnimals;
         updatedUnusedAnimals.splice(rand, 1); // removes only the rand index of unused animals
-        console.log(updatedUnusedAnimals);
-
         setUnusedAnimals(updatedUnusedAnimals);
         console.log(correctAnimal);
         // eslint-disable-next-line
