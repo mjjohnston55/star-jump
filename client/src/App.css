@@ -295,6 +295,11 @@ nav {
 
 }
 
+.domino-picture {
+  transform: rotate(90deg);
+  max-width:50%;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
