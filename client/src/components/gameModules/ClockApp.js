@@ -66,7 +66,7 @@ const incorrect = new Audio(
 function SightWordApp(props) {
     const userContext = useContext(UserContext);
 
-    const { isAuthenticated, logout, updateStars, user } = userContext;
+    const { isAuthenticated, updateStars, user } = userContext;
 
 
     function chooseRandomWords() {

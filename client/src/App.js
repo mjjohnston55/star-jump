@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import setAuthToken from './utils/setAuthToken';
 
 // layout
@@ -69,26 +69,6 @@ function App() {
     );
 }
 
-// const Home = () => (
-//     <div>
-//         <h1>Home Page!</h1>
-
-//         <div className="container">
-//             <div className="row">
-//                 <div className="col-md-1"></div>
-//                 <div className="col-md-4 register-login"><Link to='/register'>
-//             <h3 className="white">Register</h3>
-//         </Link></div>
-//         <div className="col-md-2"></div>
-//                 <div className="col-md-4 register-login"><Link to='/login'>
-//             <h3 className="white">Login</h3>
-//         </Link></div>
-//                 <div className="col-md-1"></div>
-//             </div>
-//         </div>
-
-//     </div>
-// );
 
 const Preload = () => (
     <section className='wrapper'>

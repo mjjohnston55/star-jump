@@ -60,8 +60,11 @@ html {
   }
   
   .word-picture {
-    object-fit: cover;
+    /* object-fit: cover; */
     margin: auto;
+    border-radius: 20%;
+    border: 10px solid white;
+    background: #026db0;
   }
   
   .choice-button {
@@ -74,8 +77,8 @@ html {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin-left: 70px;
-    margin-right: 70px;
+    /* margin-left: 70px;
+    margin-right: 70px; */
     margin-top:3%;
 
   }

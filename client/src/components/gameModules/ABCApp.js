@@ -34,19 +34,19 @@ const ABCApp = props => {
     setScore(score + 1);
     if (score > 10) {
       if (isAuthenticated) {
-        swal('You earned 3 stars!', 'Great Job!', 'success');
+        swal("You earned 3 stars!", "Great Job!", "success");
         updateStars(user, 3);
-    } else {
+      } else {
         swal(
-            'You won! Make sure to login if you want to earn stars!',
-            'Great Job!',
-            'success'
+          "You won! Make sure to login if you want to earn stars!",
+          "Great Job!",
+          "success"
         );
-    }
-    setTimeout(function() {
-        props.history.push('/');
-    }, 1500);
-    return;
+      }
+      setTimeout(function() {
+        props.history.push("/");
+      }, 1500);
+      return;
     }
     console.log(score);
     setWord(WordBank.next(word));
@@ -59,76 +59,100 @@ const ABCApp = props => {
   // main render fuction
   return (
     <div>
-      <br/>
+      <br />
       <div className="row">
-        <div className="col-md-4"><Link to="/">
-        <div className="back-arrow"></div>
-      </Link></div>
-        <div className="col-md-4"><div className="banner"><h1 className="abc-title">Fill in the missing letters in each word!</h1></div></div>
-        <div className="col-md-4"></div>
-        
-      </div>
-      
-     
-
-      
-
-      <div className="animal-box">
-      <div className="grid">
-        <Picture word={word} />
-        <Word word={word} hiddenLetterIndex={hiddenLetterIndex} />
-        {/* <div className="item3">
-          <LetterButton
-            onClickEvent={correctGuess}
-            buttonIndex={0}
-            correctButtonIndex={correctButtonIndex}
-            hiddenLetterIndex={hiddenLetterIndex}
-            word={word}
-          />
-          <LetterButton
-            onClickEvent={correctGuess}
-            buttonIndex={1}
-            correctButtonIndex={correctButtonIndex}
-            hiddenLetterIndex={hiddenLetterIndex}
-            word={word}
-          />
-          <LetterButton
-            onClickEvent={correctGuess}
-            buttonIndex={2}
-            correctButtonIndex={correctButtonIndex}
-            hiddenLetterIndex={hiddenLetterIndex}
-            word={word}
-          />
-        </div> */}
-      </div>
-      
-    </div>
-    <div className="item3">
-          <LetterButton
-            onClickEvent={correctGuess}
-            buttonIndex={0}
-            correctButtonIndex={correctButtonIndex}
-            hiddenLetterIndex={hiddenLetterIndex}
-            word={word}
-          />
-          <LetterButton
-            onClickEvent={correctGuess}
-            buttonIndex={1}
-            correctButtonIndex={correctButtonIndex}
-            hiddenLetterIndex={hiddenLetterIndex}
-            word={word}
-          />
-          <LetterButton
-            onClickEvent={correctGuess}
-            buttonIndex={2}
-            correctButtonIndex={correctButtonIndex}
-            hiddenLetterIndex={hiddenLetterIndex}
-            word={word}
-          />
+        <div className="col-md-4">
+          <Link to="/">
+            <div className="back-arrow"></div>
+          </Link>
         </div>
+        <div className="col-md-4">
+          <div className="banner">
+            <h1 className="abc-title">
+              Fill in the missing letters in each word!
+            </h1>
+          </div>
+        </div>
+        <div className="col-md-4"></div>
+      </div>
+
+      <div className="container">
+
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            <Picture word={word} />
+          </div>
+          <div className="col-md-3"></div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6">
+            <Word word={word} hiddenLetterIndex={hiddenLetterIndex} />
+          </div>
+          <div className="col-md-3"></div>
+        </div>
+
+        <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-2"><LetterButton
+          onClickEvent={correctGuess}
+          buttonIndex={0}
+          correctButtonIndex={correctButtonIndex}
+          hiddenLetterIndex={hiddenLetterIndex}
+          word={word}
+        /></div>
+          <div className="col-md-2"><LetterButton
+          onClickEvent={correctGuess}
+          buttonIndex={1}
+          correctButtonIndex={correctButtonIndex}
+          hiddenLetterIndex={hiddenLetterIndex}
+          word={word}
+        /></div>
+          <div className="col-md-2">
+          
+        
+        
+        <LetterButton
+          onClickEvent={correctGuess}
+          buttonIndex={2}
+          correctButtonIndex={correctButtonIndex}
+          hiddenLetterIndex={hiddenLetterIndex}
+          word={word}
+        />
+      
+          </div>
+          <div className="col-md-3"></div>
+        </div>
+
+      </div>
+
+
+      {/* <div className="item3">
+        <LetterButton
+          onClickEvent={correctGuess}
+          buttonIndex={0}
+          correctButtonIndex={correctButtonIndex}
+          hiddenLetterIndex={hiddenLetterIndex}
+          word={word}
+        />
+        <LetterButton
+          onClickEvent={correctGuess}
+          buttonIndex={1}
+          correctButtonIndex={correctButtonIndex}
+          hiddenLetterIndex={hiddenLetterIndex}
+          word={word}
+        />
+        <LetterButton
+          onClickEvent={correctGuess}
+          buttonIndex={2}
+          correctButtonIndex={correctButtonIndex}
+          hiddenLetterIndex={hiddenLetterIndex}
+          word={word}
+        />
+      </div> */}
     </div>
-
-
   );
 };
 
