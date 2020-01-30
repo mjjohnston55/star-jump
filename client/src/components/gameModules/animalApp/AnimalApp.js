@@ -8,19 +8,39 @@ import { Link } from 'react-router-dom';
 // App
 const AnimalApp = props => {
     const [message, setMessage] = useState('What animal made that noise?');
-    const [correctAnimal, setCorrectAnimal] = useState({});
     const [score, setScore] = useState(0);
     const [tiles, setTiles] = useState(animals);
+    const [correctAnimal, setCorrectAnimal] = useState({});
+    const [unusedAnimals, setUnusedAnimals] = useState([]);
 
-    const correctAnswer = tiles[Math.floor(Math.random() * tiles.length)];
-    console.log(correctAnswer);
+    useEffect(() => {
+        let rand = Math.floor(Math.random() * tiles.length);
+        console.log(rand);
+        setCorrectAnimal(tiles[rand]);
+
+        var updatedUnusedAnimals = unusedAnimals;
+        updatedUnusedAnimals.splice(rand, 1); // removes only the rand index of unused animals
+        console.log(updatedUnusedAnimals);
+
+        setUnusedAnimals(updatedUnusedAnimals);
+        console.log(correctAnimal);
+        // eslint-disable-next-line
+    }, []);
+
+    const setNewAnswer = () => {
+        setCorrectAnimal(tiles[Math.floor(Math.random() * tiles.length)]);
+        console.log(correctAnimal);
+    };
 
     const handleClick = animal => {
         let choices = tiles; // sets choices to a copy of the full object in the animals.json file
         let chosen = choices.findIndex(chosen => chosen.name === animal); // Sets chosen to the index of the animal whos name matches the one clicked
         playAudio(choices[chosen].audio); // runs playAudio function with the path of the audio files passed in
         // play animal sound
-        if (choices[chosen].id === correctAnswer.id) {
+        if (choices[chosen].id === correctAnimal.id) {
+            let updatedTiles = tiles; // temporary copy of tiles
+            updatedTiles[chosen].used = true; // set the clicked animals used key
+            setTiles(updatedTiles); // set the state tiles to the updated one
             handleCorrectClick(choices[chosen]); // passes in the object of the animal clicked
         } else {
             handleIncorrectClick(choices[chosen]); // passes in the object of the animal clicked
@@ -31,12 +51,16 @@ const AnimalApp = props => {
     };
 
     const handleCorrectClick = animal => {
-        // set clicked to true
+        let updatedScore = score + 1;
+        setNewAnswer();
+        setScore(updatedScore);
+        setMessage('You got it! Now what animal made this noise?');
         console.log(`You clicked ${animal.name}. Correct!`);
     };
 
     const handleIncorrectClick = animal => {
-        console.log(`You clicked ${animal}. Incorrect!`);
+        setMessage(`Sorry, that wasn't it! Try again!`);
+        console.log(`You clicked ${animal.name}. Incorrect!`);
     };
 
     const playAudio = path => {
@@ -47,9 +71,6 @@ const AnimalApp = props => {
         audio.play();
     };
 
-    const setNewAnswer = () => {
-        let prevAnswer = 
-    }
     // return
     return (
         <Fragment>

@@ -13,7 +13,7 @@ const Game = ({ tiles, handleClick }) => {
                     name={tile.name}
                     image={tile.image}
                     audio={tile.audio}
-                    clicked={tile.clicked}
+                    used={tile.used}
                     handleClick={handleClick}
                 />
             ))}
