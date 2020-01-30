@@ -13,7 +13,7 @@ const Game = ({ tiles, handleClick }) => {
                     name={tile.name}
                     image={tile.image}
                     audio={tile.audio}
-                    clicked={tile.clicked}
+                    used={tile.used}
                     handleClick={handleClick}
                 />
             ))}
@@ -22,7 +22,8 @@ const Game = ({ tiles, handleClick }) => {
 };
 
 Game.propTypes = {
-    tiles: PropTypes.array.isRequired
+    tiles: PropTypes.array.isRequired,
+    handleClick: PropTypes.func.isRequired
 };
 
 const gridStyle = {
