@@ -9,7 +9,7 @@ const Title = ({ message, score, animalAudio, playAudio, correct }) => {
             <div className='col-lg-1'>
                 <div className='hvr-icon-back back-button-wrapper'>
                     <Link to='/'>
-                        <i class='fas fa-arrow-circle-left hvr-icon back-button'></i>
+                        <i className='fas fa-arrow-circle-left hvr-icon back-button'></i>
                     </Link>
                 </div>
             </div>
