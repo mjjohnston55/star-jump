@@ -11,23 +11,27 @@ const AnimalApp = props => {
     const [score, setScore] = useState(0);
     const [tiles, setTiles] = useState(animals);
     const [correctAnimal, setCorrectAnimal] = useState({});
-    const [unusedAnimals, setUnusedAnimals] = useState([]);
+    const [usedIndexes, setUsedIndexes] = useState([]);
+
+    const newAnswer = (min, max, failOn) => {
+        failOn = Array.isArray(failOn) ? failOn : [failOn];
+        var num = Math.floor(Math.random() * (max - min + 1)) + min;
+        console.log(num);
+        setCorrectAnimal(tiles[num]);
+        return failOn.includes(num) ? newAnswer(min, max, failOn) : num;
+    };
 
     useEffect(() => {
-        let rand = Math.floor(Math.random() * unusedAnimals.length); // random number between 0 and 9 (full unusedAnimals index)
+        newAnswer(0, tiles.length - 1);
+        /* let rand = Math.floor(Math.random() * unusedAnimals.length); // random number between 0 and 9 (full unusedAnimals index)
         console.log(rand);
         setCorrectAnimal(unusedAnimals[rand]); // set the correct animal to the animal at that index
         var updatedUnusedAnimals = unusedAnimals;
         updatedUnusedAnimals.splice(rand, 1); // removes only the rand index of unused animals
         setUnusedAnimals(updatedUnusedAnimals);
-        console.log(correctAnimal);
+        console.log(correctAnimal); */
         // eslint-disable-next-line
     }, []);
-
-    const setNewAnswer = () => {
-        setCorrectAnimal(tiles[Math.floor(Math.random() * tiles.length)]);
-        console.log(correctAnimal);
-    };
 
     const handleClick = animal => {
         let choices = tiles; // sets choices to a copy of the full object in the animals.json file
@@ -49,7 +53,8 @@ const AnimalApp = props => {
 
     const handleCorrectClick = animal => {
         let updatedScore = score + 1;
-        setNewAnswer();
+        newAnswer(0, tiles.length - 1);
+        console.log(correctAnimal);
         setScore(updatedScore);
         setMessage('You got it! Now what animal made this noise?');
         console.log(`You clicked ${animal.name}. Correct!`);
