@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const Tile = ({ name, image, handleClick }) => {
     return (
-        <div className='hvr-pulse' onClick={() => handleClick(name)}>
+        <div className='hvr-pulse img' onClick={() => handleClick(name)}>
             <img
                 style={{
                     objectFit: 'cover',

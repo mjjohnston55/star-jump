@@ -12,59 +12,52 @@ function Nav() {
         logout();
     };
 
-    
+    const authLinks = (
+        <Fragment>
+            {/* THIS IS FOR TESTING UPDATE STARS */}
+            <li className='hvr-underline-from-right hvr-rotate'>
+                <Link to='/about' className='white'>
+                    About
+                </Link>
+            </li>
+            <li>Hi, {user && user.name}!</li>
+            <li>
+                <i className='far fa-star stars'></i>
+                <span className='small'>x </span>
+                {user && user.stars}
+            </li>
+            <li>
+                <a className='hvr-icon-forward' onClick={onLogout} href='#!'>
+                    <i className='fas fa-sign-out-alt hvr-icon white'></i>
+                    <Link to='/'>
+                        <span className='hide-sm white hvr-underline-from-left ml-1'>
+                            Logout
+                        </span>
+                    </Link>
+                </a>
+            </li>
+        </Fragment>
+    ); // if there is a user, display the users name
 
-  const authLinks = (
-    <Fragment>
-      
-      {/* THIS IS FOR TESTING UPDATE STARS */}
-      <li className="hvr-underline-from-right hvr-rotate">
-          <Link to="/about" className="white">
-            About
-          </Link>
-        </li>
-      <li>Welcome {user && user.name}</li>
-      <li>
-        <i className="far fa-star stars"></i>
-        <span className="small">x </span>
-        {user && user.stars}
-      </li>
-      <li>
-        <a className="hvr-icon-forward" onClick={onLogout} href="#!">
-          <i className="fas fa-sign-out-alt hvr-icon white"></i>
-          <Link to="/">
-            <span className="hide-sm white hvr-underline-from-left ml-1">
-              Logout
-            </span>
-          </Link>
-        </a>
-      </li>
-      
-    </Fragment>
-  ); // if there is a user, display the users name
-
-  const guestLinks = (
-    <Fragment>
-      
-      <li className="hvr-underline-from-right hvr-rotate">
-          <Link to="/about" className="white">
-            About
-          </Link>
-        </li>
-        <li className="hvr-underline-from-right hvr-rotate">
-          <Link to="/register" className="white">
-            Register
-          </Link>
-        </li>
-        <li className="hvr-underline-from-right hvr-rotate">
-          <Link to="/login" className="white">
-            Login
-          </Link>
-        </li>
-        
-      
-    </Fragment>
-  ); // if there is a user, display the users star count
+    const guestLinks = (
+        <Fragment>
+            <li className='hvr-underline-from-right hvr-rotate'>
+                <Link to='/about' className='white'>
+                    About
+                </Link>
+            </li>
+            <li className='hvr-underline-from-right hvr-rotate'>
+                <Link to='/register' className='white'>
+                    Register
+                </Link>
+            </li>
+            <li className='hvr-underline-from-right hvr-rotate'>
+                <Link to='/login' className='white'>
+                    Login
+                </Link>
+            </li>
+        </Fragment>
+    ); // if there is a user, display the users star count
 
     const navStyle = {
         color: 'white'
@@ -74,13 +67,14 @@ function Nav() {
         <nav className='navbar'>
             <Link to='/' className='title-link'>
                 <h1 style={navStyle} className='title'>
-                    <i className='fas fa-star spin'></i>
-                    <span className='hvr-underline-from-left'>Star Jump</span>
+                    <i className='fas fa-star spin star'></i>
+                    <span className='hvr-underline-from-left star-jump'>
+                        Star Jump
+                    </span>
                 </h1>
             </Link>
             <ul className='nav-links'>
                 {isAuthenticated ? authLinks : guestLinks}
-                
             </ul>
         </nav>
     );

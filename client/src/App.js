@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
@@ -37,7 +37,7 @@ function App() {
         <UserState>
             <AlertState>
                 <Router>
-                    <div className='App'>
+                    <div className={`App`}>
                         <Nav />
                         <div className='container'>
                             <Alerts />
@@ -68,7 +68,6 @@ function App() {
         </UserState>
     );
 }
-
 
 const Preload = () => (
     <section className='wrapper'>
