@@ -13,12 +13,12 @@ const AnimalApp = props => {
     const [correctAnimal, setCorrectAnimal] = useState({});
     const [usedIndexes, setUsedIndexes] = useState([]);
 
-    const newAnswer = (min, max, failOn) => {
-        failOn = Array.isArray(failOn) ? failOn : [failOn];
+    const newAnswer = (min, max, exclude) => {
+        failOn = Array.isArray(exclude) ? exclude : [exclude];
         var num = Math.floor(Math.random() * (max - min + 1)) + min;
         console.log(num);
         setCorrectAnimal(tiles[num]);
-        return failOn.includes(num) ? newAnswer(min, max, failOn) : num;
+        return exclude.includes(num) ? newAnswer(min, max, exclude) : num;
     };
 
     useEffect(() => {
@@ -57,6 +57,9 @@ const AnimalApp = props => {
         console.log(correctAnimal);
         setScore(updatedScore);
         setMessage('You got it! Now what animal made this noise?');
+        updatedUsedIndexes = usedIndexes;
+        usedIndexes.push(animal.id - 1);
+        setUsedIndexes(updatedUsedIndexes);
         console.log(`You clicked ${animal.name}. Correct!`);
     };
 
