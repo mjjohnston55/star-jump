@@ -42,6 +42,7 @@ React.js           |  Node.js |  MongoDB  |  JSON Web Token
 
 <ul style="font-size: 20px;">
 <li><a href="https://reactjs.org/">React.js</a> was used to further enhance our front-end with component logic written in JavaScript to improve overall rendering performance. With creative views, we designed a simple, yet effective, interface to provide users with different games.</li>
+<li><a href="https://getbootstrap.com/">Bootstrap</a> was used to create the front-end layout of our project, creating a responsive design for multiple resolutions</li>
 <li><a href="https://expressjs.com/">Express.js</a> is a web framework that we used to build our server.</li>
 <li><a href="https://nodejs.org/en/">Node.js</a> is the development environment we used to build our application.</li>
 <li><a href="https://www.mongodb.com/">MongoDB</a> and Mongoose was used to store data about users and keep track of their stars.</li>
