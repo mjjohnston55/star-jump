@@ -56,7 +56,7 @@ const AnimalApp = props => {
         setUsedIndexes(updatedUsedIndexes);
 
         setMessage('You got it!');
-        setCorrect('correct');
+        setCorrect('correct-true');
 
         let updatedScore = score + 1;
         setScore(updatedScore);
@@ -97,7 +97,7 @@ const AnimalApp = props => {
 
     const handleIncorrectClick = animal => {
         setMessage(`Sorry, that wasn't it!`);
-        setCorrect('incorrect');
+        setCorrect('correct-false');
 
         setTimeout(function() {
             setCorrect('');

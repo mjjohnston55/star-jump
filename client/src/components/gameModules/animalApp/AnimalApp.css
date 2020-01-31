@@ -86,23 +86,13 @@ img:active {
     -webkit-filter: brightness(90%);
 }
 
-/* .incorrect {
-    animation: bad 0.5s forwards;
-    transition: all 0.2s;
-}
-
-.correct {
-    animation: good 0.5s forwards;
-    transition: all 0.2s;
-} */
-
-.correct {
-    color: blue;
+.correct-true {
+    color: rgb(50, 216, 50);
     -webkit-animation: vibrate-1 0.5s linear both;
     animation: vibrate-1 0.5s linear both;
 }
 
-.incorrect {
+.correct-false {
     color: indianred;
     -webkit-animation: vibrate-1 0.5s linear both;
     animation: vibrate-1 0.5s linear both;

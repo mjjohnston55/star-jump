@@ -15,24 +15,27 @@ const Title = ({ message, score, animalAudio, playAudio, correct }) => {
             </div>
             <div className='col-lg-6'>
                 <h1 className={correct}>{message}</h1>
+                {/* class is being set to whatever string is passed in as 'correct' */}
             </div>
             <div className='col-lg-3'>
                 <button
                     onClick={() => playAudio(animalAudio)}
                     /* onEnded={() => } */
-                    className={`${correct === 'shake' ? 'correct' : ''}`}
+                    className={`${correct === 'shake' ? 'correct-true' : ''}`}
                 >
                     <img
                         src='https://www.searchpng.com/wp-content/uploads/2019/02/Audio-Button-PNG-715x735.png'
                         alt='play audio'
                         className={`audio-btn2 ${
-                            correct === 'shake' ? 'correct' : ''
+                            correct === 'shake' ? 'correct-true' : ''
                         }`}
                     />
                 </button>
             </div>
             <div className='col-lg-2'>
-                <h1 className={correct === 'correct' ? 'correct' : ''}>
+                <h1
+                    className={correct === 'correct-true' ? 'correct-true' : ''}
+                >
                     {score}/10
                 </h1>
             </div>
