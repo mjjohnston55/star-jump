@@ -1,3 +1,9 @@
+* {
+    pointer-events: auto;
+    cursor: url('./components/images/cursor.png'), auto;
+    cursor: url('./components/images/cursor.png'), pointer;
+}
+
 .App {
     text-align: center;
     min-height: 100vh;
@@ -34,6 +40,7 @@
     box-shadow: inset 0px 0px 5px -4px rgba(0, 0, 0, 0.75);
 
     background-image: url(./components/images/primary.png);
+    cursor: url('./components/images/cursor.png'), auto;
 }
 
 .upper-buffer {
