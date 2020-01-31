@@ -44,13 +44,13 @@ const Login = props => {
     };
 
     return (
-        <div className='container w-50 p-3 contain'>
-            <h1 className='text-light font-weight-bold'>
+        <div className='container w-50 contain'>
+            <h1 className='text-light font-weight-bold field'>
                 Account
                 <span className='text-primary blue-auth'> Login</span>
             </h1>
             <form onSubmit={onSubmit}>
-                <div className='form-group text-left text-light font-weight-bold'>
+                <div className='form-group text-left text-light font-weight-bold field'>
                     <label htmlFor='email'>Email Address:</label>
                     <input
                         className='form-control'
@@ -61,7 +61,7 @@ const Login = props => {
                         required
                     />
                 </div>
-                <div className='form-group text-left text-light font-weight-bold'>
+                <div className='form-group text-left text-light font-weight-bold field'>
                     <label htmlFor='password'>Password:</label>
                     <input
                         className='form-control'
@@ -75,7 +75,7 @@ const Login = props => {
                 <input
                     type='submit'
                     value='Login'
-                    className='btn btn-primary btn-block font-weight-bold'
+                    className='upper-buffer btn btn-success w-50 font-weight-bold submit-button'
                 />
             </form>
         </div>

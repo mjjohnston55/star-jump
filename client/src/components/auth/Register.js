@@ -56,12 +56,12 @@ const Register = props => {
     };
 
     return (
-        <div className='container w-50 p-3 contain'>
+        <div className='container w-50 contain field'>
             <h1 className='text-light font-weight-bold'>
                 Account <span className='text-primary blue-auth'>Register</span>
             </h1>
             <form onSubmit={onSubmit}>
-                <div className='form-group text-left text-light font-weight-bold'>
+                <div className='form-group text-left text-light font-weight-bold field'>
                     <label htmlFor='name'>Name:</label>
                     <input
                         className='form-control'
@@ -71,7 +71,7 @@ const Register = props => {
                         onChange={onChange}
                     />
                 </div>
-                <div className='form-group text-left text-light font-weight-bold'>
+                <div className='form-group text-left text-light font-weight-bold field'>
                     <label htmlFor='email'>Email Address:</label>
                     <input
                         className='form-control'
@@ -81,7 +81,7 @@ const Register = props => {
                         onChange={onChange}
                     />
                 </div>
-                <div className='form-group text-left text-light font-weight-bold'>
+                <div className='form-group text-left text-light font-weight-bold field'>
                     <label htmlFor='password'>Password:</label>
                     <input
                         className='form-control'
@@ -89,9 +89,9 @@ const Register = props => {
                         name='password'
                         value={password}
                         onChange={onChange}
-                    />{' '}
+                    />
                 </div>
-                <div className='form-group text-left text-light font-weight-bold'>
+                <div className='form-group text-left text-light font-weight-bold field'>
                     <label htmlFor='password2'>Confirm Password:</label>
                     <input
                         className='form-control'
@@ -105,7 +105,7 @@ const Register = props => {
                 <input
                     type='submit'
                     value='Register'
-                    className='btn btn-primary btn-block font-weight-bold'
+                    className='upper-buffer btn btn-success w-50 font-weight-bold submit-button'
                 />
             </form>
         </div>
