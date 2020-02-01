@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Circle",
+      "image": "info/images/circle.png",
+      "audio": "info/audio/circle_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 2,
+      "name": "Square",
+      "image": "info/images/square.png",
+      "audio": "info/audio/square_audio.mp3",
+      "used": false
+      
+    },
+    {
+      "id": 3,
+      "name": "Triangle",
+      "image": "info/images/triangle.png",
+      "audio": "info/audio/triangle_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 4,
+      "name": "Rectangle",
+      "image": "info/images/rectangle.png",
+      "audio": "info/audio/rectangle_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 5,
+      "name": "Star",
+      "image": "info/images/star.png",
+      "audio": "info/audio/star_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 6,
+      "name": "Pentagon",
+      "image": "info/images/pentagon.png",
+      "audio": "info/audio/pentagon_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 7,
+      "name": "Hexagon",
+      "image": "info/images/hexagon.png",
+      "audio": "info/audio/hexagon_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 8,
+      "name": "Octagon",
+      "image": "info/images/octagon.png",
+      "audio": "info/audio/octagon_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 9,
+      "name": "Diamond",
+      "image": "info/images/diamond.png",
+      "audio": "info/audio/diamond_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 10,
+      "name": "Oval",
+      "image": "info/images/oval.png",
+      "audio": "info/audio/oval_audio.mp3",
+      "used": false
+    }
+  
+  ]
+  
