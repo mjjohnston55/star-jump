@@ -1,3 +1,10 @@
+
+
+
+//OLD VERSION OF COLOR APP, UPDATED VERSION IN COLOR APP FOLDER, 
+//THIS FILE NO LONGER BEING USED, JUST BEING KEPT FOR REFERENCE
+
+
 import React, { useState, useEffect, useContext } from "react";
 import "../../App.css";
 import { Link } from "react-router-dom";
