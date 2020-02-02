@@ -1,4 +1,4 @@
-// THIS IS FOR SIGNUP (register a user to database)
+// THIS IS FOR UPDATING STARS
 
 const express = require('express');
 const router = express.Router();
