@@ -100,7 +100,11 @@ const ShapeApp = props => {
 
     const handleIncorrectClick = shape => {
 
-        
+        setTimeout(function() {
+            
+            playAudio(correctShape.audio);
+            setCorrect('shake');
+        }, 1300);
         
         setMessage(`Sorry, that wasn't it!`);
         setCorrect('incorrect');
@@ -129,6 +133,7 @@ const ShapeApp = props => {
                 shapeAudio={correctShape.audio}
                 playAudio={playAudio}
                 correct={correct}
+                correctShape={correctShape.name}
             ></Title>
             <Game tiles={tiles} handleClick={handleClick}></Game>
         </Fragment>

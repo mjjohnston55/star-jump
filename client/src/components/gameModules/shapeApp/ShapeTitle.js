@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ShapeApp.css';
 
-const Title = ({ message, score, shapeAudio, playAudio, correct }) => {
+const Title = ({ message, score, shapeAudio, playAudio, correct, correctShape }) => {
     return (
+        <div>
         <div className='row shape-header'>
             <div className='col-lg-1'>
                 <div className='hvr-icon-back back-button-wrapper'>
@@ -16,7 +17,6 @@ const Title = ({ message, score, shapeAudio, playAudio, correct }) => {
             </div>
             <div className='col-lg-6'>
                 <h1 className={correct}>{message}</h1>
-    <h2>{}</h2>
             </div>
             <div className='col-lg-3'>
                 <button
@@ -39,6 +39,14 @@ const Title = ({ message, score, shapeAudio, playAudio, correct }) => {
                 </h1>
             </div>
         </div>
+        <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4"><h1 className={correct}>{correctShape}</h1></div>
+            <div className="col-md-4"></div>
+        </div>
+
+        </div>
+        
     );
 };
 

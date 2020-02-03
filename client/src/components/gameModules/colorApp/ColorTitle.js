@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ColorApp.css';
 
-const Title = ({ message, score, colorAudio, playAudio, correct }) => {
+const Title = ({ message, score, colorAudio, playAudio, correct, correctColor }) => {
     return (
+        <div>
         <div className='row color-header'>
             <div className='col-lg-1'>
                 <div className='hvr-icon-back back-button-wrapper'>
@@ -39,6 +40,12 @@ const Title = ({ message, score, colorAudio, playAudio, correct }) => {
                 </h1>
             </div>
         </div>
+        <div className="row">
+        <div className="col-md-4"></div>
+        <div className="col-md-4"><h1 className={correct}>{correctColor}</h1></div>
+        <div className="col-md-4"></div>
+    </div>
+    </div>
     );
 };
 

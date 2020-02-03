@@ -100,6 +100,11 @@ const ColorApp = props => {
 
     const handleIncorrectClick = color => {
 
+        setTimeout(function() {
+            
+            playAudio(correctColor.audio);
+            setCorrect('shake');
+        }, 1300);
         
         
         setMessage(`Sorry, that wasn't it!`);
@@ -129,6 +134,7 @@ const ColorApp = props => {
                 colorAudio={correctColor.audio}
                 playAudio={playAudio}
                 correct={correct}
+                correctColor={correctColor.name}
             ></Title>
             <Game tiles={tiles} handleClick={handleClick}></Game>
         </Fragment>
