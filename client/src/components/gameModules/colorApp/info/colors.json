@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "Red",
+      "image": "info/images/red.png",
+      "audio": "info/audio/red_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 2,
+      "name": "Orange",
+      "image": "info/images/orange.png",
+      "audio": "info/audio/orange_audio.mp3",
+      "used": false
+      
+    },
+    {
+      "id": 3,
+      "name": "Yellow",
+      "image": "info/images/yellow.png",
+      "audio": "info/audio/yellow_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 4,
+      "name": "Green",
+      "image": "info/images/green.png",
+      "audio": "info/audio/green_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 5,
+      "name": "Blue",
+      "image": "info/images/blue.png",
+      "audio": "info/audio/blue_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 6,
+      "name": "Purple",
+      "image": "info/images/purple.png",
+      "audio": "info/audio/purple_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 7,
+      "name": "Pink",
+      "image": "info/images/pink.png",
+      "audio": "info/audio/pink_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 8,
+      "name": "Brown",
+      "image": "info/images/brown.png",
+      "audio": "info/audio/brown_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 9,
+      "name": "Black",
+      "image": "info/images/black.png",
+      "audio": "info/audio/black_audio.mp3",
+      "used": false
+    },
+    {
+      "id": 10,
+      "name": "White",
+      "image": "info/images/white.png",
+      "audio": "info/audio/white_audio.mp3",
+      "used": false
+    }
+  
+  ]
+  

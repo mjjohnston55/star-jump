@@ -18,11 +18,13 @@ import About from './components/About';
 import ABCApp from './components/gameModules/ABCApp';
 import AnimalApp from './components/gameModules/animalApp/AnimalApp.js';
 import ClockApp from './components/gameModules/ClockApp';
-import ColorApp from './components/gameModules/ColorApp';
+// import ColorApp from './components/gameModules/ColorApp';
+import ColorApp from './components/gameModules/colorApp/ColorApp.js';
 import MathApp from './components/gameModules/MathApp';
 import NumApp from './components/gameModules/NumApp';
 import PlanetApp from './components/gameModules/PlanetApp';
-import ShapeApp from './components/gameModules/ShapeApp';
+// import ShapeApp from './components/gameModules/ShapeApp';
+import ShapeApp from './components/gameModules/shapeApp/ShapeApp.js';
 
 // context
 import UserState from './context/user/UserState';

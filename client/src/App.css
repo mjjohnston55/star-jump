@@ -320,13 +320,12 @@ nav {
 }
 
 .word-bg {
-    background: #026db0;
-    border: 8px solid #509264;
+    color:white;
 }
 
 .word-bg > .word-inside {
-    font-size: 200%;
-    padding-top: 5%;
+    font-size: 300%;
+    padding-top: 3%;
     color: white;
 }
 
