@@ -104,9 +104,12 @@ const MathApp = props => {
     <div>
       <br/>
       <div className="row">
-        <div className="col-md-4"><Link to="/">
-        <div className="back-arrow"></div>
-      </Link></div>
+        <div className="col-md-1"><div className='hvr-icon-back back-button-wrapper'>
+                    <Link to='/'>
+                        <i className='fas fa-arrow-circle-left hvr-icon back-button'></i>
+                    </Link>
+                </div></div>
+      <div className="col-md-3"></div>
 
         <div className="col-md-4"><div className="timerWrapper">
         <div className="timer">Score : {score}</div>
