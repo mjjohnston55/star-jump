@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
     );
 }
 
-// If there is an environment variable for hosted port, use it, otherwise use 5000 (development)
+// If there is an environment variable for hosted port, use it, otherwise use 8000 (development)
 const PORT = process.env.PORT || 8000;
 
 // Start server with PORT
