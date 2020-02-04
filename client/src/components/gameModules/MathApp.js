@@ -17,7 +17,7 @@ const MathApp = props => {
     const [smallNum2, setSmallNum2] = useState(numbers[Math.floor(Math.random() * numbers.length)])
     const [bigNum1, setBigNum1] = useState(biggerNumbers[Math.floor(Math.random() * biggerNumbers.length)])
     const [bigNum2, setBigNum2] = useState(biggerNumbers[Math.floor(Math.random() * biggerNumbers.length)])
-    const [correctButtonIndex, setCorrectButtonIndex] = useState(null);
+    const [correctButtonIndex, setCorrectButtonIndex] = useState(Math.floor(Math.random() * 3));
       
     const userContext = useContext(UserContext);
     const { updateStars, user, isAuthenticated } = userContext;
@@ -25,12 +25,12 @@ const MathApp = props => {
     useEffect(() => {
       setScore(score);
       setDifficulty(difficulty);
-      setSmallNum1(smallNum1);
-      setSmallNum2(smallNum2);
-      setBigNum1(bigNum1);
-      setBigNum2(bigNum2);
-      setCorrectButtonIndex(correctButtonIndex);
-    }, [score, smallNum1, smallNum2, bigNum1, bigNum2, correctButtonIndex]);
+      setSmallNum1(numbers[Math.floor(Math.random() * numbers.length)]);
+      setSmallNum2(numbers[Math.floor(Math.random() * numbers.length)]);
+      setBigNum1(biggerNumbers[Math.floor(Math.random() * biggerNumbers.length)]);
+      setBigNum2(biggerNumbers[Math.floor(Math.random() * biggerNumbers.length)]);
+      setCorrectButtonIndex(Math.floor(Math.random() * 3));
+    }, [score]);
 
     const correctGuess = () => {
         setScore(score + 1);
@@ -65,21 +65,20 @@ const MathApp = props => {
         const setEasy = () => {
             setDifficulty("easy")
                 // once a difficulty is set, choosing a button index to be the correct answer at random
-            setCorrectButtonIndex(Math.floor(Math.random() * 3))
+            // setCorrectButtonIndex(Math.floor(Math.random() * 3))
         }
 
         const setMedium = () => {
             setDifficulty("medium")
                 // once a difficulty is set, choosing a button index to be the correct answer at random
-            setCorrectButtonIndex(Math.floor(Math.random() * 3))
+            // setCorrectButtonIndex(Math.floor(Math.random() * 3))
         }
 
         const setHard = () => {
             setDifficulty("hard")
                 // once a difficulty is set, choosing a button index to be the correct answer at random
-            setCorrectButtonIndex(Math.floor(Math.random() * 3))
+            // setCorrectButtonIndex(Math.floor(Math.random() * 3))
         }
-
 
 
     return (
