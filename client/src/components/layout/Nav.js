@@ -15,7 +15,7 @@ function Nav() {
     const authLinks = (
         <Fragment>
             {/* THIS IS FOR TESTING UPDATE STARS */}
-            <li className='nav-buffer'>Hi, {user && user.name}!</li>
+            <li className='nav-buffer nav-name'>Hi, {user && user.name}!</li>
             <li className='nav-buffer'>
                 <i className='far fa-star stars'></i>
                 <span className='small'>x </span>

@@ -671,6 +671,17 @@ div.spinner i:nth-child(8) {
     .shape-row {
         margin-left: 18.8%;
     }
+    .nav-name {
+        font-size:140% !important;
+    }
+    .nav-links {
+        width:65%;
+        font-size:120%;
+    }
+    .nav-buffer {
+        font-size:large;
+    }
+
 }
 
 /* Landscape */
@@ -694,6 +705,6 @@ div.spinner i:nth-child(8) {
         margin-top: 5%;
     }
     .domino {
-        margin-top:-5%;
+        margin-top:-8%;
     }
 }

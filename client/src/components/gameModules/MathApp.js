@@ -95,9 +95,9 @@ const MathApp = props => {
 
   function equalsHider() {
     if (difficulty == null) {
-      return          <div class="middleBox equal hidden"> = </div>
+      return          <div className="middleBox equal hidden"> = </div>
     }
-    return <div class="middleBox equal"> = </div>
+    return <div className="middleBox equal"> = </div>
   }
 
   return (
@@ -108,8 +108,8 @@ const MathApp = props => {
         <div className="back-arrow"></div>
       </Link></div>
 
-        <div className="col-md-4"><div class="timerWrapper">
-        <div class="timer">Score : {score}</div>
+        <div className="col-md-4"><div className="timerWrapper">
+        <div className="timer">Score : {score}</div>
       </div></div>
 
         <div className="col-md-4"></div>
@@ -119,7 +119,7 @@ const MathApp = props => {
       
 
       {/* <div class="boxWrapper"> */}
-        <div class="mathWrapper">
+        <div className="mathWrapper">
           <Box
             difficulty={difficulty}
             smallNum1={smallNum1}
@@ -141,7 +141,7 @@ const MathApp = props => {
         </div>
       {/* </div> */}
 
-      <div class="decisionWrapper">
+      <div className="decisionWrapper">
         <AnswerButton
           difficulty={difficulty}
           smallNum1={smallNum1}
