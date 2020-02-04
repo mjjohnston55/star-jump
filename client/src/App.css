@@ -329,6 +329,12 @@ nav {
     color: white;
 }
 
+.word-inside:hover {
+    transform: scale(1.2);
+    transition: all 0.2s;
+}
+
+
 .banner {
     text-align: center;
     font-size: 60px;
@@ -686,5 +692,8 @@ div.spinner i:nth-child(8) {
     }
     .shape-row {
         margin-top: 5%;
+    }
+    .domino {
+        margin-top:-5%;
     }
 }
