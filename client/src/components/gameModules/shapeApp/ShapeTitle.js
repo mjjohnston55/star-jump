@@ -8,10 +8,9 @@ const Title = ({ message, score, shapeAudio, playAudio, correct, correctShape })
         <div>
         <div className='row shape-header'>
             <div className='col-lg-1'>
-                <div className='hvr-icon-back back-button-wrapper'>
+            <div className='hvr-icon-back back-button-wrapper'>
                     <Link to='/'>
-                        {/* <i className='fas fa-arrow-circle-left hvr-icon back-button'></i> */}
-                        <div className="back-arrow back-button"></div>
+                        <i className='fas fa-arrow-circle-left hvr-icon back-button'></i>
                     </Link>
                 </div>
             </div>

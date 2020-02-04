@@ -161,11 +161,14 @@ function SightWordApp(props) {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <Link to="/">
-              <div className="back-arrow"></div>
-            </Link>
+          <div className="col-md-1">
+          <div className='hvr-icon-back back-button-wrapper'>
+                    <Link to='/'>
+                        <i className='fas fa-arrow-circle-left hvr-icon back-button'></i>
+                    </Link>
+                </div>
           </div>
+          <div className="col-md-3"></div>
           <div className="col-md-4"> <h1 onLoad={chooseRandomWords()} className="sight-title">Can you find the word?</h1></div>
           <div className="col-md-4"></div>
         </div>
