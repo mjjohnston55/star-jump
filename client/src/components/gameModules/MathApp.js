@@ -30,7 +30,7 @@ const MathApp = props => {
       setBigNum1(biggerNumbers[Math.floor(Math.random() * biggerNumbers.length)]);
       setBigNum2(biggerNumbers[Math.floor(Math.random() * biggerNumbers.length)]);
       setCorrectButtonIndex(Math.floor(Math.random() * 3));
-    }, [score]);
+    }, [score, difficulty]);
 
     const correctGuess = () => {
         setScore(score + 1);
@@ -92,17 +92,17 @@ const MathApp = props => {
             </div>
             <div class="boxWrapper">
             <div class="mathWrapper">
-                <Box difficulty={difficulty} smallNum1={smallNum1} bigNum1={bigNum1} onClickEvent={setEasy()} buttonIndex={0}/>
+                <Box difficulty={difficulty} smallNum1={smallNum1} bigNum1={bigNum1} onClickEvent={setEasy} buttonIndex={0}/>
                 <div className="middleBox operator"> + </div>
-                <Box difficulty={difficulty} smallNum2={smallNum2} bigNum2={bigNum2} onClickEvent={setMedium()} buttonIndex={1}/>
+                <Box difficulty={difficulty} smallNum2={smallNum2} bigNum2={bigNum2} onClickEvent={setMedium} buttonIndex={1}/>
                 <div class="middleBox equal"> = </div>
-                <Box difficulty={difficulty} onClickEvent={setHard()} buttonIndex={2}/>
+                <Box difficulty={difficulty} onClickEvent={setHard} buttonIndex={2}/>
             </div>
             </div>
             <div class="decisionWrapper"> 
-                <AnswerButton difficulty={difficulty} smallNum1={smallNum1} smallNum2={smallNum2} bigNum1={bigNum1} bigNum2={bigNum2} onClickEvent={correctGuess()} buttonIndex={0}/>
-                <AnswerButton difficulty={difficulty} smallNum1={smallNum1} smallNum2={smallNum2} bigNum1={bigNum1} bigNum2={bigNum2} onClickEvent={correctGuess()} buttonIndex={1}/>
-                <AnswerButton difficulty={difficulty} smallNum1={smallNum1} smallNum2={smallNum2} bigNum1={bigNum1} bigNum2={bigNum2} onClickEvent={correctGuess()} buttonIndex={2}/>
+                <AnswerButton difficulty={difficulty} smallNum1={smallNum1} smallNum2={smallNum2} bigNum1={bigNum1} bigNum2={bigNum2} onClickEvent={correctGuess} buttonIndex={0} correctButtonIndex={correctButtonIndex}/>
+                <AnswerButton difficulty={difficulty} smallNum1={smallNum1} smallNum2={smallNum2} bigNum1={bigNum1} bigNum2={bigNum2} onClickEvent={correctGuess} buttonIndex={1} correctButtonIndex={correctButtonIndex}/>
+                <AnswerButton difficulty={difficulty} smallNum1={smallNum1} smallNum2={smallNum2} bigNum1={bigNum1} bigNum2={bigNum2} onClickEvent={correctGuess} buttonIndex={2} correctButtonIndex={correctButtonIndex}/>
             {/* <div class="box answer first"></div> 
             <div class="box answer second"></div>
             <div class="box answer third"></div> */}

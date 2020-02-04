@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 
 const generateAnswerButton = (buttonIndex, correctButtonIndex, onClickEvent, difficulty, smallNum1, smallNum2, bigNum1, bigNum2) => {
     
-    var firstNumber;
-    var secondNumber;
+    let firstNumber;
+    let secondNumber;
 
     if (difficulty === "easy") {
         firstNumber = smallNum1;
@@ -30,7 +30,9 @@ const generateAnswerButton = (buttonIndex, correctButtonIndex, onClickEvent, dif
     var buttonClickEvent = (buttonIndex === correctButtonIndex)
     ? onClickEvent : null
 
+    if (difficulty !== null)
     return (<button className="box answer" onClick={buttonClickEvent}> {buttonTotal} </button>)
+    else return null
 }
 
 const AnswerButton = (props) => {
