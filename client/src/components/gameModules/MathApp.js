@@ -9,7 +9,6 @@ import AnswerButton from "../mathComponents/AnswerButton";
 
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var biggerNumbers = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-var classHide = null;
 
 const MathApp = props => {
   const [score, setScore] = useState(0);
@@ -77,18 +76,29 @@ const MathApp = props => {
 
   const setEasy = () => {
     setDifficulty("easy");
-    classHide = "hider"
   };
 
   const setMedium = () => {
     setDifficulty("medium");
-    classHide = "hider"
   };
 
   const setHard = () => {
     setDifficulty("hard");
-    classHide = "hider"
   };
+
+  function plusHider() {
+    if (difficulty == null) {
+      return <div className="middleBox operator hidden"> + </div>
+    }
+    return <div className="middleBox operator"> + </div>
+  }
+
+  function equalsHider() {
+    if (difficulty == null) {
+      return          <div class="middleBox equal hidden"> = </div>
+    }
+    return <div class="middleBox equal"> = </div>
+  }
 
   return (
     <div>
@@ -117,7 +127,8 @@ const MathApp = props => {
             onClickEvent={setEasy}
             buttonIndex={0}
           />
-          <div className="middleBox operator"> + </div>
+          {/* <div className="middleBox operator"> + </div> */}
+          {plusHider(difficulty)}
           <Box
             difficulty={difficulty}
             smallNum2={smallNum2}
@@ -125,7 +136,7 @@ const MathApp = props => {
             onClickEvent={setMedium}
             buttonIndex={1}
           />
-          <div class="middleBox equal"> = </div>
+          {equalsHider()}
           <Box difficulty={difficulty} onClickEvent={setHard} buttonIndex={2} />
         </div>
       {/* </div> */}
