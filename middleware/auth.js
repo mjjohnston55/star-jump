@@ -24,3 +24,11 @@ module.exports = function(req, res, next) {
         res.status(401).json({ msg: 'Token is not valid' }); // if it doesn't verify, send msg
     }
 };
+
+// Summary:
+// This file will activate on protected routes
+// It gets the token which should have been signed in the route
+// If there isnt a token, access is denied
+// If there is, create a variable that is the entire jwt object WITH the users ID
+// then set the req.user object to the jwt user object
+// If the token doesnt verify, deny the action

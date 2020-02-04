@@ -9,7 +9,9 @@ const db = config.get('mongoURI');
 // mongoose returns a promise so we wait for the connection
 const connectDB = async () => {
     try {
+        // connect our app to mongo database with the uri we got with config, then pass in some setting options
         await mongoose.connect(db, {
+            // some settings
             useNewUrlParser: true,
             useCreateIndex: true,
             useFindAndModify: false
@@ -22,4 +24,5 @@ const connectDB = async () => {
     }
 };
 
+// export the function
 module.exports = connectDB;
