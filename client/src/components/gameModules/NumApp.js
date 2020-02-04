@@ -71,7 +71,7 @@ const NumApp = props => {
        <div className="container">
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-6"> <Picture domino={domino} /></div>
+          <div className="col-md-6 domino"> <Picture domino={domino} /></div>
           <div className="col-md-3"></div>
         </div>
        
