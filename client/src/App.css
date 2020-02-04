@@ -681,6 +681,16 @@ div.spinner i:nth-child(8) {
     .nav-buffer {
         font-size:large;
     }
+    .mathWrapper {
+        width:fit-content !important;
+        grid-gap:0.1em !important;
+    }
+    .timer {
+        font-size: 60px !important;
+    }
+    .answer {
+        height:75% !important;
+    }
 
 }
 
@@ -706,5 +716,10 @@ div.spinner i:nth-child(8) {
     }
     .domino {
         margin-top:-8%;
+    }
+
+    .mathWrapper {
+        width:fit-content !important;
+        grid-gap:0.1em !important;
     }
 }
