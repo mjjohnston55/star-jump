@@ -6,9 +6,9 @@
     align-items: center;
 }
 .timer {
-    background: orchid;
+    /* background: orchid; */
     height: 12vh;
-    width: 25%;
+    /* width: 25%; */
     font-size: 80px;
     margin: auto;
     text-align: center;
@@ -28,20 +28,20 @@
 }
 
 .middleBox {
-    background: orchid;
+    /* background: orchid; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-size: 5em;
 }
 
 .box {
-    background: red;
+    /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-size: 5em;
 }
 
@@ -59,21 +59,21 @@
 }
 
 .boxWrapper {
-    height: 60vh;
+    /* height: 60vh; */
     display: flex;
     align-items: center;
     align-self: center;
 }
 
 .mathWrapper {
-    width: 90%;
+    width: 60%;
     margin: auto;
     display: grid;
     grid-template-columns: 5fr 1fr 5fr 1fr 5fr;
     grid-gap: 4em;
     grid-auto-rows: 20em;
 }
-
+/* 
 .operator {
     height: min-content;
     align-self: center;
@@ -81,7 +81,7 @@
 .equal {
     height: min-content;
     align-self: center;
-}
+} */
 
 .decisionWrapper {
     width: 70%;
@@ -90,8 +90,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10em;
     grid-auto-rows: 12em;
+    margin-top:2%;
 }
 
 .answer {
-    background: orchid;
+    /* background: orchid; */
+    border:2px solid black;
+    background-color:teal;
 }
