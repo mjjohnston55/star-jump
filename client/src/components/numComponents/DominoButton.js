@@ -6,16 +6,12 @@ const generateDominoButton = (buttonIndex, correctButtonIndex, domino, onClickEv
 
     console.log(domino.total)
 
-    var randomTotal = [Math.floor(Math.random() * 12)]
-    
-    while (randomTotal === domino.total) {
-        randomTotal = [Math.floor(Math.random() * 12)]
+    var buttonTotal = (buttonIndex === correctButtonIndex)
+    ?   domino.total : (Math.floor(Math.random() * 12))
+    while ((buttonIndex !== correctButtonIndex) && (buttonTotal === (domino.total))) {
+        buttonTotal = Math.floor(Math.random() * 12)
     }
-
-
-    const buttonTotal = (buttonIndex === correctButtonIndex)
-    ?   domino.total : randomTotal
-    const buttonClickEvent = (buttonIndex === correctButtonIndex)
+    var buttonClickEvent = (buttonIndex === correctButtonIndex)
     ? onClickEvent : function(){
         console.log('wrong answer')
     }
