@@ -9,6 +9,7 @@ import AnswerButton from "../mathComponents/AnswerButton";
 
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var biggerNumbers = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var classHide = null;
 
 const MathApp = props => {
   const [score, setScore] = useState(0);
@@ -44,16 +45,20 @@ const MathApp = props => {
 
   const correctGuess = () => {
     setScore(score + 1);
-    if (score >= 7) {
-      if (isAuthenticated && difficulty === "easy") {
+    if (score >= 10) {
+      console.log(isAuthenticated)
+      console.log(difficulty)
+      if ((isAuthenticated === true) && (difficulty.toString() === 'easy')) {
+        console.log(isAuthenticated)
+        console.log(difficulty)
         swal("You earned 3 stars!", "Great Job!", "success");
         updateStars(user, 3);
       }
-      if (isAuthenticated && difficulty === "medium") {
+      else if ((isAuthenticated === true) && (difficulty.toString() === 'medium')) {
         swal("You earned 6 stars!", "Great Job!", "success");
         updateStars(user, 6);
       }
-      if (isAuthenticated && difficulty === "hard") {
+      else if ((isAuthenticated === true) && (difficulty.toString() === 'hard')) {
         swal("You earned 9 stars!", "Great Job!", "success");
         updateStars(user, 9);
       } else {
@@ -72,20 +77,17 @@ const MathApp = props => {
 
   const setEasy = () => {
     setDifficulty("easy");
-    // once a difficulty is set, choosing a button index to be the correct answer at random
-    // setCorrectButtonIndex(Math.floor(Math.random() * 3))
+    classHide = "hider"
   };
 
   const setMedium = () => {
     setDifficulty("medium");
-    // once a difficulty is set, choosing a button index to be the correct answer at random
-    // setCorrectButtonIndex(Math.floor(Math.random() * 3))
+    classHide = "hider"
   };
 
   const setHard = () => {
     setDifficulty("hard");
-    // once a difficulty is set, choosing a button index to be the correct answer at random
-    // setCorrectButtonIndex(Math.floor(Math.random() * 3))
+    classHide = "hider"
   };
 
   return (
@@ -97,7 +99,7 @@ const MathApp = props => {
       </Link></div>
 
         <div className="col-md-4"><div class="timerWrapper">
-        <div class="timer">Score: 0</div>
+        <div class="timer">Score : {score}</div>
       </div></div>
 
         <div className="col-md-4"></div>
