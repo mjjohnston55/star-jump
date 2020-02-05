@@ -19,7 +19,7 @@ function About() {
             <img className="allGames" src="./images/ChooseGameGif.gif" alt="choose game gif"></img>  
             </div>
             <div className="back">
-            <h2 className="cardBack">Designed for young children, Star Jump's games are designed to make learning fun and enganging. Using bright colors and pictures. Your child is able to learn new words, practice their addition and subtraction and even learn about the solor system! Our games also include audio help our games accessible to all kids!</h2>
+            <h2 className="cardBack">Designed for young children, Star Jump's games are designed to make learning fun and engaging. Using bright colors and pictures, your child is able to learn new words, practice their addition and subtraction and even learn about the solar system! Our games also include audio help and our games are accessible to all kids!</h2>
             </div>
           </div>
         </div>
