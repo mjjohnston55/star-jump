@@ -119,9 +119,9 @@ const MathApp = props => {
       </div>
 
       
-      
-
-      {/* <div class="boxWrapper"> */}
+      <div className="row">
+        <div className="col-md-12">
+           {/* <div class="boxWrapper"> */}
         <div className="mathWrapper">
           <Box
             difficulty={difficulty}
@@ -143,6 +143,10 @@ const MathApp = props => {
           <Box difficulty={difficulty} onClickEvent={setHard} buttonIndex={2} />
         </div>
       {/* </div> */}
+        </div>
+      </div>
+
+     
 
       <div className="decisionWrapper">
         <AnswerButton
